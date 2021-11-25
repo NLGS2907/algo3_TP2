@@ -1,10 +1,10 @@
 ![tp2](https://github.com/NLGS2907/algo3_TP2/actions/workflows/build.yml/badge.svg) [![codecov](https://codecov.io/gh/NLGS2907/algo3_TP2/branch/master/graph/badge.svg)](https://codecov.io/gh/NLGS2907/algo3_TP2)
 
-# TP2 Algoritmos 3: {nombre} 
+# TP2 Algoritmos 3: AlgoThief
 
 Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUBA
 
-## Grupo {N}
+## Grupo 1
 
 * **Integrante 1** - [Martin Schipani](https://github.com/martinschipani)
 * **Integrante 2** - [Franco Lighterman Reismann](https://github.com/NLGS2907)
@@ -12,7 +12,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 * **Integrante 4** - [Ezequiel Zbogar](https://github.com/ezezbogar)
 * **Integrante 5** - [Andrés Ricardo Moyano](https://github.com/moyanoandres)
 
-Corrector: **{Corrector}**
+Corrector: **Joaquín Gómez**
 
 ## Aplicación
 
