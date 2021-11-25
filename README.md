@@ -10,6 +10,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 * **Integrante 2** - [Franco Lighterman Reismann](https://github.com/NLGS2907)
 * **Integrante 3** - [Francisco José Cufré](https://github.com/Franc98)
 * **Integrante 4** - [Ezequiel Zbogar](https://github.com/ezezbogar)
+* **Integrante 5** - [Andrés Ricardo Moyano](https://github.com/moyanoandres)
 
 Corrector: **{Corrector}**
 
