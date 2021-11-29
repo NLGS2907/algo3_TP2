@@ -1,4 +1,5 @@
 package edu.fiuba.algo3.modelo;
 
-public class Edificio {
+interface Edificio {
+    String desplegarPista();
 }

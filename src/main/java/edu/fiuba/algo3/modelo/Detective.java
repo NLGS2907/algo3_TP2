@@ -15,4 +15,6 @@ public abstract class Detective {
     public LocalDateTime obtenerFecha(){
         return reloj.obtenerFecha();
     }
+
+    public abstract void viajar(int distancia);
 }

@@ -10,20 +10,74 @@ public class DetectiveTest {
 
     @Test
     public void test01DetectiveVisitaUnBancoYSeDespliegaUnaPista() {
-        Edificio edificio = new Edificio();
+        Edificio banco = new Banco();
         Detective detective = new DetectiveNovato();
-        assertEquals("Cambio los dolares por pesos mexicanos", detective.visitarEdificio(edificio, 1));
+        assertEquals("Cambio los dolares por pesos mexicanos", detective.visitarEdificio(banco, 1));
     }
 
     @Test
     public void test02DetectiveVisitaUnBancoYElTiempoTranscurreCorrectamente() {
-        Edificio edificio = new Edificio();
+        Edificio banco = new Banco();
         Detective detective = new DetectiveNovato();
         LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  8, 0);
-        detective.visitarEdificio(edificio, 1);
+        detective.visitarEdificio(banco, 1);
         assertTrue(detective.obtenerFecha().equals(fecha));
     }
 
+    @Test
+    public void test03DetectiveViajaDeMontrealAMexico(){
+        Ciudad montreal = new Ciudad("Montreal");
+        Mapa mapa = new Mapa(montreal);
+        Detective detective = new DetectiveNovato();
+        Ciudad mexico = new Ciudad("Mexico");
+        LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  11, 0);
+        mapa.realizarViaje(mexico, detective);
+        assertEquals(mapa.ciudadActual(), "Mexico");
+        assertTrue(detective.obtenerFecha().equals(fecha));
+    }
+
+    @Test
+    public void test04DetectiveNovatoComienzaEnMontrealVisitaBancoYBlibloteca(){
+        Detective detective = new DetectiveNovato();
+        Ciudad montreal = new Ciudad("Montreal");
+        Edificio banco = new Banco();
+        Edificio biblioteca = new Biblioteca();
+        montreal.agregarEdificio(banco);
+        montreal.agregarEdificio(biblioteca);
+        montreal.visitarEdificio(detective, 0);
+        montreal.visitarEdificio(detective, 1);
+        LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  10, 0);
+        assertTrue(detective.obtenerFecha().equals(fecha));
+    }
+
+    @Test
+    public void test05DetectiveVisitaUnBancoYElTiempoTranscurreCorrectamente() {
+        Edificio banco = new Banco();
+        Detective detective = new DetectiveNovato();
+        LocalDateTime fecha = LocalDateTime.of(2021, 1, 2,  11, 0);
+        detective.visitarEdificio(banco, 20);
+        assertTrue(detective.obtenerFecha().equals(fecha));
+    }
+
+    @Test
+    public void test06VisitarAeropuertoTresVecesLa(){
+        Detective detective = new DetectiveNovato();
+        Ciudad montreal = new Ciudad("Montreal");
+        Edificio aeropuerto = new Aeropuerto();
+        Edificio puerto = new Puerto();
+        LocalDateTime fecha = LocalDateTime.of(2021, 1, 2,  12, 0);
+        montreal.agregarEdificio(aeropuerto);
+        montreal.agregarEdificio(puerto);
+        for(int i = 0; i < 3; i++){
+            montreal.visitarEdificio(detective, 0);
+        }
+        for(int i = 0; i < 5; i++) {
+            montreal.visitarEdificio(detective, 1);
+        }
+        System.out.println(detective.obtenerFecha().getDayOfMonth());
+        System.out.println(detective.obtenerFecha().getHour());
+        assertTrue(detective.obtenerFecha().equals(fecha));
+    }
 
 
 }

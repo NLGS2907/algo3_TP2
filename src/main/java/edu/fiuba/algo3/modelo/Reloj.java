@@ -1,10 +1,6 @@
 package edu.fiuba.algo3.modelo;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
-import static java.util.List.of;
 
 public class Reloj {
 
@@ -15,10 +11,15 @@ public class Reloj {
     }
 
     public void avanzarTiempo(int horas){
+        LocalDateTime auxiliar = this.fecha.plusHours(0);
         this.fecha = this.fecha.plusHours(horas);
+        if(23 == this.fecha.getHour() || this.fecha.getDayOfMonth() != auxiliar.getDayOfMonth()) {
+            this.fecha = this.fecha.plusHours(8);
+        }
     }
 
     public LocalDateTime obtenerFecha() {
         return this.fecha;
     }
+
 }
