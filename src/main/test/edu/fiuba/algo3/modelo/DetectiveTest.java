@@ -1,8 +1,6 @@
 package edu.fiuba.algo3.modelo;
 import org.junit.jupiter.api.Test;
-
 import java.time.LocalDateTime;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -12,7 +10,7 @@ public class DetectiveTest {
     public void test01DetectiveVisitaUnBancoYSeDespliegaUnaPista() {
         Edificio banco = new Banco();
         Detective detective = new DetectiveNovato();
-        assertEquals("Cambio los dolares por pesos mexicanos", detective.visitarEdificio(banco, 1));
+        assertEquals("Cambio dolares por pesos mexicanos", detective.visitarEdificio(banco, 1));
     }
 
     @Test
@@ -86,7 +84,16 @@ public class DetectiveTest {
         Detective detective = new DetectiveNovato();
         int distancia = 12600;
         LocalDateTime fecha = LocalDateTime.of(2021, 1, 2,  7, 0);
+        detective.viajarACiudadConLadron(distancia);
+        assertTrue(detective.obtenerFecha().equals(fecha));
+    }
 
+    @Test
+    public void test08DetectiveRecibeDosCuchillazos(){
+        Detective detective = new DetectiveNovato();
+        int distancia = 900;
+        LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  12, 0);
+        detective.viajarACiudadConLadron(distancia);
         detective.viajarACiudadConLadron(distancia);
         assertTrue(detective.obtenerFecha().equals(fecha));
     }

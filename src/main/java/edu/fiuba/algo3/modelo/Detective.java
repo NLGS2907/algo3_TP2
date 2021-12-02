@@ -17,8 +17,6 @@ public abstract class Detective {
 
     public abstract String visitarEdificio(Edificio edificio, int horas);
 
-
-
     public LocalDateTime obtenerFecha(){
         return reloj.obtenerFecha();
     }
