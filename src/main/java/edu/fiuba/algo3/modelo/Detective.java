@@ -10,6 +10,10 @@ public abstract class Detective {
         this.reloj = new Reloj();
     }
 
+    public boolean verificarFechaLimite(){
+        return( this.reloj.verificarFechaLimite() );
+    }
+
     public abstract String visitarEdificio(Edificio edificio, int horas);
 
     public LocalDateTime obtenerFecha(){

@@ -61,22 +61,24 @@ public class DetectiveTest {
 
     @Test
     public void test06VisitarAeropuertoTresVecesLa(){
+        boolean enCurso = true;
         Detective detective = new DetectiveNovato();
         Ciudad montreal = new Ciudad("Montreal");
         Edificio aeropuerto = new Aeropuerto();
         Edificio puerto = new Puerto();
-        LocalDateTime fecha = LocalDateTime.of(2021, 1, 2,  12, 0);
         montreal.agregarEdificio(aeropuerto);
         montreal.agregarEdificio(puerto);
+
         for(int i = 0; i < 3; i++){
             montreal.visitarEdificio(detective, 0);
+            enCurso = detective.verificarFechaLimite();
         }
-        for(int i = 0; i < 5; i++) {
+
+        for(int i = 0; i < 55; i++) {
             montreal.visitarEdificio(detective, 1);
+            enCurso = detective.verificarFechaLimite();
         }
-        System.out.println(detective.obtenerFecha().getDayOfMonth());
-        System.out.println(detective.obtenerFecha().getHour());
-        assertTrue(detective.obtenerFecha().equals(fecha));
+        assertEquals(enCurso, false);
     }
 
 
