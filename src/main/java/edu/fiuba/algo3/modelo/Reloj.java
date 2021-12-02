@@ -1,9 +1,5 @@
 package edu.fiuba.algo3.modelo;
 import java.time.LocalDateTime;
-import java.time.LocalDate;
-import java.util.Date;
-import static java.util.List.of;
-
 
 public class Reloj {
 
