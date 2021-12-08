@@ -1,8 +1,6 @@
 package edu.fiuba.algo3.modelo;
 import org.junit.jupiter.api.Test;
-
 import java.time.LocalDateTime;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -12,7 +10,7 @@ public class DetectiveTest {
     public void test01DetectiveVisitaUnBancoYSeDespliegaUnaPista() {
         Edificio banco = new Banco();
         Detective detective = new DetectiveNovato();
-        assertEquals("Cambio los dolares por pesos mexicanos", detective.visitarEdificio(banco, 1));
+        assertEquals("Cambio dolares por pesos mexicanos", detective.visitarEdificio(banco, 1));
     }
 
     @Test

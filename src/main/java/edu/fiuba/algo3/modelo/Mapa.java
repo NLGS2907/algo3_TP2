@@ -8,10 +8,10 @@ public class Mapa {
         this.ciudadActual = ciudad;
     }
 
-    public void realizarViaje(Ciudad ciudad, Detective detective) {
-        int distancia = this.calcularDistancia(ciudad);
+    public void realizarViaje(Ciudad destino, Detective detective) {
+        int distancia = this.calcularDistancia(destino);
         detective.viajar(distancia);
-        this.ciudadActual = ciudad;
+        this.ciudadActual = destino;
     }
 
     private int calcularDistancia(Ciudad ciudad){
