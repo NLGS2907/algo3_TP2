@@ -15,4 +15,9 @@ public class DetectiveNovato extends Detective {
     public void viajar(int distancia){
         this.reloj.avanzarTiempo((int)distancia/900);
     }
+
+    public void viajarACiudadConLadron(int distancia){
+        this.cantidadDeCuchillazos = this.cantidadDeCuchillazos.acuchillar(this.reloj);
+        this.reloj.avanzarTiempo((int)distancia/900);
+    }
 }

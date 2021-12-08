@@ -81,5 +81,22 @@ public class DetectiveTest {
         assertEquals(enCurso, false);
     }
 
+    @Test
+    public void test07DetectiveRecibeUnCuhillazoYDuerme(){
+        Detective detective = new DetectiveNovato();
+        int distancia = 12600;
+        LocalDateTime fecha = LocalDateTime.of(2021, 1, 2,  7, 0);
+        detective.viajarACiudadConLadron(distancia);
+        assertTrue(detective.obtenerFecha().equals(fecha));
+    }
 
+    @Test
+    public void test08DetectiveRecibeDosCuchillazos(){
+        Detective detective = new DetectiveNovato();
+        int distancia = 900;
+        LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  12, 0);
+        detective.viajarACiudadConLadron(distancia);
+        detective.viajarACiudadConLadron(distancia);
+        assertTrue(detective.obtenerFecha().equals(fecha));
+    }
 }
