@@ -1,14 +1,17 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.cuchillazo.Cuchillazo;
+import edu.fiuba.algo3.modelo.cuchillazo.SinAcuchillar;
+
 import java.time.LocalDateTime;
 
 public abstract class Detective {
     protected Reloj reloj;
-    protected int contadorDeCuchillazos;
+    protected Cuchillazo cantidadDeCuchillazos;
 
     Detective(){
         this.reloj = new Reloj();
-        this.contadorDeCuchillazos = 0;
+        this.cantidadDeCuchillazos = new SinAcuchillar();
     }
 
     public boolean verificarFechaLimite(){

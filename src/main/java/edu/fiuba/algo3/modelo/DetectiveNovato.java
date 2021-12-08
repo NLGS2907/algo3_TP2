@@ -17,12 +17,7 @@ public class DetectiveNovato extends Detective {
     }
 
     public void viajarACiudadConLadron(int distancia){
-        int horasDeRecuperacion;
-        if(this.contadorDeCuchillazos == 0)
-            horasDeRecuperacion = 2;
-        else horasDeRecuperacion = 1;
+        this.cantidadDeCuchillazos = this.cantidadDeCuchillazos.acuchillar(this.reloj);
         this.reloj.avanzarTiempo((int)distancia/900);
-        this.reloj.avanzarTiempo(horasDeRecuperacion);
-        this.contadorDeCuchillazos++;
     }
 }
