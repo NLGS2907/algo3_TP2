@@ -1,7 +1,11 @@
 package edu.fiuba.algo3.modelo;
 import org.junit.jupiter.api.Test;
+
+import edu.fiuba.algo3.modelo.excepciones.ExcepcionLadron;
+
 import java.time.LocalDateTime;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DetectiveTest {
@@ -99,7 +103,58 @@ public class DetectiveTest {
     }
 
     @Test
-    public void test09DetectiveConRangoInvestigadorViajaDeMontrealAMexico(){
+    public void test09DetectiveEntraEnEdificioConLadronSinOrdenDeArresto(){
+        Banco bancoConLadron = new Banco();
+        bancoConLadron.establecerLadron(true);
+
+        Detective detective = new DetectiveNovato();
+        boolean ladronArrestado = true;
+
+        try{
+            detective.visitarEdificio(bancoConLadron, 1);
+        }catch(ExcepcionLadron ex){
+            ladronArrestado = detective.arrestarladron();
+        }
+
+        assertFalse(ladronArrestado);
+    }
+
+    @Test
+    public void test10DetectiveObtieneOrdenDecapturaEntraEnEdificioYAtrapaLadron()
+    {
+        Ladron ladron1 = new Ladron();
+        ladron1.establecerSexo("Masculino");
+        ladron1.establecerSenia("Anillo");
+        Ladron ladron2 = new Ladron();
+        ladron2.establecerSexo("Masculino");
+        ladron2.establecerCabello("Rojo");
+        ladron2.establecerSenia("Anillo");
+
+        Computadora computadora = new Computadora();
+        computadora.agregarLadron(ladron2);
+
+        Banco bancoConLadron = new Banco();
+        bancoConLadron.establecerLadron(true);
+
+        Detective detective = new DetectiveNovato();
+        boolean ladronArrestado = false;
+
+        LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  11, 0);
+
+        detective.emitirOrdenDeArresto(computadora, ladron1);
+
+        try{
+            detective.visitarEdificio(bancoConLadron, 1);
+        }catch(ExcepcionLadron ex){
+            ladronArrestado = detective.arrestarladron();
+        }
+
+        assertTrue(detective.obtenerFecha().equals(fecha));
+        assertTrue(ladronArrestado);
+    }
+  
+    @Test
+    public void test11DetectiveConRangoInvestigadorViajaDeMontrealAMexico(){
         Detective detective = new DetectiveInvestigador();
         Ciudad ciudadOrigen = new Ciudad("Montreal");
         Ciudad ciudadDestino = new Ciudad("Mexico");
@@ -110,8 +165,5 @@ public class DetectiveTest {
         LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  10, 0);
         assertEquals(mapa.ciudadActual(), "Mexico");
         assertTrue(detective.obtenerFecha().equals(fecha));
-
-
-
     }
 }
