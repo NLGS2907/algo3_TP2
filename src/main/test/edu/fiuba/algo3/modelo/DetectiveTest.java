@@ -118,4 +118,38 @@ public class DetectiveTest {
 
         assertFalse(ladronArrestado);
     }
+
+    @Test
+    public void test10DetectiveObtieneOrdenDecapturaEntraEnEdificioYAtrapaLadron()
+    {
+        Ladron ladron1 = new Ladron();
+        ladron1.establecerSexo("Masculino");
+        ladron1.establecerSenia("Anillo");
+        Ladron ladron2 = new Ladron();
+        ladron2.establecerSexo("Masculino");
+        ladron2.establecerCabello("Rojo");
+        ladron2.establecerSenia("Anillo");
+
+        Computadora computadora = new Computadora();
+        computadora.agregarLadron(ladron2);
+
+        Banco bancoConLadron = new Banco();
+        bancoConLadron.establecerLadron(true);
+
+        Detective detective = new DetectiveNovato();
+        boolean ladronArrestado = false;
+
+        LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  11, 0);
+
+        detective.emitirOrdenDeArresto(computadora, ladron1);
+
+        try{
+            detective.visitarEdificio(bancoConLadron, 1);
+        }catch(ExcepcionLadron ex){
+            ladronArrestado = detective.arrestarladron();
+        }
+
+        assertTrue(detective.obtenerFecha().equals(fecha));
+        assertTrue(ladronArrestado);
+    }
 }
