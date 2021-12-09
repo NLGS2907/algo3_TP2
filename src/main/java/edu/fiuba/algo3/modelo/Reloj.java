@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 public class Reloj {
 
     private LocalDateTime fecha;
-    private static LocalDateTime fechaLimite;
+    private final LocalDateTime fechaLimite;
 
     Reloj(){
         this.fecha = LocalDateTime.of(2021, 1, 1, 7, 0);
