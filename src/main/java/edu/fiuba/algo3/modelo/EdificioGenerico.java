@@ -18,10 +18,6 @@ public abstract class EdificioGenerico implements Edificio{
 
     public abstract String desplegarPista();
 
-    public boolean estaElLadron(){
-        return this.tieneLadron;
-    }
-
     public void establecerLadron(boolean hayLadron){
         this.tieneLadron = hayLadron;
     }
