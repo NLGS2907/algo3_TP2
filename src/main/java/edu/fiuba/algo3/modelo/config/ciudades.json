@@ -1,9 +1,9 @@
 {
   "ciudades": [
-    "Tokyo",
+    "Montreal",
     "New York",
     "Buenos Aires",
-    "London",
+    "Mexico",
     "Rio de Janeiro"
   ],
 
@@ -24,27 +24,29 @@
   },
 
   "distanciasCiudades": {
-    "Tokyo": {
+    "Montreal": {
       "New York": 64,
-      "Buenos Aires": 32
+      "Buenos Aires": 32,
+      "Mexico": 3725
     },
     "New York": {
-      "Tokyo": 64,
-      "London": 82,
+      "Montreal": 64,
+      "Mexico": 82,
       "Rio de Janeiro": 42
     },
     "Buenos Aires": {
-      "Tokyo": 32,
+      "Montreal": 32,
       "Rio de Janeiro": 20
     },
-    "London": {
+    "Mexico": {
       "New York": 82,
-      "Rio de Janeiro": 36
+      "Rio de Janeiro": 36,
+      "Montreal": 3725
     },
     "Rio de Janeiro": {
       "New York": 42,
       "Buenos Aires": 20,
-      "London": 36
+      "Mexico": 36
     }
   }
 }

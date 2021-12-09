@@ -24,7 +24,7 @@ public class Mapa {
     }
 
     public void realizarViaje(Ciudad destino, Detective detective) {
-        int distancia = this.calcularDistancia(destino);
+        int distancia = this.calcularDistanciaEntre(ciudadActual, destino);
         detective.viajar(distancia);
         this.ciudadActual = destino;
     }
@@ -39,7 +39,7 @@ public class Mapa {
 
     public void cargarMapa() {
         try {
-            FileReader reader = new FileReader("ciudades.json");
+            FileReader reader = new FileReader("src/main/java/edu/fiuba/algo3/modelo/config/ciudades.json");
             JSONParser mapParser = new JSONParser();
 
             JSONObject jsonObject = (JSONObject) mapParser.parse(reader);
@@ -65,6 +65,7 @@ public class Mapa {
 
     int calcularDistanciaEntre(Ciudad ciudadOrigen, Ciudad ciudadDestino) {
         Integer distancia = 0;
+
         try {
             FileReader reader = new FileReader("src/main/java/edu/fiuba/algo3/modelo/config/ciudades.json");
             JSONParser mapParser = new JSONParser();
