@@ -97,4 +97,21 @@ public class DetectiveTest {
         detective.viajarACiudadConLadron(distancia);
         assertTrue(detective.obtenerFecha().equals(fecha));
     }
+
+    @Test
+    public void test09DetectiveConRangoInvestigadorViajaDeMontrealAMexico(){
+        Detective detective = new DetectiveInvestigador();
+        Ciudad ciudadOrigen = new Ciudad("Montreal");
+        Ciudad ciudadDestino = new Ciudad("Mexico");
+        Mapa mapa = new Mapa(ciudadOrigen);
+        mapa.cargarMapa();
+        mapa.realizarViaje(ciudadDestino, detective);
+
+        LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  10, 0);
+        assertEquals(mapa.ciudadActual(), "Mexico");
+        assertTrue(detective.obtenerFecha().equals(fecha));
+
+
+
+    }
 }
