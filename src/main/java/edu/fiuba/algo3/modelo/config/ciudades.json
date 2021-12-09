@@ -1,0 +1,50 @@
+{
+  "ciudades": [
+    "Tokyo",
+    "New York",
+    "Buenos Aires",
+    "London",
+    "Rio de Janeiro"
+  ],
+
+  "distancias": {
+    "Tokyo":          [0, 64, 32, 0, 0],
+    "New York":       [64, 0, 0, 82, 42],
+    "Buenos Aires":   [32, 0, 0, 0, 20],
+    "London":         [0, 82, 0, 0, 36],
+    "Rio de Janeiro": [0, 42, 20, 36, 0]
+  },
+
+  "distanciasAdy": {
+    "Tokyo":          [0, 1, 1, 0, 0],
+    "New York":       [1, 0, 0, 1, 1],
+    "Buenos Aires":   [1, 0, 0, 0, 1],
+    "London":         [0, 1, 0, 0, 1],
+    "Rio de Janeiro": [0, 1, 1, 1, 0]
+  },
+
+  "distanciasCiudades": {
+    "Tokyo": {
+      "New York": 64,
+      "Buenos Aires": 32
+    },
+    "New York": {
+      "Tokyo": 64,
+      "London": 82,
+      "Rio de Janeiro": 42
+    },
+    "Buenos Aires": {
+      "Tokyo": 32,
+      "Rio de Janeiro": 20
+    },
+    "London": {
+      "New York": 82,
+      "Rio de Janeiro": 36
+    },
+    "Rio de Janeiro": {
+      "New York": 42,
+      "Buenos Aires": 20,
+      "London": 36
+    }
+  }
+}
