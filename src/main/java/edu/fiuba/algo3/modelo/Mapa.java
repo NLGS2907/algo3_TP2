@@ -46,7 +46,7 @@ public class Mapa {
             JSONArray ciudadesArray = (JSONArray) jsonObject.get("ciudades");
 
             ciudadesArray.forEach(item -> {
-                System.out.println(item.toString());
+                //System.out.println(item.toString());
                 ciudades.add(new Ciudad(item.toString()));
             });
 

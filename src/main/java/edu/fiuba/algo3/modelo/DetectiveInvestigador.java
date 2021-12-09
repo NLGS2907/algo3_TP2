@@ -22,4 +22,13 @@ public class DetectiveInvestigador extends Detective {
         this.cantidadDeCuchillazos = this.cantidadDeCuchillazos.acuchillar(this.reloj);
         this.reloj.avanzarTiempo((int) Math.round(distancia/1300.0));
     }
+
+    @Override
+    public Detective incrementarArresto() {
+        this.cantidadDeArrestos++;
+        if (cantidadDeArrestos == 10) {
+            return new DetectiveSargento();
+        }
+        return this;
+    }
 }

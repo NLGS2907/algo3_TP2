@@ -9,11 +9,13 @@ public abstract class Detective {
     protected Reloj reloj;
     protected Cuchillazo cantidadDeCuchillazos;
     protected boolean ordenDeArresto;
+    protected int cantidadDeArrestos;
 
     Detective(){
         this.reloj = new Reloj();
         this.cantidadDeCuchillazos = new SinAcuchillar();
         this.ordenDeArresto = false;
+        this.cantidadDeArrestos = 0;
     }
 
     public boolean verificarFechaLimite(){
@@ -39,4 +41,6 @@ public abstract class Detective {
     public abstract void viajar(int distancia);
 
     public abstract void viajarACiudadConLadron(int distancia);
+
+    public abstract Detective incrementarArresto();
 }
