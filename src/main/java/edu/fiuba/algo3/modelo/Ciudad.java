@@ -6,10 +6,12 @@ public class Ciudad {
 
     private String nombre;
     private ArrayList<Edificio> edificios;
+    private ArrayList<Ciudad> ciudadesAdyacentes;
     private int contadorVisitas;
 
     Ciudad(String nombre){
-        this.edificios = new ArrayList<Edificio>();
+        this.edificios = new ArrayList<>();
+        this.ciudadesAdyacentes = new ArrayList<>();
         this.contadorVisitas = 0;
         this.nombre = nombre;
     }
@@ -27,5 +29,9 @@ public class Ciudad {
 
     public void agregarEdificio(Edificio edificio){
         this.edificios.add(edificio);
+    }
+
+    void agregarRutaDeVuelo(Ciudad ciudad) {
+        ciudadesAdyacentes.add(ciudad);
     }
 }

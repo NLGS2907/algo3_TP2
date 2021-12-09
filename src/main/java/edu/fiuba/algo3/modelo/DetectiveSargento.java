@@ -2,9 +2,9 @@ package edu.fiuba.algo3.modelo;
 
 import java.math.*;
 
-public class DetectiveNovato extends Detective {
+public class DetectiveSargento extends Detective {
 
-    DetectiveNovato(){
+    DetectiveSargento(){
         super();
     }
 
@@ -15,11 +15,14 @@ public class DetectiveNovato extends Detective {
     }
 
     public void viajar(int distancia){
-        this.reloj.avanzarTiempo((int) Math.round(distancia/900.0));
+        this.reloj.avanzarTiempo((int) Math.round(distancia/1500.0));
     }
 
     public void viajarACiudadConLadron(int distancia){
         this.cantidadDeCuchillazos = this.cantidadDeCuchillazos.acuchillar(this.reloj);
-        this.reloj.avanzarTiempo((int) Math.round(distancia/900.0));
+        this.reloj.avanzarTiempo((int) Math.round(distancia/1500.0));
     }
+
+
+
 }
