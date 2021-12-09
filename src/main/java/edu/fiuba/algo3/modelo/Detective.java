@@ -26,10 +26,13 @@ public abstract class Detective {
         return this.reloj.obtenerFecha();
     }
     
-    public boolean emitirOrdenDeArresto(Computadora baseDeDatos, Ladron ladronImaginado)
-    {
+    public boolean emitirOrdenDeArresto(Computadora baseDeDatos, Ladron ladronImaginado){
         this.reloj.avanzarTiempo(3);
         this.ordenDeArresto = baseDeDatos.buscarLadron(ladronImaginado);
+        return this.ordenDeArresto;
+    }
+
+    public boolean arrestarladron(){
         return this.ordenDeArresto;
     }
 

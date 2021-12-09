@@ -1,7 +1,11 @@
 package edu.fiuba.algo3.modelo;
 import org.junit.jupiter.api.Test;
+
+import edu.fiuba.algo3.modelo.excepciones.ExcepcionLadron;
+
 import java.time.LocalDateTime;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DetectiveTest {
@@ -96,5 +100,22 @@ public class DetectiveTest {
         detective.viajarACiudadConLadron(distancia);
         detective.viajarACiudadConLadron(distancia);
         assertTrue(detective.obtenerFecha().equals(fecha));
+    }
+
+    @Test
+    public void test09DetectiveEntraEnEdificioConLadronSinOrdenDeArresto(){
+        Banco bancoConLadron = new Banco();
+        bancoConLadron.establecerLadron(true);
+
+        Detective detective = new DetectiveNovato();
+        boolean ladronArrestado = true;
+
+        try{
+            detective.visitarEdificio(bancoConLadron, 1);
+        }catch(ExcepcionLadron ex){
+            ladronArrestado = detective.arrestarladron();
+        }
+
+        assertFalse(ladronArrestado);
     }
 }
