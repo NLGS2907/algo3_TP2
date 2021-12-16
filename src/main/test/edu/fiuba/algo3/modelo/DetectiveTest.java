@@ -27,13 +27,16 @@ public class DetectiveTest {
 
     @Test
     public void test03DetectiveViajaDeMontrealAMexico(){
-        Ciudad montreal = new Ciudad("Montreal");
-        Mapa mapa = new Mapa(montreal);
+        Mapa mapa = Mapa.obtenerInstancia();
         Detective detective = new DetectiveNovato();
-        Ciudad mexico = new Ciudad("Mexico");
+
+        Ciudad montreal = mapa.obtenerCiudad("Montreal");
+        Ciudad mexico = mapa.obtenerCiudad("Mexico");
+        Ciudad ciudadActual = montreal;
+
         LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  11, 0);
-        mapa.realizarViaje(mexico, detective);
-        assertEquals(mapa.ciudadActual(), "Mexico");
+        ciudadActual = ciudadActual.realizarViaje(mexico, detective);
+        assertEquals(ciudadActual.obtenerNombre(), "Mexico");
         assertTrue(detective.obtenerFecha().equals(fecha));
     }
 
@@ -157,12 +160,12 @@ public class DetectiveTest {
         Detective detective = new DetectiveInvestigador();
         Ciudad ciudadOrigen = new Ciudad("Montreal");
         Ciudad ciudadDestino = new Ciudad("Mexico");
-        Mapa mapa = new Mapa(ciudadOrigen);
-        mapa.cargarMapa();
-        mapa.realizarViaje(ciudadDestino, detective);
+        Ciudad ciudadActual = ciudadOrigen;
+
+        ciudadActual = ciudadActual.realizarViaje(ciudadDestino, detective);
 
         LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  10, 0);
-        assertEquals(mapa.ciudadActual(), "Mexico");
+        assertEquals(ciudadActual.obtenerNombre(), "Mexico");
         assertTrue(detective.obtenerFecha().equals(fecha));
     }
 
@@ -178,10 +181,9 @@ public class DetectiveTest {
         Ciudad ciudadOrigen = new Ciudad("Mexico");
         Ciudad ciudadDestino = new Ciudad("Montreal");
 
-        Mapa mapa = new Mapa(ciudadOrigen);
-        mapa.cargarMapa();
+        Ciudad ciudadActual = ciudadOrigen;
 
-        mapa.realizarViaje(ciudadDestino, detective);
+        ciudadActual.realizarViaje(ciudadDestino, detective);
 
         Banco bancoConLadron = new Banco();
         bancoConLadron.establecerLadron(true);
@@ -205,11 +207,5 @@ public class DetectiveTest {
 
         assertTrue(detective.obtenerFecha().equals(fecha));
         assertTrue(ladronArrestado);
-
-
-
-
-
-
     }
 }
