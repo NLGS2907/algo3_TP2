@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-public class Biblioteca extends EdificioGenerico {
+public class Biblioteca extends Edificio {
 
     Biblioteca(){
         super();

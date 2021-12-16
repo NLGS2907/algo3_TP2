@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-public class Puerto extends EdificioGenerico {
+public class Puerto extends Edificio {
 
     Puerto(){
         super();
