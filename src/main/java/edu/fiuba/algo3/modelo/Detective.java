@@ -10,6 +10,7 @@ public abstract class Detective {
     protected Cuchillazo cantidadDeCuchillazos;
     protected boolean ordenDeArresto;
     protected int cantidadDeArrestos;
+    protected float velocidad;
 
     Detective(){
         this.reloj = new Reloj();

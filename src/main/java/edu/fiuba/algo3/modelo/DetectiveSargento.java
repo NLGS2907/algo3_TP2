@@ -6,6 +6,7 @@ public class DetectiveSargento extends Detective {
 
     DetectiveSargento(){
         super();
+        this.velocidad = 1500;
     }
 
     @Override
@@ -15,12 +16,12 @@ public class DetectiveSargento extends Detective {
     }
 
     public void viajar(int distancia){
-        this.reloj.avanzarTiempo((int) Math.round(distancia/1500.0));
+        this.reloj.avanzarTiempo((int) Math.round(distancia/this.velocidad));
     }
 
     public void viajarACiudadConLadron(int distancia){
         this.cantidadDeCuchillazos = this.cantidadDeCuchillazos.acuchillar(this.reloj);
-        this.reloj.avanzarTiempo((int) Math.round(distancia/1500.0));
+        this.reloj.avanzarTiempo((int) Math.round(distancia/this.velocidad));
     }
 
     @Override
