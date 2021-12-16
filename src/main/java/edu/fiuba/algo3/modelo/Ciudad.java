@@ -18,6 +18,10 @@ public class Ciudad {
         return this.nombre;
     }
 
+    public int obtenerVisitas() {
+        return this.contadorVisitas;
+    }
+
     public void visitarEdificio(Detective detective, int numeroEdificio){
         if(this.contadorVisitas < 3){
             this.contadorVisitas++;
