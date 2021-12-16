@@ -14,7 +14,7 @@ public class Reloj {
     public void avanzarTiempo(int horas){
         LocalDateTime auxiliar = this.fecha.plusHours(0);
         this.fecha = this.fecha.plusHours(horas);
-        if(23 == this.fecha.getHour() || this.fecha.getDayOfMonth() != auxiliar.getDayOfMonth()) {
+        if(auxiliar.withHour(22).isBefore(this.fecha)) {
             this.fecha = this.fecha.plusHours(8);
         }
     }
