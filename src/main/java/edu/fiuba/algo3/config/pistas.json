@@ -1,0 +1,102 @@
+{
+  "pistas": {
+    "Facil": {
+      "Default": {
+        "Financiero": "Por aca no pasó nadie papu",
+        "Biblioteca": "Por aca no pasó nadie papu",
+        "Transporte": "Por aca no pasó nadie papu"
+      },
+      "Montreal": {
+        "Financiero": "El ladrón compró dólares",
+        "Biblioteca": "Se fue con un libro sobre alces",
+        "Transporte": "El ladrón tenía una bandera blanca y roja"
+      },
+      "New York": {
+        "Financiero": "El ladrón compró dólares",
+        "Biblioteca": "En el piso habia una entrada de un partido de los knicks",
+        "Transporte": "El ladrón tenía una bandera azul, blanca y roja"
+      },
+      "Buenos Aires": {
+        "Financiero": "El ladrón compró pesos",
+        "Biblioteca": "Se fue con un mate",
+        "Transporte": "El ladrón tenía una bandera celeste y blanca"
+      },
+      "Mexico": {
+        "Financiero": "El ladrón compró pesos",
+        "Biblioteca": "Estaba un con sombrero de mariachi",
+        "Transporte": "El ladrón tenía una bandera verde, blanca y roja"
+      },
+      "Rio de Janeiro": {
+        "Financiero": "El ladrón compró reales",
+        "Biblioteca": "Estaba con una caipirinha",
+        "Transporte": "El ladrón tenía una bandera verde, azul, y amarilla"
+      }
+    },
+    "Media": {
+      "Default": {
+        "Financiero": "Por aca no pasó nadie papu",
+        "Biblioteca": "Por aca no pasó nadie papu",
+        "Transporte": "Por aca no pasó nadie papu"
+      },
+      "Montreal": {
+        "Financiero": "",
+        "Biblioteca": "Se fue con un libro sobre arces",
+        "Transporte": ""
+      },
+      "New York": {
+        "Financiero": "",
+        "Biblioteca": "",
+        "Transporte": ""
+      },
+      "Buenos Aires": {
+        "Financiero": "",
+        "Biblioteca": "",
+        "Transporte": ""
+      },
+      "Mexico": {
+        "Financiero": "",
+        "Biblioteca": "",
+        "Transporte": ""
+      },
+      "Rio de Janeiro": {
+        "Financiero": "",
+        "Biblioteca": "",
+        "Transporte": ""
+      }
+    },
+    "Dificil": {
+      "Default": {
+        "Financiero": "Por aca no pasó nadie papu",
+        "Biblioteca": "Por aca no pasó nadie papu",
+        "Transporte": "Por aca no pasó nadie papu"
+      },
+      "Montreal": {
+        "Financiero": "",
+        "Biblioteca": "",
+        "Transporte": ""
+      },
+      "New York": {
+        "Financiero": "",
+        "Biblioteca": "",
+        "Transporte": ""
+      },
+      "Buenos Aires": {
+        "Financiero": "",
+        "Biblioteca": "",
+        "Transporte": ""
+      },
+      "Mexico": {
+        "Financiero": "",
+        "Biblioteca": "",
+        "Transporte": ""
+      },
+      "Rio de Janeiro": {
+        "Financiero": "",
+        "Biblioteca": "",
+        "Transporte": ""
+      }
+
+
+    }
+  }
+}

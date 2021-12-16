@@ -2,11 +2,11 @@ package edu.fiuba.algo3.modelo;
 
 import java.math.*;
 
-public class DetectiveNovato extends Detective {
+public class DetectiveSargento extends Detective {
 
-    DetectiveNovato(){
+    DetectiveSargento(){
         super();
-        this.velocidad = 900;
+        this.velocidad = 1500;
     }
 
     @Override
@@ -27,9 +27,7 @@ public class DetectiveNovato extends Detective {
     @Override
     public Detective incrementarArresto() {
         this.cantidadDeArrestos++;
-        if (cantidadDeArrestos == 5) {
-            return new DetectiveDetective();
-        }
         return this;
     }
+
 }
