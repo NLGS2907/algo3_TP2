@@ -9,7 +9,7 @@ import javafx.scene.layout.VBox;
 public class CajaBotonesYEstado extends VBox {
 
     public CajaBotonesYEstado() {
-        super(20);
+        super(10);
         this.getChildren().addAll(new PantallaEnNegro(), new BotonesAcciones());
         this.setPadding(new Insets(20));
         this.setAlignment(Pos.CENTER_RIGHT);

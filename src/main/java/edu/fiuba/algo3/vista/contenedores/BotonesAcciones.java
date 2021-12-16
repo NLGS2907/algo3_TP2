@@ -10,7 +10,7 @@ import javafx.scene.layout.HBox;
 public class BotonesAcciones extends HBox {
 
     public BotonesAcciones() {
-        super(5);
+        super(10);
         this.getChildren().addAll(
                 new BotonVerConexiones(),
                 new BotonViajar(),
