@@ -6,7 +6,7 @@ public class Reloj {
     private LocalDateTime fecha;
     private static LocalDateTime fechaLimite;
 
-    Reloj(){
+    public Reloj(){
         this.fecha = LocalDateTime.of(2021, 1, 1, 7, 0);
         this.fechaLimite = LocalDateTime.of(2021, 1, 7, 17, 0);
     }
