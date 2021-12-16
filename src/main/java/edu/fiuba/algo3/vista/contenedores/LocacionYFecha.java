@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.vista.contenedores;
 
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
@@ -10,5 +11,6 @@ public class LocacionYFecha extends VBox {
         Label lugar = new Label(nombreLugar);
         Label tiempo = new Label(descripcionTiempo);
         this.getChildren().addAll(lugar, tiempo);
+        this.setAlignment(Pos.TOP_CENTER);
     }
 }
