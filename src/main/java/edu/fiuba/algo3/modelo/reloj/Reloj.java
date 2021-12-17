@@ -7,8 +7,8 @@ public class Reloj {
     private final Fecha fechaLimite;
 
     public Reloj(){
-        this.fecha = new Fecha(1, 7, 0);
-        this.fechaLimite = new Fecha(7, 17, 0);
+        this.fecha = new Fecha(1, 7);
+        this.fechaLimite = new Fecha(7, 17);
     }
 
     public void avanzarTiempo(int horas){

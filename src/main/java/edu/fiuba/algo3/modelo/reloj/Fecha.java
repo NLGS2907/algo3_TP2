@@ -1,13 +1,15 @@
 package edu.fiuba.algo3.modelo.reloj;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 public class Fecha {
 
     private LocalDateTime fechaReal;
 
-    public Fecha(int diaDelMes, int horaDelDia, int minuto) {
-        this.fechaReal = LocalDateTime.of(2021, 1, diaDelMes, horaDelDia, minuto);
+    public Fecha(int diaDelMes, int horaDelDia) {
+        this.fechaReal = LocalDateTime.of(2021, 1, diaDelMes, horaDelDia, 0);
     }
 
     public Fecha(Fecha fechaOriginal) {
@@ -35,10 +37,9 @@ public class Fecha {
     }
 
     public String mostrar() {
-        return "Prueba";
-    }
-
-    public LocalDateTime getFechaReal(){
-        return this.fechaReal;
+        Locale localEsp = new Locale("es", "AR");
+        DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("EEEE h:mm", localEsp);
+        DateTimeFormatter formatoMeridiano = DateTimeFormatter.ofPattern(" a");
+        return this.fechaReal.format(formatoFecha) + this.fechaReal.format(formatoMeridiano);
     }
 }

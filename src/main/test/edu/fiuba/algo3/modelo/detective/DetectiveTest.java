@@ -25,7 +25,7 @@ public class DetectiveTest {
     public void test02DetectiveVisitaUnBancoYElTiempoTranscurreCorrectamente() {
         Edificio banco = new Banco();
         Detective detective = new DetectiveNovato();
-        Fecha fecha = new Fecha (1,  8, 0);
+        Fecha fecha = new Fecha (1,  8);
         detective.visitarEdificio(banco, 1);
         assertTrue(detective.obtenerFecha().esIgualA(fecha));
     }
@@ -39,7 +39,7 @@ public class DetectiveTest {
         Ciudad mexico = mapa.obtenerCiudad("Mexico");
         Ciudad ciudadActual = montreal;
 
-        Fecha fecha =  new Fecha (1,  11, 0);
+        Fecha fecha =  new Fecha (1,  11);
         ciudadActual = ciudadActual.realizarViaje(mexico, detective);
         assertEquals(ciudadActual.obtenerNombre(), "Mexico");
         assertTrue(detective.obtenerFecha().esIgualA(fecha));
@@ -55,7 +55,7 @@ public class DetectiveTest {
         montreal.agregarEdificio(biblioteca);
         montreal.visitarEdificio(detective, 0);
         montreal.visitarEdificio(detective, 1);
-        Fecha fecha = new Fecha( 1,  10, 0);
+        Fecha fecha = new Fecha(1, 10);
         assertTrue(detective.obtenerFecha().esIgualA(fecha));
     }
 
@@ -63,7 +63,7 @@ public class DetectiveTest {
     public void test05DetectiveVisitaUnBancoYElTiempoTranscurreCorrectamente() {
         Edificio banco = new Banco();
         Detective detective = new DetectiveNovato();
-        Fecha fecha = new Fecha(2,  11, 0);
+        Fecha fecha = new Fecha(2,  11);
         detective.visitarEdificio(banco, 20);
         assertTrue(detective.obtenerFecha().esIgualA(fecha));
     }
@@ -94,7 +94,7 @@ public class DetectiveTest {
     public void test07DetectiveRecibeUnCuhillazoYDuerme(){
         Detective detective = new DetectiveNovato();
         int distancia = 12600;
-        Fecha fecha = new Fecha (2,  7, 0);
+        Fecha fecha = new Fecha (2,  7);
         detective.viajarACiudadConLadron(distancia);
         assertTrue(detective.obtenerFecha().esIgualA(fecha));
     }
@@ -103,7 +103,7 @@ public class DetectiveTest {
     public void test08DetectiveRecibeDosCuchillazos(){
         Detective detective = new DetectiveNovato();
         int distancia = 900;
-        Fecha fecha = new Fecha (1,  12, 0);
+        Fecha fecha = new Fecha (1,  12);
         detective.viajarACiudadConLadron(distancia);
         detective.viajarACiudadConLadron(distancia);
         assertTrue(detective.obtenerFecha().esIgualA(fecha));
@@ -143,7 +143,7 @@ public class DetectiveTest {
         Detective detective = new DetectiveNovato();
         boolean ladronArrestado = false;
 
-        Fecha fecha = new Fecha(1,  11, 0);
+        Fecha fecha = new Fecha(1, 11);
 
         detective.emitirOrdenDeArresto(computadora, ladron1);
 
@@ -163,7 +163,7 @@ public class DetectiveTest {
 
         ciudadActual = ciudadActual.realizarViaje(ciudadDestino, detective);
 
-        Fecha fecha = new Fecha (1,  10, 0);
+        Fecha fecha = new Fecha (1,  10);
         assertEquals(ciudadActual.obtenerNombre(), "Mexico");
         assertTrue(detective.obtenerFecha().esIgualA(fecha));
     }
@@ -199,7 +199,7 @@ public class DetectiveTest {
         detective.visitarEdificio(bancoConLadron, 1);
         ladronArrestado = detective.arrestarladron();
 
-        Fecha fecha = new Fecha (1,  14, 0);
+        Fecha fecha = new Fecha (1,  14);
 
         assertTrue(detective.obtenerFecha().esIgualA(fecha));
         assertTrue(ladronArrestado);

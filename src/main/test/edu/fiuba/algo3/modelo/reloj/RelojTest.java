@@ -11,7 +11,6 @@ public class RelojTest {
         Reloj reloj = new Reloj();
 
         reloj.avanzarTiempo(6);
-
         assertTrue(reloj.verificarFechaLimite());
     }
 
@@ -29,9 +28,9 @@ public class RelojTest {
         Reloj reloj1 = new Reloj();
         Reloj reloj2 = new Reloj();
         Reloj reloj3 = new Reloj();
-        Fecha unDiaDespues = new Fecha(2, 15, 0);
-        Fecha diezDiasDespues = new Fecha(11,15,0);
-        Fecha unMesDespues = new Fecha(31, 15, 0);
+        Fecha unDiaDespues = new Fecha(2, 15);
+        Fecha diezDiasDespues = new Fecha(11, 15);
+        Fecha unMesDespues = new Fecha(31, 15);
 
         reloj1.avanzarTiempo(24);
         reloj2.avanzarTiempo(240); // 10 (dias) x 24 (horas) = 240
