@@ -113,11 +113,8 @@ public class DetectiveTest {
         Detective detective = new DetectiveNovato();
         boolean ladronArrestado = true;
 
-        try{
-            detective.visitarEdificio(bancoConLadron, 1);
-        }catch(ExcepcionLadron ex){
-            ladronArrestado = detective.arrestarladron();
-        }
+        detective.visitarEdificio(bancoConLadron, 1);
+        ladronArrestado = detective.arrestarladron();
 
         assertFalse(ladronArrestado);
     }
@@ -146,11 +143,8 @@ public class DetectiveTest {
 
         detective.emitirOrdenDeArresto(computadora, ladron1);
 
-        try{
-            detective.visitarEdificio(bancoConLadron, 1);
-        }catch(ExcepcionLadron ex){
-            ladronArrestado = detective.arrestarladron();
-        }
+        detective.visitarEdificio(bancoConLadron, 1);
+        ladronArrestado = detective.arrestarladron();
 
         assertTrue(detective.obtenerFecha().equals(fecha));
         assertTrue(ladronArrestado);
@@ -198,11 +192,8 @@ public class DetectiveTest {
 
         detective.emitirOrdenDeArresto(computadora, ladron);
 
-        try{
-            detective.visitarEdificio(bancoConLadron, 1);
-        }catch(ExcepcionLadron ex){
-            ladronArrestado = detective.arrestarladron();
-        }
+        detective.visitarEdificio(bancoConLadron, 1);
+        ladronArrestado = detective.arrestarladron();
 
         LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  14, 0);
 

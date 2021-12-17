@@ -10,10 +10,8 @@ public abstract class Edificio {
         tieneLadron = false;
     }
 
-    protected void encontrarLadron(){
-        if(this.tieneLadron){
-            throw new ExcepcionLadron();
-        }
+    public Boolean encontrarLadron(){
+        return this.tieneLadron;
     }
 
     public abstract String desplegarPista();
