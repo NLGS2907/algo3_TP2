@@ -1,9 +1,12 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.detective;
 
+import edu.fiuba.algo3.modelo.Computadora;
+import edu.fiuba.algo3.modelo.Ladron;
+import edu.fiuba.algo3.modelo.reloj.Fecha;
+import edu.fiuba.algo3.modelo.reloj.Reloj;
 import edu.fiuba.algo3.modelo.cuchillazo.Cuchillazo;
 import edu.fiuba.algo3.modelo.cuchillazo.SinAcuchillar;
-
-import java.time.LocalDateTime;
+import edu.fiuba.algo3.modelo.edificios.Edificio;
 
 public abstract class Detective {
     protected Reloj reloj;
@@ -25,7 +28,7 @@ public abstract class Detective {
 
     public abstract String visitarEdificio(Edificio edificio, int horas);
 
-    public LocalDateTime obtenerFecha(){
+    public Fecha obtenerFecha(){
         return this.reloj.obtenerFecha();
     }
     

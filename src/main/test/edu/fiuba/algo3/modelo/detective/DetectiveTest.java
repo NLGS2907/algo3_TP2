@@ -1,10 +1,14 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.detective;
 
+import edu.fiuba.algo3.modelo.Ciudad;
+import edu.fiuba.algo3.modelo.Computadora;
+import edu.fiuba.algo3.modelo.Ladron;
+import edu.fiuba.algo3.modelo.Mapa;
+import edu.fiuba.algo3.modelo.edificios.*;
+import edu.fiuba.algo3.modelo.reloj.Fecha;
 import org.junit.jupiter.api.Test;
 
 import edu.fiuba.algo3.modelo.excepciones.ExcepcionLadron;
-
-import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,9 +25,9 @@ public class DetectiveTest {
     public void test02DetectiveVisitaUnBancoYElTiempoTranscurreCorrectamente() {
         Edificio banco = new Banco();
         Detective detective = new DetectiveNovato();
-        LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  8, 0);
+        Fecha fecha = new Fecha (1,  8, 0);
         detective.visitarEdificio(banco, 1);
-        assertTrue(detective.obtenerFecha().equals(fecha));
+        assertTrue(detective.obtenerFecha().esIgualA(fecha));
     }
 
     @Test
@@ -35,10 +39,10 @@ public class DetectiveTest {
         Ciudad mexico = mapa.obtenerCiudad("Mexico");
         Ciudad ciudadActual = montreal;
 
-        LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  11, 0);
+        Fecha fecha =  new Fecha (1,  11, 0);
         ciudadActual = ciudadActual.realizarViaje(mexico, detective);
         assertEquals(ciudadActual.obtenerNombre(), "Mexico");
-        assertTrue(detective.obtenerFecha().equals(fecha));
+        assertTrue(detective.obtenerFecha().esIgualA(fecha));
     }
 
     @Test
@@ -51,17 +55,17 @@ public class DetectiveTest {
         montreal.agregarEdificio(biblioteca);
         montreal.visitarEdificio(detective, 0);
         montreal.visitarEdificio(detective, 1);
-        LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  10, 0);
-        assertTrue(detective.obtenerFecha().equals(fecha));
+        Fecha fecha = new Fecha( 1,  10, 0);
+        assertTrue(detective.obtenerFecha().esIgualA(fecha));
     }
 
     @Test
     public void test05DetectiveVisitaUnBancoYElTiempoTranscurreCorrectamente() {
         Edificio banco = new Banco();
         Detective detective = new DetectiveNovato();
-        LocalDateTime fecha = LocalDateTime.of(2021, 1, 2,  11, 0);
+        Fecha fecha = new Fecha(2,  11, 0);
         detective.visitarEdificio(banco, 20);
-        assertTrue(detective.obtenerFecha().equals(fecha));
+        assertTrue(detective.obtenerFecha().esIgualA(fecha));
     }
 
     @Test
@@ -90,19 +94,19 @@ public class DetectiveTest {
     public void test07DetectiveRecibeUnCuhillazoYDuerme(){
         Detective detective = new DetectiveNovato();
         int distancia = 12600;
-        LocalDateTime fecha = LocalDateTime.of(2021, 1, 2,  7, 0);
+        Fecha fecha = new Fecha (2,  7, 0);
         detective.viajarACiudadConLadron(distancia);
-        assertTrue(detective.obtenerFecha().equals(fecha));
+        assertTrue(detective.obtenerFecha().esIgualA(fecha));
     }
 
     @Test
     public void test08DetectiveRecibeDosCuchillazos(){
         Detective detective = new DetectiveNovato();
         int distancia = 900;
-        LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  12, 0);
+        Fecha fecha = new Fecha (1,  12, 0);
         detective.viajarACiudadConLadron(distancia);
         detective.viajarACiudadConLadron(distancia);
-        assertTrue(detective.obtenerFecha().equals(fecha));
+        assertTrue(detective.obtenerFecha().esIgualA(fecha));
     }
 
     @Test
@@ -142,7 +146,7 @@ public class DetectiveTest {
         Detective detective = new DetectiveNovato();
         boolean ladronArrestado = false;
 
-        LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  11, 0);
+        Fecha fecha = new Fecha(1,  11, 0);
 
         detective.emitirOrdenDeArresto(computadora, ladron1);
 
@@ -152,7 +156,7 @@ public class DetectiveTest {
             ladronArrestado = detective.arrestarladron();
         }
 
-        assertTrue(detective.obtenerFecha().equals(fecha));
+        assertTrue(detective.obtenerFecha().esIgualA(fecha));
         assertTrue(ladronArrestado);
     }
   
@@ -165,9 +169,9 @@ public class DetectiveTest {
 
         ciudadActual = ciudadActual.realizarViaje(ciudadDestino, detective);
 
-        LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  10, 0);
+        Fecha fecha = new Fecha (1,  10, 0);
         assertEquals(ciudadActual.obtenerNombre(), "Mexico");
-        assertTrue(detective.obtenerFecha().equals(fecha));
+        assertTrue(detective.obtenerFecha().esIgualA(fecha));
     }
 
     @Test
@@ -204,9 +208,9 @@ public class DetectiveTest {
             ladronArrestado = detective.arrestarladron();
         }
 
-        LocalDateTime fecha = LocalDateTime.of(2021, 1, 1,  14, 0);
+        Fecha fecha = new Fecha (1,  14, 0);
 
-        assertTrue(detective.obtenerFecha().equals(fecha));
+        assertTrue(detective.obtenerFecha().esIgualA(fecha));
         assertTrue(ladronArrestado);
     }
 }
