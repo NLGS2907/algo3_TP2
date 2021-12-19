@@ -38,8 +38,9 @@ public class Fecha {
 
     public String mostrar() {
         Locale localEsp = new Locale("es", "AR");
+        Locale localEng = new Locale("en", "US");
         DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("EEEE h:mm", localEsp);
-        DateTimeFormatter formatoMeridiano = DateTimeFormatter.ofPattern(" a");
+        DateTimeFormatter formatoMeridiano = DateTimeFormatter.ofPattern(" a", localEng);
         return this.fechaReal.format(formatoFecha) + this.fechaReal.format(formatoMeridiano);
     }
 }
