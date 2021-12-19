@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.excepciones.ExcepcionMapa;
+
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -42,7 +44,10 @@ public class Mapa {
     //    return ciudades.get(0); // Cambiar
     //}
 
-    int calcularDistanciaEntre(Ciudad ciudadOrigen, Ciudad ciudadDestino) {
+    int calcularDistanciaEntre(Ciudad ciudadOrigen, Ciudad ciudadDestino) throws ExcepcionMapa {
+        if (distancias.get(ciudadOrigen.obtenerNombre()).get(ciudadDestino.obtenerNombre()) == null) {
+            throw new ExcepcionMapa("Ruta inexistente");
+        }
         return distancias.get(ciudadOrigen.obtenerNombre()).get(ciudadDestino.obtenerNombre());
     }
 
