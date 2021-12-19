@@ -1,10 +1,10 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.detective;
 
-import java.math.*;
+import edu.fiuba.algo3.modelo.edificios.Edificio;
 
 public class DetectiveDetective extends Detective {
 
-    DetectiveDetective(){
+    public DetectiveDetective(){
         super();
         this.velocidad = 1100;
     }

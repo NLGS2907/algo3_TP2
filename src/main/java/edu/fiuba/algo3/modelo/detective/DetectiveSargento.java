@@ -1,12 +1,12 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.detective;
 
-import java.math.*;
+import edu.fiuba.algo3.modelo.edificios.Edificio;
 
-public class DetectiveInvestigador extends Detective {
+public class DetectiveSargento extends Detective {
 
-    DetectiveInvestigador(){
+    public DetectiveSargento(){
         super();
-        this.velocidad = 1300;
+        this.velocidad = 1500;
     }
 
     @Override
@@ -27,9 +27,7 @@ public class DetectiveInvestigador extends Detective {
     @Override
     public Detective incrementarArresto() {
         this.cantidadDeArrestos++;
-        if (cantidadDeArrestos == 10) {
-            return new DetectiveSargento();
-        }
         return this;
     }
+
 }

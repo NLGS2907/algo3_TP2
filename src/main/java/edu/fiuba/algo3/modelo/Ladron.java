@@ -7,7 +7,7 @@ public class Ladron {
     String nombre;
     ArrayList<Caracteristica> caracteristicas;
 
-    Ladron(){
+    public Ladron(){
         this.nombre = "";
         caracteristicas = new ArrayList<Caracteristica>();
         caracteristicas.add(new Caracteristica("Sexo"));

@@ -7,7 +7,7 @@ public class Computadora {
     
     private ArrayList<Ladron> listaLadrones;
 
-    Computadora(){
+    public Computadora(){
         this.listaLadrones = new ArrayList<Ladron>();
     }
 

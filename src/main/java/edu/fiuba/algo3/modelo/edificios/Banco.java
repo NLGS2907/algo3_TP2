@@ -1,8 +1,8 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.edificios;
 
 public class Banco extends Edificio {
 
-    Banco(){
+    public Banco(){
         super();
     }
 

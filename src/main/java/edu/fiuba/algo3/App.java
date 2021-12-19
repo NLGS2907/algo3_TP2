@@ -1,9 +1,7 @@
 package edu.fiuba.algo3;
 
+import edu.fiuba.algo3.vista.Interfaz;
 import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -13,17 +11,16 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
-        var javaVersion = SystemInfo.javaVersion();
-        var javafxVersion = SystemInfo.javafxVersion();
+        stage.setTitle("-=  AlgoThief  =-");
 
-        var label = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
-        var scene = new Scene(new StackPane(label), 640, 480);
-        stage.setScene(scene);
+        Interfaz interfaz = new Interfaz();
+        stage.setScene(interfaz.getEscena());
+        stage.sizeToScene();
         stage.show();
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 
 }
