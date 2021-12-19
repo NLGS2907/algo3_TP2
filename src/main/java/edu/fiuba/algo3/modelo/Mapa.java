@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.excepciones.ExcepcionMapa;
+import edu.fiuba.algo3.modelo.detective.Detective;
 
 import java.util.ArrayList;
 import java.util.Map;

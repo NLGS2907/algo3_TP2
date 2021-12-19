@@ -1,5 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.detective.Detective;
+import edu.fiuba.algo3.modelo.edificios.Edificio;
+
 import java.util.ArrayList;
 
 public class Ciudad {
@@ -9,7 +12,7 @@ public class Ciudad {
     private ArrayList<Ciudad> ciudadesAdyacentes;
     private int contadorVisitas;
 
-    Ciudad(String nombre){
+    public Ciudad(String nombre){
         this.edificios = new ArrayList<>();
         this.ciudadesAdyacentes = new ArrayList<>();
         this.contadorVisitas = 0;
