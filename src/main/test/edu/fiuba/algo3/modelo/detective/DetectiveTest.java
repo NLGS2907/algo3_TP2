@@ -1,14 +1,9 @@
 package edu.fiuba.algo3.modelo.detective;
 
-import edu.fiuba.algo3.modelo.Ciudad;
-import edu.fiuba.algo3.modelo.Computadora;
-import edu.fiuba.algo3.modelo.Ladron;
-import edu.fiuba.algo3.modelo.Mapa;
+import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.edificios.*;
 import edu.fiuba.algo3.modelo.reloj.Fecha;
 import org.junit.jupiter.api.Test;
-
-import edu.fiuba.algo3.modelo.excepciones.ExcepcionLadron;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -53,8 +48,8 @@ public class DetectiveTest {
         Edificio biblioteca = new Biblioteca();
         montreal.agregarEdificio(banco);
         montreal.agregarEdificio(biblioteca);
-        montreal.visitarEdificio(detective, 0);
-        montreal.visitarEdificio(detective, 1);
+        montreal.visitarEdificio(detective, banco);
+        montreal.visitarEdificio(detective, biblioteca);
         Fecha fecha = new Fecha(1, 10);
         assertTrue(detective.obtenerFecha().esIgualA(fecha));
     }
@@ -79,12 +74,12 @@ public class DetectiveTest {
         montreal.agregarEdificio(puerto);
 
         for(int i = 0; i < 3; i++){
-            montreal.visitarEdificio(detective, 0);
+            montreal.visitarEdificio(detective, aeropuerto);
             enCurso = detective.verificarFechaLimite();
         }
 
         for(int i = 0; i < 55; i++) {
-            montreal.visitarEdificio(detective, 1);
+            montreal.visitarEdificio(detective, puerto);
             enCurso = detective.verificarFechaLimite();
         }
         assertFalse(enCurso);
@@ -112,20 +107,22 @@ public class DetectiveTest {
     @Test
     public void test09DetectiveEntraEnEdificioConLadronSinOrdenDeArresto(){
         Banco bancoConLadron = new Banco();
+        Ladron ladron = new Ladron();
+        OrdenDeArresto orden = new OrdenValida(ladron);
         bancoConLadron.establecerLadron(true);
 
         Detective detective = new DetectiveNovato();
-        boolean ladronArrestado = true;
+
 
         detective.visitarEdificio(bancoConLadron, 1);
-        ladronArrestado = detective.arrestarladron();
 
-        assertFalse(ladronArrestado);
+        assertFalse(orden.getClass() == OrdenValida.class);
     }
 
     @Test
     public void test10DetectiveObtieneOrdenDecapturaEntraEnEdificioYAtrapaLadron()
     {
+        Computadora computadora = new Computadora();
         Ladron ladron1 = new Ladron();
         ladron1.establecerSexo("Masculino");
         ladron1.establecerSenia("Anillo");
@@ -134,8 +131,8 @@ public class DetectiveTest {
         ladron2.establecerCabello("Rojo");
         ladron2.establecerSenia("Anillo");
 
-        Computadora computadora = new Computadora();
-        computadora.agregarLadron(ladron2);
+        BaseDeDatos baseDeDatos = new BaseDeDatos();
+        baseDeDatos.agregarLadron(ladron2);
 
         Banco bancoConLadron = new Banco();
         bancoConLadron.establecerLadron(true);
@@ -145,13 +142,12 @@ public class DetectiveTest {
 
         Fecha fecha = new Fecha(1, 11);
 
-        detective.emitirOrdenDeArresto(computadora, ladron1);
+        detective.emitirOrdenDeArresto(computadora);
 
         detective.visitarEdificio(bancoConLadron, 1);
-        ladronArrestado = detective.arrestarladron();
-
+        detective.arrestarladron(ladron1);
         assertTrue(detective.obtenerFecha().esIgualA(fecha));
-        assertTrue(ladronArrestado);
+        assertTrue(detective.obtenerContador() == 1);
     }
   
     @Test
@@ -191,10 +187,10 @@ public class DetectiveTest {
         ladron.establecerSexo("Masculino");
         ladron.establecerSenia("Anillo");
 
-        Computadora computadora = new Computadora();
-        computadora.agregarLadron(ladron);
+        BaseDeDatos baseDeDatos = new BaseDeDatos();
+        baseDeDatos.agregarLadron(ladron);
 
-        detective.emitirOrdenDeArresto(computadora, ladron);
+        detective.emitirOrdenDeArresto(baseDeDatos, ladron);
 
         detective.visitarEdificio(bancoConLadron, 1);
         ladronArrestado = detective.arrestarladron();

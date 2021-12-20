@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-public class ComputadoraTest {
+public class BaseDeDatosTest {
 
     
     public void test01BuscarLadronMasculinoEnUnaListaConOtros2()
@@ -22,12 +22,12 @@ public class ComputadoraTest {
         ladron4.establecerSexo("Femenino");
         ladron4.establecerHobby("Tenis");
 
-        Computadora computadora = new Computadora();
-        computadora.agregarLadron(ladron2);
-        computadora.agregarLadron(ladron3);
-        computadora.agregarLadron(ladron4);
+        BaseDeDatos baseDeDatos = new BaseDeDatos();
+        baseDeDatos.agregarLadron(ladron2);
+        baseDeDatos.agregarLadron(ladron3);
+        baseDeDatos.agregarLadron(ladron4);
 
-        assertFalse(computadora.buscarLadron(ladron1));
+        assertFalse(baseDeDatos.buscarLadron(ladron1).getClass() == OrdenValida.class);
     }
 
     @Test
@@ -49,12 +49,12 @@ public class ComputadoraTest {
         ladron4.establecerHobby("Tenis");
         ladron4.establecerSenia("Cicatriz");
 
-        Computadora computadora = new Computadora();
-        computadora.agregarLadron(ladron2);
-        computadora.agregarLadron(ladron3);
-        computadora.agregarLadron(ladron4);
+        BaseDeDatos baseDeDatos = new BaseDeDatos();
+        baseDeDatos.agregarLadron(ladron2);
+        baseDeDatos.agregarLadron(ladron3);
+        baseDeDatos.agregarLadron(ladron4);
 
-        assertTrue(computadora.buscarLadron(ladron1));
+        assertTrue(baseDeDatos.buscarLadron(ladron1).getClass() == OrdenValida.class);
     }
 
     @Test
@@ -77,12 +77,12 @@ public class ComputadoraTest {
         ladron4.establecerHobby("Tenis");
         ladron4.establecerSenia("Cicatriz");
 
-        Computadora computadora = new Computadora();
-        computadora.agregarLadron(ladron2);
-        computadora.agregarLadron(ladron3);
-        computadora.agregarLadron(ladron4);
+        BaseDeDatos baseDeDatos = new BaseDeDatos();
+        baseDeDatos.agregarLadron(ladron2);
+        baseDeDatos.agregarLadron(ladron3);
+        baseDeDatos.agregarLadron(ladron4);
 
-        assertFalse(computadora.buscarLadron(ladron1));
+        assertFalse(baseDeDatos.buscarLadron(ladron1).getClass() == OrdenValida.class);
     }
     
 }

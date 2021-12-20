@@ -27,11 +27,11 @@ public class Ciudad {
         return this.contadorVisitas;
     }
 
-    public void visitarEdificio(Detective detective, int numeroEdificio){
+    public void visitarEdificio(Detective detective, Edificio edificio){
         if(this.contadorVisitas < 3){
             this.contadorVisitas++;
         }
-        detective.visitarEdificio(edificios.get(numeroEdificio), this.contadorVisitas);
+        detective.visitarEdificio(edificio, this.contadorVisitas);
     }
 
     public Ciudad realizarViaje(Detective detective) {
