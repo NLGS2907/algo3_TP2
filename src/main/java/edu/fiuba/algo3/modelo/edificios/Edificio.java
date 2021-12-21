@@ -1,23 +1,38 @@
 package edu.fiuba.algo3.modelo.edificios;
 
-import edu.fiuba.algo3.modelo.excepciones.ExcepcionLadron;
+import edu.fiuba.algo3.modelo.Ladron;
+import edu.fiuba.algo3.modelo.NoLadron;
+import edu.fiuba.algo3.modelo.Sospechoso;
+import edu.fiuba.algo3.modelo.detective.Detective;
 
 public abstract class Edificio {
 
-    protected boolean tieneLadron;
+    protected Ladron ladron;
 
     Edificio(){
-        tieneLadron = false;
+        this.ladron = new NoLadron();
     }
 
     public Boolean encontrarLadron(){
-        return this.tieneLadron;
+        return this.ladron.getClass() == Sospechoso.class;
     }
 
-    public abstract String desplegarPista();
-
-    public void establecerLadron(boolean hayLadron){
-        this.tieneLadron = hayLadron;
+    public void establecerLadron(Ladron ladron){
+        this.ladron = ladron;
     }
-    
+
+
+
+
+
+    public String visitar(Detective detective){
+        this.ladron.encontrar(detective);
+
+
+
+        return this.desplegarPista();
+    }
+
+    protected abstract String desplegarPista();
+
 }

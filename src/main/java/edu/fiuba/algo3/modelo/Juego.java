@@ -24,6 +24,16 @@ public class Juego {
     }
 
     public void emitirOrdenDeArresto(){
-        this.detective.asignarOrdenDeArresto(this.computadora.emitirOrdenDeArresto());
+        this.detective.emitirOrdenDeArresto(this.computadora);
+    }
+
+
+
+    public void establecerCiudadActual(Ciudad ciudad){
+        this.ciudadActual = ciudad;
+    }
+
+    public Ciudad ciudadActual(){
+        return this.ciudadActual;
     }
 }

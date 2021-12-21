@@ -5,6 +5,11 @@ public class Computadora {
     private BaseDeDatos baseDeDatos;
     private Ladron ladron;
 
+    public Computadora(){
+        this.baseDeDatos = new BaseDeDatos();
+        this.ladron = new Sospechoso();
+    }
+
     public void establecerSexo(String sexo){
         this.ladron.establecerSexo(sexo);
     }
@@ -29,4 +34,8 @@ public class Computadora {
         return this.baseDeDatos.buscarLadron(this.ladron);
     }
 
+
+    public void agregarLadron(Ladron ladron){
+        this.baseDeDatos.agregarLadron(ladron);
+    }
 }

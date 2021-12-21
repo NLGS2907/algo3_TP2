@@ -24,6 +24,8 @@ public class BaseDeDatos {
         // espacio para mostrar los distintos ladrones
         
         long cantidadSospechosos = listaFiltrada.count();
+        listaFiltrada =  this.listaLadrones.stream().filter(elemento->elemento.esSimilarA(ladronBuscado));
+
         if(cantidadSospechosos == 1){
             return new OrdenValida(listaFiltrada.findFirst().get());
         }

@@ -44,11 +44,11 @@ public class Mapa {
     //    return ciudades.get(0); // Cambiar
     //}
 
-    int calcularDistanciaEntre(Ciudad ciudadOrigen, Ciudad ciudadDestino) {
-        return distancias.get(ciudadOrigen.obtenerNombre()).get(ciudadDestino.obtenerNombre());
+    public int calcularDistanciaEntre(Ciudad ciudadOrigen, Ciudad ciudadDestino) {
+       return distancias.get(ciudadOrigen.obtenerNombre()).get(ciudadDestino.obtenerNombre());
     }
 
-    int calcularDistanciaEntre(String ciudadOrigen, String ciudadDestino) {
+    public int calcularDistanciaEntre(String ciudadOrigen, String ciudadDestino) {
         return distancias.get(ciudadOrigen).get(ciudadDestino);
     }
 
