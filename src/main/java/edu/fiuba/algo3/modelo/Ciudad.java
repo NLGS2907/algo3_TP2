@@ -10,7 +10,7 @@ public class Ciudad {
     private String nombre;
     private ArrayList<Edificio> edificios;
     private ArrayList<Ciudad> ciudadesAdyacentes;
-    private Ciudad ciudadRecorrido;
+    private String ciudadRecorrido;
     private int contadorVisitas;
 
     public Ciudad(String nombre){
@@ -28,10 +28,9 @@ public class Ciudad {
         if(this.contadorVisitas < 3){
             this.contadorVisitas++;
         }
-        detective.visitarEdificio(edificio, this.contadorVisitas, ciudadRecorrido.obtenerNombre());
-        return detective.leerPista(ciudadRecorrido.obtenerNombre(), edificio.obtenerTipo());
+        detective.visitarEdificio(edificio, this.contadorVisitas, ciudadRecorrido);
+        return detective.leerPista(ciudadRecorrido, edificio.obtenerTipo());
     }
-
 
     public void agregarEdificio(Edificio edificio){
         this.edificios.add(edificio);
@@ -41,20 +40,27 @@ public class Ciudad {
         ciudadesAdyacentes.add(ciudad);
     }
 
-    ////// TEST //////
+    public void establecerRutaDelLadron(String ciudadSiguiente) {
+        this.ciudadRecorrido = ciudadSiguiente;
+    }
 
+    public String obtenerRutaDelLadron() {
+        return this.ciudadRecorrido;
+    }
+
+    ////// TEST //////
     public Ciudad realizarViaje(Ciudad destino, Detective detective) {
         Mapa.obtenerInstancia().realizarViaje(this, destino, detective);
         return destino;
     }
 
-    //TEST//
+    ////// TEST //////
     public int obtenerVisitas() {
         return this.contadorVisitas;
     }
 
-    //TEST//
+    ////// TEST //////
     public void asignarSiguiente(Ciudad siguiente){
-        this.ciudadRecorrido = siguiente;
+        this.ciudadRecorrido = siguiente.obtenerNombre();
     }
 }

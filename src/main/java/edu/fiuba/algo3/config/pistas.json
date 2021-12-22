@@ -6,6 +6,11 @@
         "Biblioteca": "Por aca no pasó nadie papu",
         "Transporte": "Por aca no pasó nadie papu"
       },
+      "Final": {
+        "Financiero": "Se dice que el sospechoso se vio por la ciudad",
+        "Biblioteca": "Se dice que el sospechoso se vio por la ciudad",
+        "Transporte": "Se dice que el sospechoso se vio por la ciudad"
+      },
       "Montreal": {
         "Financiero": "El ladrón compró dólares",
         "Biblioteca": "Se fue con un libro sobre alces",
@@ -30,13 +35,18 @@
         "Financiero": "El ladrón compró reales",
         "Biblioteca": "Estaba con una caipirinha",
         "Transporte": "El ladrón tenía una bandera verde, azul, y amarilla"
-      }
+      },
     },
     "Media": {
       "Default": {
         "Financiero": "Por aca no pasó nadie papu",
         "Biblioteca": "Por aca no pasó nadie papu",
         "Transporte": "Por aca no pasó nadie papu"
+      },
+      "Final": {
+        "Financiero": "Se dice que el sospechoso se vio por la ciudad",
+        "Biblioteca": "Se dice que el sospechoso se vio por la ciudad",
+        "Transporte": "Se dice que el sospechoso se vio por la ciudad"
       },
       "Montreal": {
         "Financiero": "",
@@ -69,6 +79,11 @@
         "Financiero": "Por aca no pasó nadie papu",
         "Biblioteca": "Por aca no pasó nadie papu",
         "Transporte": "Por aca no pasó nadie papu"
+      },
+      "Final": {
+        "Financiero": "Se dice que el sospechoso se vio por la ciudad",
+        "Biblioteca": "Se dice que el sospechoso se vio por la ciudad",
+        "Transporte": "Se dice que el sospechoso se vio por la ciudad"
       },
       "Montreal": {
         "Financiero": "",
