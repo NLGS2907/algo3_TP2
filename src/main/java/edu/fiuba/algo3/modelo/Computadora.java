@@ -1,35 +1,41 @@
 package edu.fiuba.algo3.modelo;
 
-import java.util.ArrayList;
-import java.util.stream.Stream;
-
 public class Computadora {
-    
-    private ArrayList<Ladron> listaLadrones;
+
+    private BaseDeDatos baseDeDatos;
+    private Ladron ladron;
 
     public Computadora(){
-        this.listaLadrones = new ArrayList<Ladron>();
+        this.baseDeDatos = new BaseDeDatos();
+        this.ladron = new Sospechoso();
     }
 
-    private boolean buscarLadronIdentico(Ladron ladronBuscado)
-    {
-        long cantidadSospechosos =  this.listaLadrones.stream().filter(elemento->elemento.esIgualA(ladronBuscado)).count();
-        return cantidadSospechosos > 0;
+    public void establecerSexo(String sexo){
+        this.ladron.establecerSexo(sexo);
     }
 
-    public boolean buscarLadron(Ladron ladronBuscado)
-    {
-        //long cantidadSospechosos =  this.listaLadrones.stream().filter(elemento->elemento.esSimilar(ladronBuscado)).count();
-        Stream<Ladron> listaFiltrada =  this.listaLadrones.stream().filter(elemento->elemento.esSimilarA(ladronBuscado));
-        // espacio para mostrar los distintos ladrones
-        
-        long cantidadSospechosos = listaFiltrada.count();
-        return cantidadSospechosos == 1;
+    public void establecerHobby(String hobby){
+        this.ladron.establecerHobby(hobby);
     }
 
-    public void agregarLadron (Ladron ladronBuscado)
-    {
-        if(!buscarLadronIdentico(ladronBuscado))
-            this.listaLadrones.add(ladronBuscado);
+    public void establecerPelo(String pelo){
+        this.ladron.establecerCabello(pelo);
+    }
+
+    public void establecerSeña(String senia){
+        this.ladron.establecerSenia(senia);
+    }
+
+    public void establecerVehiculo(String vehiculo){
+        this.ladron.establecerVehiculo(vehiculo);
+    }
+
+    public OrdenDeArresto emitirOrdenDeArresto(){
+        return this.baseDeDatos.buscarLadron(this.ladron);
+    }
+
+
+    public void agregarLadron(Ladron ladron){
+        this.baseDeDatos.agregarLadron(ladron);
     }
 }

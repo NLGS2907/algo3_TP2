@@ -1,8 +1,10 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.detective.Detective;
+
 import java.util.ArrayList;
 
-public class Ladron {
+public abstract class Ladron {
     
     String nombre;
     ArrayList<Caracteristica> caracteristicas;
@@ -67,4 +69,7 @@ public class Ladron {
         long cantidadMismatches = this.caracteristicas.stream().filter(elemento -> !buscarCaracteristicaExactaEnLadron(ladron.caracteristicas,elemento)).count();
         return cantidadMismatches == 0;
     }
+    
+    public abstract void encontrar(Detective detective);
+    
 }

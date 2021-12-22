@@ -52,7 +52,7 @@ public class Mapa {
         return distancias.get(ciudadOrigen.obtenerNombre()).get(ciudadDestino.obtenerNombre());
     }
 
-    int calcularDistanciaEntre(String ciudadOrigen, String ciudadDestino) {
+    public int calcularDistanciaEntre(String ciudadOrigen, String ciudadDestino) {
         return distancias.get(ciudadOrigen).get(ciudadDestino);
     }
 

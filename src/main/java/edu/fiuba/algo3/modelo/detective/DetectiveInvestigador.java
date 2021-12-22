@@ -9,12 +9,6 @@ public class DetectiveInvestigador extends Detective {
         this.velocidad = 1300;
     }
 
-    @Override
-    public String visitarEdificio(Edificio edificio, int horas){
-        this.reloj.avanzarTiempo(horas);
-        return edificio.desplegarPista();
-    }
-
     public void viajar(int distancia){
         this.reloj.avanzarTiempo((int) Math.round(distancia/this.velocidad));
     }

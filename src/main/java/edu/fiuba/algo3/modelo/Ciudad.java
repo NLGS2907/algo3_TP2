@@ -10,6 +10,7 @@ public class Ciudad {
     private String nombre;
     private ArrayList<Edificio> edificios;
     private ArrayList<Ciudad> ciudadesAdyacentes;
+    private Ciudad ciudadRecorrido;
     private int contadorVisitas;
 
     public Ciudad(String nombre){
@@ -23,31 +24,14 @@ public class Ciudad {
         return this.nombre;
     }
 
-    public int obtenerVisitas() {
-        return this.contadorVisitas;
-    }
-
-    public void visitarEdificio(Detective detective, int numeroEdificio){
+    public String visitarEdificio(Detective detective, Edificio edificio){
         if(this.contadorVisitas < 3){
             this.contadorVisitas++;
         }
-        detective.visitarEdificio(edificios.get(numeroEdificio), this.contadorVisitas);
+        detective.visitarEdificio(edificio, this.contadorVisitas);
+        return detective.leerPista(ciudadRecorrido.obtenerNombre(), edificio.obtenerTipo());
     }
 
-    public Ciudad realizarViaje(Detective detective) {
-
-        // Interfaz de elejir ciudad a la cual viajar
-        // Botones de ciudades a las que viajar
-        // Boton de volver (No hace nada)
-
-        // Caso donde viaja a una ciudad
-            // Obtener la ciudad a la que se queire vajar (destino).
-            //Mapa.obtenerInstancia().realizarViaje(this, destino, detective);
-            //return destino;
-
-        // Caso donde no se viaja
-            return this;
-    }
 
     public void agregarEdificio(Edificio edificio){
         this.edificios.add(edificio);
@@ -58,8 +42,19 @@ public class Ciudad {
     }
 
     ////// TEST //////
+
     public Ciudad realizarViaje(Ciudad destino, Detective detective) {
         Mapa.obtenerInstancia().realizarViaje(this, destino, detective);
         return destino;
+    }
+
+    //TEST//
+    public int obtenerVisitas() {
+        return this.contadorVisitas;
+    }
+
+    //TEST//
+    public void asignarSiguiente(Ciudad siguiente){
+        this.ciudadRecorrido = siguiente;
     }
 }

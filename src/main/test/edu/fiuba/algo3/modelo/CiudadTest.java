@@ -12,13 +12,14 @@ public class CiudadTest {
     public void test01ElContadorDeVisitasNoPasaDeTres() {
         Detective detective = new DetectiveNovato();
         Ciudad buenosAires = new Ciudad("Buenos Aires");
-        Edificio biblioteca = new Biblioteca();
+        Ciudad ciudadRecorridoFake = new Ciudad("Esto es falso");
+        buenosAires.asignarSiguiente(ciudadRecorridoFake);
+
+        Edificio biblioteca = new Edificio("Biblioteca", "Biblioteca");
         buenosAires.agregarEdificio((biblioteca));
-
         for (int i = 0; i < 10; i++) {
-            buenosAires.visitarEdificio(detective, 0);
+            buenosAires.visitarEdificio(detective, biblioteca);
         }
-
         assertEquals(3, buenosAires.obtenerVisitas());
     }
 }
