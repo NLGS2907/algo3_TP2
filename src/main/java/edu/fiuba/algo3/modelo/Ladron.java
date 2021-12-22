@@ -60,6 +60,31 @@ public abstract class Ladron {
         establecerCaracteristica("Vehiculo", vehiculo);
     }
 
+    public Caracteristica obtenerSexo(){
+        Caracteristica caracteristicaAuxiliar = new Caracteristica("Sexo", "nada");
+        return this.caracteristicas.stream().filter(elemento -> elemento.compararTipo(caracteristicaAuxiliar)).findFirst().get();
+    }
+    public Caracteristica obtenerHobby(){
+        Caracteristica caracteristicaAuxiliar = new Caracteristica("Hobby", "nada");
+        return this.caracteristicas.stream().filter(elemento -> elemento.compararTipo(caracteristicaAuxiliar)).findFirst().get();
+    }
+
+    public Caracteristica obtenerCabello(){
+        Caracteristica caracteristicaAuxiliar = new Caracteristica("Cabello", "nada");
+        return this.caracteristicas.stream().filter(elemento -> elemento.compararTipo(caracteristicaAuxiliar)).findFirst().get();
+    }
+
+    public Caracteristica obtenerSenia(){
+        Caracteristica caracteristicaAuxiliar = new Caracteristica("Seña", "nada");
+        return this.caracteristicas.stream().filter(elemento -> elemento.compararTipo(caracteristicaAuxiliar)).findFirst().get();
+    }
+
+    public Caracteristica obtenerVehiculo(){
+        Caracteristica caracteristicaAuxiliar = new Caracteristica("Vehiculo", "nada");
+        return this.caracteristicas.stream().filter(elemento -> elemento.compararTipo(caracteristicaAuxiliar)).findFirst().get();
+    }
+
+
     public boolean esSimilarA(Ladron ladron){
         long cantidadMismatches = this.caracteristicas.stream().filter(elemento -> !buscarCaracteristicaSimilarEnLadron(ladron.caracteristicas,elemento)).count();
         return cantidadMismatches == 0;

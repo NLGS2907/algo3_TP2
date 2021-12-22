@@ -12,7 +12,7 @@ public class CiudadTest {
     public void test01ElContadorDeVisitasNoPasaDeTres() {
         Detective detective = new DetectiveNovato();
         Ciudad buenosAires = new Ciudad("Buenos Aires");
-        Ciudad ciudadRecorridoFake = new Ciudad("Esto es falso");
+        Ciudad ciudadRecorridoFake = new Ciudad("Montreal");
         buenosAires.asignarSiguiente(ciudadRecorridoFake);
 
         Edificio biblioteca = new Edificio("Biblioteca", "Biblioteca");
