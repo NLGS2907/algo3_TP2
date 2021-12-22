@@ -1,9 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class LadronTest {
 
@@ -31,5 +30,12 @@ public class LadronTest {
         assertFalse(ladron1.esSimilarA(ladron2));
         assertFalse(ladron2.esSimilarA(ladron1));
     }
-    
+
+    @Test
+    public void test03ElVehiculoDeUnLadronSeAsignaCorrectamente(){
+        Ladron ladron1 = new Sospechoso();
+        ladron1.establecerVehiculo("Audi");
+
+        assertEquals("Audi", ladron1.obtenerVehiculo().obtenerValor());
+    }
 }

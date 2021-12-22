@@ -2,23 +2,19 @@ package edu.fiuba.algo3.modelo;
 
 public class Caracteristica {
 
-    /**
-     *
-     */
-    private static final String NULO = "";
     private String tipo;
     private String valor;
 
     Caracteristica()
     {
-        this.tipo = NULO;
-        this.valor = NULO;
+        this.tipo = "";
+        this.valor = "";
     }
 
     Caracteristica(String tipo)
     {
         this.tipo = tipo;
-        this.valor = NULO;
+        this.valor = "";
     }
 
     Caracteristica(String tipo, String valor)
@@ -49,7 +45,7 @@ public class Caracteristica {
 
     public boolean valorEsNulo()
     {
-        return (this.valor == NULO);
+        return (this.valor.length() == 0);
     }
 
     public boolean compararManeraExacta(Caracteristica caracteristicaAComparar)
@@ -71,5 +67,14 @@ public class Caracteristica {
 
         return esSimilar;
     }
-    
+
+    //?!
+    public String obtenerTipo(){
+        return this.tipo;
+    }
+    //NO SE USA
+    public String obtenerValor(){
+        return this.valor;
+    }
+
 }

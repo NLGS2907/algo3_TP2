@@ -1,10 +1,13 @@
 package edu.fiuba.algo3.modelo.detective;
 
+import edu.fiuba.algo3.modelo.randomizador.RandomizadorNovato;
+
 public class DetectiveNovato extends Detective {
 
     public DetectiveNovato(){
         super();
         this.velocidad = 900;
+        this.randomizador = new RandomizadorNovato();
     }
 
     public void viajar(int distancia){

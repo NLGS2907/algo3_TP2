@@ -17,7 +17,7 @@ public class LectorDePistas {
         this.filePath = filePath;
     }
 
-    public ContenedorDePistas cargarPistas() {
+    public void cargarPistas() {
         Map<String, PistasDeCiudad> contenedorDePistas = new HashMap<>();
         try {
             FileReader reader = new FileReader(this.filePath);
@@ -50,6 +50,6 @@ public class LectorDePistas {
             e.printStackTrace();
         }
 
-        return new ContenedorDePistas(contenedorDePistas);
+        ContenedorDePistas.crearContenedorDePistas(contenedorDePistas);
     }
 }

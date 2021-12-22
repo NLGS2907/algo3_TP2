@@ -28,7 +28,7 @@ public class Ciudad {
         if(this.contadorVisitas < 3){
             this.contadorVisitas++;
         }
-        detective.visitarEdificio(edificio, this.contadorVisitas);
+        detective.visitarEdificio(edificio, this.contadorVisitas, ciudadRecorrido.obtenerNombre());
         return detective.leerPista(ciudadRecorrido.obtenerNombre(), edificio.obtenerTipo());
     }
 

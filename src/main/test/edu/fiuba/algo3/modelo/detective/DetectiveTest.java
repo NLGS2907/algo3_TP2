@@ -21,8 +21,9 @@ public class DetectiveTest {
     public void test02DetectiveVisitaUnEdificioYElTiempoTranscurreCorrectamente() {
         Edificio banco = new Edificio("Banco", "Financiero");
         Detective detective = new DetectiveNovato();
+        Ciudad siguienteCiudad = new Ciudad("Montreal");
         Fecha fecha = new Fecha (1,  8);
-        detective.visitarEdificio(banco, 1);
+        detective.visitarEdificio(banco, 1, siguienteCiudad.obtenerNombre());
         assertTrue(detective.obtenerFecha().esIgualA(fecha));
     }
 
@@ -45,7 +46,7 @@ public class DetectiveTest {
     public void test04DetectiveNovatoComienzaEnMontrealVisitaEdificioYBlibloteca(){
         Detective detective = new DetectiveNovato();
         Ciudad montreal = new Ciudad("Montreal");
-        Ciudad siguiente = new Ciudad("Nombre");
+        Ciudad siguiente = new Ciudad("Mexico");
         montreal.asignarSiguiente(siguiente);
         Edificio puerto = new Edificio("Puerto", "Transporte");
         Edificio biblioteca = new Edificio("Biblioteca", "Biblioteca");
@@ -61,8 +62,9 @@ public class DetectiveTest {
     public void test05DetectiveVisitaUnEdificioYElTiempoTranscurreCorrectamente() {
         Edificio bolsa = new Edificio("Bolsa", "Financiero");
         Detective detective = new DetectiveNovato();
+        Ciudad siguienteCiudad = new Ciudad("Rio de Janeiro");
         Fecha fecha = new Fecha(2,  11);
-        detective.visitarEdificio(bolsa, 20);
+        detective.visitarEdificio(bolsa, 20, siguienteCiudad.obtenerNombre());
         assertTrue(detective.obtenerFecha().esIgualA(fecha));
     }
 
@@ -71,7 +73,7 @@ public class DetectiveTest {
         boolean enCurso = true;
         Detective detective = new DetectiveNovato();
         Ciudad montreal = new Ciudad("Montreal");
-        Ciudad siguiente = new Ciudad("Nombre");
+        Ciudad siguiente = new Ciudad("Mexico");
         montreal.asignarSiguiente(siguiente);
         Edificio aeropuerto = new Edificio("Aeropuerto", "Transporte");
         Edificio puerto = new Edificio("Puerto", "Transporte");
@@ -111,6 +113,7 @@ public class DetectiveTest {
 
     @Test
     public void test09DetectiveEntraEnEdificioConLadronSinOrdenDeArrestoYNoLoArresta(){
+        Ciudad siguienteCiudad = new Ciudad("Mexico");
         Edificio bolsaConLadron = new Edificio("Bolsa", "Financierio");
         Ladron ladron = new Sospechoso();
         bolsaConLadron.establecerLadron(ladron);
@@ -118,7 +121,7 @@ public class DetectiveTest {
         Detective detective = new DetectiveNovato();
 
 
-        detective.visitarEdificio(bolsaConLadron, 1);
+        detective.visitarEdificio(bolsaConLadron, 1, siguienteCiudad.obtenerNombre());
 
         assertEquals(0, detective.cantidadDeArrestos);
     }
@@ -143,12 +146,13 @@ public class DetectiveTest {
         bancoConLadron.establecerLadron(ladron2);
 
         Detective detective = new DetectiveNovato();
+        Ciudad siguienteCiudad = new Ciudad("Buenos Aires");
 
         Fecha fecha = new Fecha(1, 11);
 
         detective.emitirOrdenDeArresto(computadora);
 
-        detective.visitarEdificio(bancoConLadron, 1);
+        detective.visitarEdificio(bancoConLadron, 1, siguienteCiudad.obtenerNombre());
         assertTrue(detective.obtenerFecha().esIgualA(fecha));
         assertEquals(detective.obtenerContador(),1);
     }
