@@ -162,9 +162,9 @@ public class DetectiveTest {
         assertEquals(ciudadActual.obtenerNombre(), "Mexico");
         assertTrue(detective.obtenerFecha().esIgualA(fecha));
     }
-/*
-    @Test
-    public void test12DetectivoHace6ArrestosYInvestigaYAtrapaSospechoso() {
+
+  /*  @Test
+    public void test12DetectivoHace6ArrestosInvestigaYAtrapaSospechoso() {
         Detective detective = new DetectiveNovato();
         for (int i = 0; i < 6; i++) {
             detective = detective.incrementarArresto();
@@ -199,6 +199,6 @@ public class DetectiveTest {
         assertTrue(detective.obtenerFecha().esIgualA(fecha));
         assertTrue(ladronArrestado);
     }
+*/
 
- */
 }

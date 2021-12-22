@@ -28,8 +28,6 @@ public abstract class Edificio {
     public String visitar(Detective detective){
         this.ladron.encontrar(detective);
 
-
-
         return this.desplegarPista();
     }
 

@@ -36,4 +36,8 @@ public class Juego {
     public Ciudad ciudadActual(){
         return this.ciudadActual;
     }
+
+    public Detective obtenerDetective(){
+        return this.detective;
+    }
 }
