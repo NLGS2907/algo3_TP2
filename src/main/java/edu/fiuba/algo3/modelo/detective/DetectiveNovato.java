@@ -1,18 +1,10 @@
 package edu.fiuba.algo3.modelo.detective;
 
-import edu.fiuba.algo3.modelo.edificios.Edificio;
-
 public class DetectiveNovato extends Detective {
 
     public DetectiveNovato(){
         super();
         this.velocidad = 900;
-    }
-
-    @Override
-    public String visitarEdificio(Edificio edificio, int horas){
-        this.reloj.avanzarTiempo(horas);
-        return edificio.desplegarPista();
     }
 
     public void viajar(int distancia){

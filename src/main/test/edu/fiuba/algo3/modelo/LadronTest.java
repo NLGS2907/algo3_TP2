@@ -10,8 +10,8 @@ public class LadronTest {
     @Test
     public void test01CompararUnLadronSinCaracteristicasConOtroConSexo()
     {
-        Ladron ladron1 = new Ladron();
-        Ladron ladron2 = new Ladron();
+        Ladron ladron1 = new Sospechoso();
+        Ladron ladron2 = new Sospechoso();
         ladron2.establecerSexo("Masculino");
 
         assertFalse(ladron1.esIgualA(ladron2));
@@ -22,9 +22,9 @@ public class LadronTest {
     @Test
     public void test02CompararDosLadronesDeDistintoSexo()
     {
-        Ladron ladron1 = new Ladron();
+        Ladron ladron1 = new Sospechoso();
         ladron1.establecerSexo("Femenino");
-        Ladron ladron2 = new Ladron();
+        Ladron ladron2 = new Sospechoso();
         ladron2.establecerSexo("Masculino");
 
         assertFalse(ladron1.esIgualA(ladron2));
