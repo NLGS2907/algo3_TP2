@@ -1,8 +1,8 @@
-package edu.fiuba.algo3.vista.menus;
+package edu.fiuba.algo3.vista.escenas;
 
 import javafx.scene.Scene;
 
-public interface Menu {
+public interface Escena {
 
     public abstract Scene getEscena();
 }
