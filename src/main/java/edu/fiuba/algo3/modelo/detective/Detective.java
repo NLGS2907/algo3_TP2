@@ -26,9 +26,9 @@ public abstract class Detective {
         return( this.reloj.verificarFechaLimite() );
     }
 
-    public String visitarEdificio(Edificio edificio, int horas){
+    public void visitarEdificio(Edificio edificio, int horas){
         this.reloj.avanzarTiempo(horas);
-        return edificio.visitar(this);
+        edificio.visitar(this, horas);
     }
 
     public Fecha obtenerFecha(){
@@ -52,6 +52,11 @@ public abstract class Detective {
     public abstract void viajarACiudadConLadron(int distancia);
 
     public abstract Detective incrementarArresto();
+
+    public String leerPista(String nombreCiudad, String tipoEdificio){
+        return "a";
+        //return ContenedorDePistas.getInstrance().lerrPistaCon(nombreCiudad, tipoEdificio, this.dificultad);
+    }
 
     //public void asignarOrdenDeArresto(OrdenDeArresto ordenDeArresto) {
         //this.ordenDeArresto = ordenDeArresto;

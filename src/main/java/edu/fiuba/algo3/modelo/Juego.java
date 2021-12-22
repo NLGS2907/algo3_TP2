@@ -15,8 +15,8 @@ public class Juego {
         this.computadora = new Computadora();
     }
 
-    public void visitarEdificio(Edificio edificio){
-        this.ciudadActual.visitarEdificio(this.detective, edificio);
+    public String visitarEdificio(Edificio edificio){
+        return this.ciudadActual.visitarEdificio(this.detective, edificio);
     }
 
     public void viajar(Ciudad destino){
