@@ -12,11 +12,13 @@ public class Mapa {
 
     private ArrayList<Ciudad> ciudades;
     private Map<String, Map<String, Integer>> distancias;
+    private Map<String,ArrayList<String>> adyacencias;
 
     private Mapa() {
         MapReader mapReader = new MapReader("src/main/java/edu/fiuba/algo3/config/ciudades.json");
         this.distancias = mapReader.cargarDistancias();
         this.ciudades = mapReader.cargarCiudades();
+        this.adyacencias = mapReader.cargarAdyacencias();
     }
 
     private static void crearMapa() {
@@ -37,12 +39,8 @@ public class Mapa {
         detective.viajar(distancia);
     }
 
-    //void crearRutaDelLadron() {
+    //Ciudad crearRutaDelLadron() {
     //    // Implementar
-    //}
-
-    //Ciudad ciudadInicial() {
-    //    return ciudades.get(0); // Cambiar
     //}
 
     int calcularDistanciaEntre(Ciudad ciudadOrigen, Ciudad ciudadDestino) throws ExcepcionMapa {
@@ -53,6 +51,9 @@ public class Mapa {
     }
 
     public int calcularDistanciaEntre(String ciudadOrigen, String ciudadDestino) {
+        if (distancias.get(ciudadOrigen).get(ciudadDestino) == null) {
+            throw new ExcepcionMapa("Ruta inexistente");
+        }
         return distancias.get(ciudadOrigen).get(ciudadDestino);
     }
 

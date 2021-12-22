@@ -76,4 +76,33 @@ public class MapReader {
 
         return ciudades;
     }
+
+    Map<String,ArrayList<String>> cargarAdyacencias() {
+        Map<String,ArrayList<String>> adyacencias = new HashMap<>();
+        try {
+            FileReader reader = new FileReader(this.filePath);
+            JSONParser mapParser = new JSONParser();
+            JSONObject jsonObject = (JSONObject) mapParser.parse(reader);
+
+            JSONObject ciudadesOrigenJSON = (JSONObject) jsonObject.get("distanciasCiudades");
+
+            ciudadesOrigenJSON.keySet().forEach(ciudadOrigen -> {
+                JSONObject ciudadDestinoJSON = (JSONObject) ciudadesOrigenJSON.get(ciudadOrigen);
+                ArrayList<String> adyacenciasCiudad = new ArrayList<>();
+
+                ciudadDestinoJSON.keySet().forEach(ciudadDestino -> {
+                    adyacenciasCiudad.add(ciudadDestino.toString());
+                });
+
+                adyacencias.put(ciudadOrigen.toString(), adyacenciasCiudad);
+            });
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return adyacencias;
+    }
 }
