@@ -17,6 +17,7 @@ public class Ciudad {
         this.ciudadesAdyacentes = new ArrayList<>();
         this.contadorVisitas = 0;
         this.nombre = nombre;
+        this.ciudadRecorrido = "Default";
     }
 
     public String obtenerNombre() {
