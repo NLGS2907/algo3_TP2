@@ -1,8 +1,8 @@
-package edu.fiuba.algo3.modelo.edificios;
+package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.Ladron;
-import edu.fiuba.algo3.modelo.NoLadron;
-import edu.fiuba.algo3.modelo.Sospechoso;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.ladron.NoLadron;
+import edu.fiuba.algo3.modelo.ladron.Sospechoso;
 import edu.fiuba.algo3.modelo.detective.Detective;
 
 public class Edificio {

@@ -3,6 +3,10 @@ package edu.fiuba.algo3.modelo;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import edu.fiuba.algo3.modelo.computadora.BaseDeDatos;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.ladron.Sospechoso;
+import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenValida;
 import org.junit.jupiter.api.Test;
 
 public class BaseDeDatosTest {

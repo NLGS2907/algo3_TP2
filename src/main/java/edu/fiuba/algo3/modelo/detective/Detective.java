@@ -1,15 +1,16 @@
 package edu.fiuba.algo3.modelo.detective;
 
-import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.Computadora;
-import edu.fiuba.algo3.modelo.Ladron;
+import edu.fiuba.algo3.modelo.computadora.Computadora;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
+import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenInvalida;
 import edu.fiuba.algo3.modelo.pistas.ContenedorDePistas;
-import edu.fiuba.algo3.modelo.randomizador.Randomizador;
+import edu.fiuba.algo3.modelo.detective.randomizador.Randomizador;
 import edu.fiuba.algo3.modelo.reloj.Fecha;
 import edu.fiuba.algo3.modelo.reloj.Reloj;
-import edu.fiuba.algo3.modelo.cuchillazo.Cuchillazo;
-import edu.fiuba.algo3.modelo.cuchillazo.SinAcuchillar;
-import edu.fiuba.algo3.modelo.edificios.Edificio;
+import edu.fiuba.algo3.modelo.detective.cuchillazo.Cuchillazo;
+import edu.fiuba.algo3.modelo.detective.cuchillazo.SinAcuchillar;
+import edu.fiuba.algo3.modelo.Edificio;
 
 public abstract class Detective {
     protected Reloj reloj;
@@ -23,7 +24,6 @@ public abstract class Detective {
         this.reloj = new Reloj();
         this.cantidadDeCuchillazos = new SinAcuchillar();
         this.ordenDeArresto = new OrdenInvalida();
-        this.cantidadDeArrestos = 0;
     }
 
     public boolean verificarFechaLimite(){

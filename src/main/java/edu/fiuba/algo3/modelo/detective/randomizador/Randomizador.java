@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.randomizador;
+package edu.fiuba.algo3.modelo.detective.randomizador;
 
 import java.util.Random;
 

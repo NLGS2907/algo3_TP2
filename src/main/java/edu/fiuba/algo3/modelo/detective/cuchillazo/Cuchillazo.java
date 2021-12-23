@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.cuchillazo;
+package edu.fiuba.algo3.modelo.detective.cuchillazo;
 
 import edu.fiuba.algo3.modelo.reloj.Reloj;
 

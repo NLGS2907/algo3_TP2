@@ -1,11 +1,12 @@
 package edu.fiuba.algo3.modelo.detective;
 
-import edu.fiuba.algo3.modelo.randomizador.RandomizadorDetective;
+import edu.fiuba.algo3.modelo.detective.randomizador.RandomizadorDetective;
 
 public class DetectiveDetective extends Detective {
 
     public DetectiveDetective(){
         super();
+        this.cantidadDeArrestos = 5;
         this.velocidad = 1100;
         this.randomizador = new RandomizadorDetective();
     }

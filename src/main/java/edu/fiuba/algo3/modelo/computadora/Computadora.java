@@ -1,4 +1,10 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.computadora;
+
+import edu.fiuba.algo3.modelo.LectorDeLadrones;
+import edu.fiuba.algo3.modelo.computadora.BaseDeDatos;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.ladron.Sospechoso;
+import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
 
 public class Computadora {
 
