@@ -1,4 +1,9 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.computadora;
+
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
+import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenInvalida;
+import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenValida;
 
 import java.util.ArrayList;
 import java.util.stream.Stream;
@@ -19,9 +24,7 @@ public class BaseDeDatos {
 
     public OrdenDeArresto buscarLadron(Ladron ladronBuscado)
     {
-        //long cantidadSospechosos =  this.listaLadrones.stream().filter(elemento->elemento.esSimilar(ladronBuscado)).count();
         Stream<Ladron> listaFiltrada =  this.listaLadrones.stream().filter(elemento->elemento.esSimilarA(ladronBuscado));
-        // espacio para mostrar los distintos ladrones
         
         long cantidadSospechosos = listaFiltrada.count();
         listaFiltrada =  this.listaLadrones.stream().filter(elemento->elemento.esSimilarA(ladronBuscado));

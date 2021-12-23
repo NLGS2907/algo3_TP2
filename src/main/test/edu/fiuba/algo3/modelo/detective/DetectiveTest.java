@@ -1,8 +1,10 @@
 package edu.fiuba.algo3.modelo.detective;
 
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.edificios.*;
-import edu.fiuba.algo3.modelo.Ladron;
+import edu.fiuba.algo3.modelo.computadora.Computadora;
+import edu.fiuba.algo3.modelo.ladron.Sospechoso;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.pistas.ContenedorDePistas;
 import edu.fiuba.algo3.modelo.reloj.Fecha;
 import org.junit.jupiter.api.Test;
 
@@ -23,7 +25,7 @@ public class DetectiveTest {
         Detective detective = new DetectiveNovato();
         Ciudad siguienteCiudad = new Ciudad("Montreal");
         Fecha fecha = new Fecha (1,  8);
-        detective.visitarEdificio(banco, 1, siguienteCiudad.obtenerNombre());
+        detective.visitarEdificio(banco, 1);
         assertTrue(detective.obtenerFecha().esIgualA(fecha));
     }
 
@@ -34,6 +36,7 @@ public class DetectiveTest {
 
         Ciudad montreal = mapa.obtenerCiudad("Montreal");
         Ciudad mexico = mapa.obtenerCiudad("Mexico");
+        mexico.establecerRutaDelLadron("Default");
         Ciudad ciudadActual = montreal;
 
         Fecha fecha =  new Fecha (1,  11);
@@ -64,12 +67,13 @@ public class DetectiveTest {
         Detective detective = new DetectiveNovato();
         Ciudad siguienteCiudad = new Ciudad("Rio de Janeiro");
         Fecha fecha = new Fecha(2,  11);
-        detective.visitarEdificio(bolsa, 20, siguienteCiudad.obtenerNombre());
+        detective.visitarEdificio(bolsa, 20);
         assertTrue(detective.obtenerFecha().esIgualA(fecha));
     }
 
     @Test
     public void test06VisitarAeropuertoTresVecesLa(){
+        ContenedorDePistas.obtenerInstanciaTEST();
         boolean enCurso = true;
         Detective detective = new DetectiveNovato();
         Ciudad montreal = new Ciudad("Montreal");
@@ -121,7 +125,7 @@ public class DetectiveTest {
         Detective detective = new DetectiveNovato();
 
 
-        detective.visitarEdificio(bolsaConLadron, 1, siguienteCiudad.obtenerNombre());
+        detective.visitarEdificio(bolsaConLadron, 1);
 
         assertEquals(0, detective.cantidadDeArrestos);
     }
@@ -152,7 +156,7 @@ public class DetectiveTest {
 
         detective.emitirOrdenDeArresto(computadora);
 
-        detective.visitarEdificio(bancoConLadron, 1, siguienteCiudad.obtenerNombre());
+        detective.visitarEdificio(bancoConLadron, 1);
         assertTrue(detective.obtenerFecha().esIgualA(fecha));
         assertEquals(detective.obtenerContador(),1);
     }
@@ -162,6 +166,7 @@ public class DetectiveTest {
         Detective detective = new DetectiveInvestigador();
         Ciudad ciudadOrigen = new Ciudad("Montreal");
         Ciudad ciudadDestino = new Ciudad("Mexico");
+        ciudadDestino.establecerRutaDelLadron("Default");
         Ciudad ciudadActual = ciudadOrigen;
 
         ciudadActual = ciudadActual.realizarViaje(ciudadDestino, detective);

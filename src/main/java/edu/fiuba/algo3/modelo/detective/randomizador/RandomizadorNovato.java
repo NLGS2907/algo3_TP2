@@ -1,13 +1,13 @@
-package edu.fiuba.algo3.modelo.randomizador;
+package edu.fiuba.algo3.modelo.detective.randomizador;
 
-public class RandomizadorInvestigador extends Randomizador{
+public class RandomizadorNovato extends Randomizador{
 
     public String generarDificultad(){
         double probabilidad = random.nextDouble();
 
-        if (probabilidad < 0.2) {
+        if (probabilidad < 0.6) {
             return "Facil";
-        } else if (probabilidad < 0.6) {
+        } else if (probabilidad < 0.8) {
             return "Media";
         } else {
             return "Dificil";
