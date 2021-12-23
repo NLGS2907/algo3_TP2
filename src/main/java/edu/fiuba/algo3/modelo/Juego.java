@@ -14,7 +14,7 @@ private static Juego instancia = null;
     private Ciudad ciudadActual;
     private Computadora computadora;
 
-    private Juego(){
+    public Juego(){
         this.detective = new DetectiveNovato();
         this.computadora = new Computadora();
     }

@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.vista.handlers.menus;
+package edu.fiuba.algo3.controlador.menus;
 
 import edu.fiuba.algo3.vista.SubEscenario;
 import edu.fiuba.algo3.vista.contenedores.MensajeAbout;

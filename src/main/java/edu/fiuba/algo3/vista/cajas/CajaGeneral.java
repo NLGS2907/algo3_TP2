@@ -5,8 +5,13 @@ import javafx.scene.layout.VBox;
 
 public class CajaGeneral extends VBox {
 
+    private BarraMenus barraMenus;
+    private CajaPantalla cajaPantalla;
+
     public CajaGeneral() {
         super();
-        this.getChildren().addAll(new BarraMenus(), new CajaPantalla());
+        this.barraMenus = new BarraMenus();
+        this.cajaPantalla = new CajaPantalla();
+        this.getChildren().addAll(this.barraMenus, this.cajaPantalla);
     }
 }

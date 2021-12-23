@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.vista.handlers.botones;
+package edu.fiuba.algo3.controlador.botones;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

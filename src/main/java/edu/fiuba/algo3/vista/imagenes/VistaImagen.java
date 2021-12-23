@@ -19,4 +19,13 @@ public abstract class VistaImagen extends ImageView {
                       false,
                       false));
     }
+
+    public VistaImagen(String directorioImagen) {
+        super();
+        this.setImage(new Image(directorioImagen,
+                this.getAncho(),
+                this.getAlto(),
+                false,
+                false));
+    }
 }

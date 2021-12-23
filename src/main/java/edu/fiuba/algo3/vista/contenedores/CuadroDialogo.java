@@ -11,11 +11,14 @@ import javafx.geometry.Pos;
 import java.util.ArrayList;
 
 public class CuadroDialogo extends CuadroNegro {
+
     private static CuadroDialogo instancia = null;
     private Etiqueta mensaje;
 
     private CuadroDialogo() {
         super();
+        this.setPrefSize(400, 350);
+        this.setAlignment(Pos.TOP_LEFT);
     }
 
     public static void crearCuadroDialogo() {
@@ -32,22 +35,19 @@ public class CuadroDialogo extends CuadroNegro {
     }
 
     public CuadroDialogo mostrarMensaje(String mensaje) {
-        this.agregarEtiqueta(new AnimacionTexto(mensaje, 12).getEtiqueta());
-        this.setAlignment(Pos.TOP_LEFT);
-        this.setPrefSize(400, 350);
+        this.actualizarTodo(new AnimacionTexto(mensaje, 12).getEtiqueta());
         return instancia;
     }
 
     public CuadroDialogo desplegarPosiblesViajes(){
         ArrayList<Ciudad> ciudades = Juego.obtenerInstancia().ciudadActual().obtenerCiudadesAdyacentes();
-        this.getChildren().setAll(new BotonesViajes(ciudades));
+        this.actualizarTodo(new BotonesViajes(ciudades));
         return instancia;
     }
 
     public CuadroDialogo mostrarCiudad(){
         ArrayList<Edificio> edificios = Juego.obtenerInstancia().ciudadActual().obtenerEdificios();
-        this.getChildren().setAll(new BotonesEdificio(edificios));
+        this.actualizarTodo(new BotonesEdificio(edificios));
         return instancia;
     }
-
 }

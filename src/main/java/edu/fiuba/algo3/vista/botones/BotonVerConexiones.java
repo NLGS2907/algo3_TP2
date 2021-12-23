@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.vista.botones;
 
-import edu.fiuba.algo3.vista.handlers.botones.HandlerVerConexiones;
+import edu.fiuba.algo3.controlador.botones.HandlerVerConexiones;
 import edu.fiuba.algo3.vista.imagenes.botones.ImagenVer;
 import javafx.scene.control.Button;
 

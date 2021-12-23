@@ -15,7 +15,7 @@ public class MensajeAbout extends CuadroNegro {
     public MensajeAbout(String mensajeAMostrar, int tamanoFuente) {
         super();
         Etiqueta mensajeAbout = new AnimacionTexto(mensajeAMostrar, tamanoFuente).getEtiqueta();
-        this.agregarEtiqueta(mensajeAbout);
+        this.agregar(mensajeAbout);
         this.setAlignment(Pos.TOP_LEFT);
         this.setPadding(new Insets(15));
     }
