@@ -1,91 +1,91 @@
 [
   {
-    "Name":     "Nick Brunch",
-    "Sex":      "Male",
-    "Hobby":    "Mountain Climbing",
-    "Hair":     "Black",
-    "Feature":  "Ring",
-    "Auto":     "Motorcyle"
+    "Nombre":   "Nick Brunch",
+    "Sexo":     "Masculino",
+    "Hobby":    "Alpinismo",
+    "Cabello":  "Negro",
+    "Seña":     "Anillo",
+    "Auto":     "Moto"
   },
 
   {
-    "Name":     "Len Bulk",
-    "Sex":      "Male",
-    "Hobby":    "Mountain Climbing",
-    "Hair":     "Red",
-    "Feature":  "Tattoo",
+    "Nombre":   "Len Bulk",
+    "Sexo":     "Masculino",
+    "Hobby":    "Alpinismo",
+    "Cabello":  "Pelirrojo",
+    "Seña":     "Tatuaje",
     "Auto":     "Convertible"
   },
 
   {
-    "Name":     "Ihor Ihorovitch",
-    "Sex":      "Male",
+    "Nombre":   "Ihor Ihorovitch",
+    "Sexo":     "Masculino",
     "Hobby":    "Croquet",
-    "Hair":     "Blond",
-    "Feature":  "Tattoo",
-    "Auto":     "Limousine"
+    "Cabello":  "Rubio",
+    "Seña":     "Tatuaje",
+    "Auto":     "Limosina"
   },
 
   {
-    "Name":     "Fast Eddie B.",
-    "Sex":      "Male",
+    "Nombre":   "Fast Eddie B.",
+    "Sexo":     "Masculino",
     "Hobby":    "Croquet",
-    "Hair":     "Black",
-    "Feature":  "Jewelry",
+    "Cabello":  "Negro",
+    "Seña":     "Joyas",
     "Auto":     "Convertible"
   },
 
   {
-    "Name":     "Scar Graynolt",
-    "Sex":      "Male",
+    "Nombre":   "Scar Graynolt",
+    "Sexo":     "Masculino",
     "Hobby":    "Croquet",
-    "Hair":     "Red",
-    "Feature":  "Ring",
-    "Auto":     "Limousine"
+    "Cabello":  "Pelirrojo",
+    "Seña":     "Anillo",
+    "Auto":     "Limosina"
   },
 
   {
-    "Name":     "Merey Laroc",
-    "Sex":      "Female",
-    "Hobby":    "Mountain Climbing",
-    "Hair":     "Brown",
-    "Feature":  "Jewelry",
-    "Auto":     "Limousine"
+    "Nombre":   "Merey Laroc",
+    "Sexo":     "Femenino",
+    "Hobby":    "Alpinismo",
+    "Cabello":  "Castaño",
+    "Seña":     "Joyas",
+    "Auto":     "Limosina"
   },
 
   {
-    "Name":     "Lady Agatha",
-    "Sex":      "Female",
+    "Nombre":   "Lady Agatha",
+    "Sexo":     "Femenino",
     "Hobby":    "Tennis",
-    "Hair":     "Red",
-    "Feature":  "Ring",
+    "Cabello":  "Pelirrojo",
+    "Seña":     "Anillo",
     "Auto":     "Convertible"
   },
 
   {
-    "Name":     "Katherine Drib",
-    "Sex":      "Female",
-    "Hobby":    "Mountain Climbing",
-    "Hair":     "Brown",
-    "Feature":  "Tattoo",
-    "Auto":     "Motorcycle"
+    "Nombre":   "Katherine Drib",
+    "Sexo":     "Femenino",
+    "Hobby":    "Alpinismo",
+    "Cabello":  "Castaño",
+    "Seña":     "Tatuaje",
+    "Auto":     "Moto"
   },
 
   {
-    "Name":     "Dazzle Annie",
-    "Sex":      "Female",
+    "Nombre":   "Dazzle Annie",
+    "Sexo":     "Femenino",
     "Hobby":    "Tennis",
-    "Hair":     "Blond",
-    "Feature":  "Tattoo",
-    "Auto":     "Limousine"
+    "Cabello":  "Rubio",
+    "Seña":     "Tatuaje",
+    "Auto":     "Limosina"
   },
 
   {
-    "Name":     "Carmen Sandiego",
-    "Sex":      "Female",
+    "Nombre":   "Carmen Sandiego",
+    "Sexo":     "Femenino",
     "Hobby":    "Tennis",
-    "Hair":     "Brown",
-    "Feature":  "Jewelry",
+    "Cabello":  "Castaño",
+    "Seña":     "Joyas",
     "Auto":     "Convertible"
   }
 ]

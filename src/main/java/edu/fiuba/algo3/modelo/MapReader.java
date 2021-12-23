@@ -56,6 +56,13 @@ public class MapReader {
 
             ciudadesOrigenJSON.keySet().forEach(ciudadOrigen -> {
                 Ciudad origen = new Ciudad(ciudadOrigen.toString());
+
+                /* Leer nombres de edificios */
+                origen.agregarEdificio(new Edificio("Banco", "Financiero"));
+                origen.agregarEdificio(new Edificio("Biblioteca", "Biblioteca"));
+                origen.agregarEdificio(new Edificio("Aeropuerto", "Transporte"));
+                /* - - - */
+
                 ciudades.add(origen);
             });
 

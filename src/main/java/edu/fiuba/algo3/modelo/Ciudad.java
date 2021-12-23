@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.detective.Detective;
-import edu.fiuba.algo3.modelo.edificios.Edificio;
 
 import java.util.ArrayList;
 
@@ -18,6 +17,7 @@ public class Ciudad {
         this.ciudadesAdyacentes = new ArrayList<>();
         this.contadorVisitas = 0;
         this.nombre = nombre;
+        this.ciudadRecorrido = "Default";
     }
 
     public String obtenerNombre() {
@@ -28,7 +28,7 @@ public class Ciudad {
         if(this.contadorVisitas < 3){
             this.contadorVisitas++;
         }
-        detective.visitarEdificio(edificio, this.contadorVisitas, ciudadRecorrido);
+        detective.visitarEdificio(edificio, this.contadorVisitas);
         return detective.leerPista(ciudadRecorrido, edificio.obtenerTipo());
     }
 
@@ -48,9 +48,16 @@ public class Ciudad {
         return this.ciudadRecorrido;
     }
 
+    public Boolean estaEnLaRutaDelLadron() {
+        return !this.ciudadRecorrido.equals("Default");
+    }
+
     ////// TEST //////
     public Ciudad realizarViaje(Ciudad destino, Detective detective) {
         Mapa.obtenerInstancia().realizarViaje(this, destino, detective);
+        if (destino.estaEnLaRutaDelLadron()) {
+            detective.recibirAtaque();
+        }
         return destino;
     }
 
