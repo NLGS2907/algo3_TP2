@@ -8,6 +8,9 @@ public class Computadora {
     public Computadora(){
         this.baseDeDatos = new BaseDeDatos();
         this.ladron = new Sospechoso();
+
+        LectorDeLadrones lector = new LectorDeLadrones("src/main/java/edu/fiuba/algo3/config/ladrones.json");
+        lector.cargarLadrones(this); /* agregar ladron */
     }
 
     public void establecerSexo(String sexo){
@@ -33,7 +36,6 @@ public class Computadora {
     public OrdenDeArresto emitirOrdenDeArresto(){
         return this.baseDeDatos.buscarLadron(this.ladron);
     }
-
 
     public void agregarLadron(Ladron ladron){
         this.baseDeDatos.agregarLadron(ladron);

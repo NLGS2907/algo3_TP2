@@ -27,7 +27,11 @@ public class Juego {
         this.detective.emitirOrdenDeArresto(this.computadora);
     }
 
+    public void empezarNuevaMision(){
+        this.ciudadActual = Mapa.obtenerInstancia().crearRutaDelLadron(detective.determinarLongitudMision());
+    }
 
+    ////// TESTS //////
 
     public void establecerCiudadActual(Ciudad ciudad){
         this.ciudadActual = ciudad;

@@ -28,7 +28,7 @@ public class Ciudad {
         if(this.contadorVisitas < 3){
             this.contadorVisitas++;
         }
-        detective.visitarEdificio(edificio, this.contadorVisitas, ciudadRecorrido);
+        detective.visitarEdificio(edificio, this.contadorVisitas);
         return detective.leerPista(ciudadRecorrido, edificio.obtenerTipo());
     }
 
@@ -48,9 +48,16 @@ public class Ciudad {
         return this.ciudadRecorrido;
     }
 
+    public Boolean estaEnLaRutaDelLadron() {
+        return !this.ciudadRecorrido.equals("Default");
+    }
+
     ////// TEST //////
     public Ciudad realizarViaje(Ciudad destino, Detective detective) {
         Mapa.obtenerInstancia().realizarViaje(this, destino, detective);
+        if (destino.estaEnLaRutaDelLadron()) {
+            detective.recibirAtaque();
+        }
         return destino;
     }
 

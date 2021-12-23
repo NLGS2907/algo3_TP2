@@ -19,9 +19,7 @@ public class BaseDeDatos {
 
     public OrdenDeArresto buscarLadron(Ladron ladronBuscado)
     {
-        //long cantidadSospechosos =  this.listaLadrones.stream().filter(elemento->elemento.esSimilar(ladronBuscado)).count();
         Stream<Ladron> listaFiltrada =  this.listaLadrones.stream().filter(elemento->elemento.esSimilarA(ladronBuscado));
-        // espacio para mostrar los distintos ladrones
         
         long cantidadSospechosos = listaFiltrada.count();
         listaFiltrada =  this.listaLadrones.stream().filter(elemento->elemento.esSimilarA(ladronBuscado));
