@@ -1,17 +1,40 @@
 package edu.fiuba.algo3.vista.contenedores;
 
+import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.vista.animaciones.AnimacionTexto;
 import edu.fiuba.algo3.vista.contenedores.cuadros.CuadroNegro;
-import edu.fiuba.algo3.vista.etiquetas.Etiqueta;
 import javafx.geometry.Pos;
 
 public class LocacionYFecha extends CuadroNegro {
+    private static LocacionYFecha instancia = null;
+    private AnimacionTexto lugar;
+    private AnimacionTexto tiempo;
 
-    public LocacionYFecha(String nombreLugar, String descripcionTiempo) {
+    private LocacionYFecha() {
         super();
-        Etiqueta lugar = new AnimacionTexto(nombreLugar, 16).getEtiqueta();
-        Etiqueta tiempo = new AnimacionTexto(descripcionTiempo, 14).getEtiqueta();
-        this.agregarEtiquetas(lugar, tiempo);
-        this.setAlignment(Pos.TOP_CENTER);
+        this.lugar = new AnimacionTexto(Juego.obtenerInstancia().ciudadActual().obtenerNombre(), 16);
+        this.tiempo = new AnimacionTexto(Juego.obtenerInstancia().obtenerHorario(), 14);
+        this.agregarEtiquetas(this.lugar.getEtiqueta(), this.tiempo.getEtiqueta());
     }
+
+    private static void crearLocacionYFecha() {
+        if (instancia == null) {
+            instancia = new LocacionYFecha();
+        }
+    }
+
+    public static LocacionYFecha obtenerInstancia() {
+        if (instancia == null) {
+            crearLocacionYFecha();
+        }
+        return instancia;
+    }
+
+    public LocacionYFecha mostrarLugarYTiempo(){
+        this.lugar.reiniciar(Juego.obtenerInstancia().ciudadActual().obtenerNombre());
+        this.tiempo.reiniciar(Juego.obtenerInstancia().obtenerHorario());
+        this.setAlignment(Pos.TOP_CENTER);
+        return instancia;
+    }
+
 }

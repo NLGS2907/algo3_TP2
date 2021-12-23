@@ -6,8 +6,7 @@ public class CajaPantalla extends HBox {
 
     public CajaPantalla() {
         super(0);
-        String lugar = "Cuartel General";
-        String tiempo = "Lunes, 8:00 AM";
-        this.getChildren().addAll(new CajaLugarYFecha(lugar, tiempo), new CajaBotonesYDialogo());
+        this.getChildren().clear();
+        this.getChildren().addAll(CajaLugarYFecha.obtenerInstancia().mostrarLugarYTiempo(), new CajaBotonesYDialogo());
     }
 }

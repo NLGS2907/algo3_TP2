@@ -9,6 +9,10 @@ public class AnimacionTexto extends AnimationTimer {
     private int indiceActual;
     private Etiqueta etiqueta;
 
+    public AnimacionTexto(String texto) {
+        this(texto, 14, true);
+    }
+
     public AnimacionTexto(String texto, int tamanio) {
         this(texto, tamanio, true);
     }
@@ -18,7 +22,7 @@ public class AnimacionTexto extends AnimationTimer {
         this.indiceActual = 0;
         this.etiqueta = new Etiqueta(this.textoOriginal, tamanio);
         if (auto_start) {
-            start();
+            this.start();
         }
     }
 
@@ -26,10 +30,17 @@ public class AnimacionTexto extends AnimationTimer {
         return this.indiceActual > this.textoOriginal.length();
     }
 
+    public void reiniciar(String nuevoMensaje) {
+        this.textoOriginal = nuevoMensaje;
+        this.indiceActual = 0;
+        this.etiqueta.setText(this.textoOriginal);
+        this.start();
+    }
+
     @Override
     public void handle(long now) {
         if (this.terminoAnimacion()) {
-            stop();
+            this.stop();
             return;
         }
         String textoAMostrar = this.textoOriginal.substring(0, this.indiceActual);

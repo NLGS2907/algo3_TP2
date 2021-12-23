@@ -52,6 +52,16 @@ public class Ciudad {
         return !this.ciudadRecorrido.equals("Default");
     }
 
+    ////// VISTA //////
+    public ArrayList<Ciudad> obtenerCiudadesAdyacentes() {
+        return ciudadesAdyacentes;
+    }
+
+    ////// VISTA //////
+    public ArrayList<Edificio> obtenerEdificios() {
+        return edificios;
+    }
+
     ////// TEST //////
     public Ciudad realizarViaje(Ciudad destino, Detective detective) {
         Mapa.obtenerInstancia().realizarViaje(this, destino, detective);

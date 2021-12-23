@@ -134,20 +134,17 @@ public class DetectiveTest {
     public void test10DetectiveObtieneOrdenDecapturaEntraEnEdificioYAtrapaLadron()
     {
         Computadora computadora = new Computadora();
-        Ladron ladron1 = new Sospechoso();
-        ladron1.establecerSexo("Masculino");
-        ladron1.establecerSenia("Anillo");
-        Ladron ladron2 = new Sospechoso();
-        ladron2.establecerSexo("Masculino");
-        ladron2.establecerCabello("Rojo");
-        ladron2.establecerSenia("Anillo");
+        Ladron ladron = new Sospechoso();
+        ladron.establecerSexo("Masculino");
+        ladron.establecerCabello("Pelirrojo");
+        ladron.establecerSenia("Tatuaje");
+        ladron.establecerVehiculo("Convertible");
+        ladron.establecerHobby("Alpinismo");
 
-
-
-        computadora.agregarLadron(ladron2);
+        computadora.establecerSospechoso(ladron);
 
         Edificio bancoConLadron = new Edificio("Banco", "Financiero");
-        bancoConLadron.establecerLadron(ladron2);
+        bancoConLadron.establecerLadron(ladron);
 
         Detective detective = new DetectiveNovato();
         Ciudad siguienteCiudad = new Ciudad("Buenos Aires");
