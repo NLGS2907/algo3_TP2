@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.vista.escenas.Escena;
-import edu.fiuba.algo3.vista.escenas.EscenaPrincipal;
+import edu.fiuba.algo3.vista.escenas.EscenaInicial;
 import javafx.scene.Scene;
 
 public class Interfaz {
@@ -9,18 +9,14 @@ public class Interfaz {
     private Escena escenaActual;
 
     public Interfaz() {
-        this.escenaActual = new EscenaPrincipal();
+        this.escenaActual = new EscenaInicial();
     }
 
     public Scene getEscena() {
         return escenaActual.getEscena();
     }
 
-    public Escena getMenu() {
-        return this.escenaActual;
-    }
-
-    public void setMenu(Escena nuevaEscena) {
+    public void setEscena(Escena nuevaEscena) {
         this.escenaActual = nuevaEscena;
     }
 }

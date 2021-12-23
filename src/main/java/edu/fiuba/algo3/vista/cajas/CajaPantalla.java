@@ -5,9 +5,9 @@ import javafx.scene.layout.HBox;
 public class CajaPantalla extends HBox {
 
     public CajaPantalla() {
-        super(20);
+        super(0);
         String lugar = "Cuartel General";
         String tiempo = "Lunes, 8:00 AM";
-        this.getChildren().addAll(new CajaLugarYFecha(lugar, tiempo), new CajaBotonesYEstado());
+        this.getChildren().addAll(new CajaLugarYFecha(lugar, tiempo), new CajaBotonesYDialogo());
     }
 }

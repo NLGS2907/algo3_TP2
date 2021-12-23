@@ -4,9 +4,9 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.BorderImage;
 import javafx.scene.layout.BorderWidths;
 
-public class BordeCaja extends BorderImage {
+public class BordeNegro extends BorderImage {
 
-    public BordeCaja() {
+    public BordeNegro() {
         super(new Image("file:media/img/pantallaNegra.png"),
                 new BorderWidths(10),
                 null,

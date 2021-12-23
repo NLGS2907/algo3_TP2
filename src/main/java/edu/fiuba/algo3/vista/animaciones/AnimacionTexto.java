@@ -5,15 +5,21 @@ import javafx.animation.AnimationTimer;
 
 public class AnimacionTexto extends AnimationTimer {
 
-    String textoOriginal;
-    int indiceActual;
-    Etiqueta etiqueta;
+    private String textoOriginal;
+    private int indiceActual;
+    private Etiqueta etiqueta;
 
     public AnimacionTexto(String texto, int tamanio) {
+        this(texto, tamanio, true);
+    }
+
+    public AnimacionTexto(String texto, int tamanio, boolean auto_start) {
         this.textoOriginal = texto;
         this.indiceActual = 0;
         this.etiqueta = new Etiqueta(this.textoOriginal, tamanio);
-        start();
+        if (auto_start) {
+            start();
+        }
     }
 
     private boolean terminoAnimacion() {
