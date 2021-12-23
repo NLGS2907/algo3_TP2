@@ -50,12 +50,22 @@ public class Mapa {
         Ciudad ciudadactual = null;
 
         for (int i = 0; i < longitud; i++) {
-            ciudadactual = obtenerCiudadRandom();
+            ciudadactual = obtenerCiudadRandom(ciudadSiguiente);
             ciudadactual.establecerRutaDelLadron(ciudadSiguiente.obtenerNombre());
             ciudadSiguiente = ciudadactual;
         }
 
         return ciudadactual;
+    }
+
+    private Ciudad obtenerCiudadRandom(Ciudad ciudadSiguiente) {
+        Random random = new Random(System.nanoTime());
+        Ciudad ciudadRandom = ciudades.get(random.nextInt(ciudades.size()));
+
+        while (!ciudadRandom.obtenerRutaDelLadron().equals("Default") || !adyacencias.get(ciudadRandom.obtenerNombre()).contains(ciudadSiguiente.obtenerNombre())) {
+            ciudadRandom = ciudades.get(random.nextInt(ciudades.size()));
+        }
+        return ciudadRandom;
     }
 
     private Ciudad obtenerCiudadRandom() {
