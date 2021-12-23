@@ -10,7 +10,7 @@ public class CajaBotonesYDialogo extends VBox {
 
     public CajaBotonesYDialogo() {
         super(5);
-        this.getChildren().addAll(new CuadroDialogo("Hola, soy una pruebaHola, soy una pruebaHola, soy una pruebaHola, soy una prueba\nHola, soy una pruebaHola, soy una pruebaHola, soy una pruebaHola, soy una pruebaHola, soy una pruebaHola, soy una prueba\nHola, soy una prueba\nHola, soy una prueba\nHola, soy una prueba\nHola, soy una prueba\nHola, soy una prueba\nHola, soy una prueba\nHola, soy una prueba\nHola, soy una prueba\nHola, soy una prueba\nHola, soy una prueba\nHola, soy una prueba\nHola, soy una prueba\nHola, soy una prueba\nHola, soy una prueba\nHola, soy una prueba"), new BotonesAcciones());
+        this.getChildren().addAll(new CuadroDialogo(""), new BotonesAcciones());
         this.setPadding(new Insets(1.5));
         this.setAlignment(Pos.CENTER_RIGHT);
     }
