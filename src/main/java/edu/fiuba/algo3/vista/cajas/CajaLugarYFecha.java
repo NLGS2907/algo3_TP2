@@ -1,17 +1,27 @@
 package edu.fiuba.algo3.vista.cajas;
 
+import edu.fiuba.algo3.modelo.Ciudad;
+import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.vista.contenedores.LocacionYFecha;
-import edu.fiuba.algo3.vista.imagenes.ImagenTeclado;
+import edu.fiuba.algo3.vista.imagenes.ciudades.*;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
+
+import java.util.Locale;
 
 public class CajaLugarYFecha extends VBox {
     private static CajaLugarYFecha instancia = null;
 
     private CajaLugarYFecha() {
         super(5);
+        this.setPadding(new Insets(1.5));
+        this.setAlignment(Pos.CENTER_LEFT);
+    }
 
+    private ImagenCiudad conseguirImagenCiudad(Ciudad ciudad) {
+        String nombreImagen = ciudad.obtenerNombre().replace(" ", "").toLowerCase();
+        return new ImagenCiudad(nombreImagen);
     }
 
     public static CajaLugarYFecha obtenerInstancia() {
@@ -28,9 +38,8 @@ public class CajaLugarYFecha extends VBox {
     }
 
     public CajaLugarYFecha mostrarLugarYTiempo(){
-        this.getChildren().setAll(LocacionYFecha.obtenerInstancia().mostrarLugarYTiempo(), new ImagenTeclado());
-        this.setPadding(new Insets(1.5));
-        this.setAlignment(Pos.CENTER_LEFT);
+        this.getChildren().setAll(LocacionYFecha.obtenerInstancia().mostrarLugarYTiempo(),
+                                this.conseguirImagenCiudad(Juego.obtenerInstancia().ciudadActual()));
         return instancia;
     }
 }

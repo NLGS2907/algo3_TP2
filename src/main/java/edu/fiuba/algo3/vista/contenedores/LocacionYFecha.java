@@ -14,7 +14,7 @@ public class LocacionYFecha extends CuadroNegro {
         super();
         this.lugar = new AnimacionTexto(Juego.obtenerInstancia().ciudadActual().obtenerNombre(), 16);
         this.tiempo = new AnimacionTexto(Juego.obtenerInstancia().obtenerHorario(), 14);
-        this.agregarEtiquetas(this.lugar.getEtiqueta(), this.tiempo.getEtiqueta());
+        this.agregarTodo(this.lugar.getEtiqueta(), this.tiempo.getEtiqueta());
     }
 
     private static void crearLocacionYFecha() {
@@ -36,5 +36,4 @@ public class LocacionYFecha extends CuadroNegro {
         this.setAlignment(Pos.TOP_CENTER);
         return instancia;
     }
-
 }

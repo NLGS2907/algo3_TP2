@@ -8,6 +8,5 @@ public class Escena extends Scene {
 
     public Escena() {
         super(new StackPane(new CajaGeneral()));
-
     }
 }

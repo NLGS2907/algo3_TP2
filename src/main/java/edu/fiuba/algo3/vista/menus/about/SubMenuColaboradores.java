@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.vista.menus.about;
 
-import edu.fiuba.algo3.vista.handlers.menus.HandlerColaboradores;
+import edu.fiuba.algo3.controlador.menus.HandlerColaboradores;
 import javafx.scene.control.MenuItem;
 
 public class SubMenuColaboradores extends MenuItem {

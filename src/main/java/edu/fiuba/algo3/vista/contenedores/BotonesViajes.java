@@ -13,6 +13,6 @@ public class BotonesViajes extends VBox {
         for (Ciudad ciudad : ciudades) {
             this.getChildren().add(new BotonElegirCiudad(ciudad));
         }
-        this.setAlignment(Pos.BOTTOM_CENTER);
+        this.setAlignment(Pos.TOP_CENTER);
     }
 }

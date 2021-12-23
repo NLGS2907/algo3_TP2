@@ -1,5 +1,6 @@
 package edu.fiuba.algo3;
 
+import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.vista.escena.Escena;
 import edu.fiuba.algo3.vista.imagenes.IconoAlgoThief;
 import javafx.application.Application;
@@ -12,6 +13,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
+        Juego.obtenerInstancia().empezarNuevaMision();
         stage.setTitle("-=  AlgoThief  =-");
         stage.setScene(new Escena());
         stage.setResizable(false);

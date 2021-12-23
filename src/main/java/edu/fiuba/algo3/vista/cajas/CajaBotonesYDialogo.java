@@ -10,7 +10,7 @@ public class CajaBotonesYDialogo extends VBox {
 
     public CajaBotonesYDialogo() {
         super(5);
-        this.getChildren().addAll(CuadroDialogo.obtenerInstancia().mostrarMensaje("ASPODKJASJDKALSDAKD"), new BotonesAcciones());
+        this.getChildren().addAll(CuadroDialogo.obtenerInstancia().mostrarMensaje(""), new BotonesAcciones());
         this.setPadding(new Insets(1.5));
         this.setAlignment(Pos.CENTER_RIGHT);
     }

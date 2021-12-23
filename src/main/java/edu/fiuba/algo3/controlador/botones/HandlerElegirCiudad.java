@@ -1,15 +1,16 @@
-package edu.fiuba.algo3.vista.handlers.botones;
+package edu.fiuba.algo3.controlador.botones;
 
 import edu.fiuba.algo3.modelo.Ciudad;
 import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.vista.cajas.CajaLugarYFecha;
+import edu.fiuba.algo3.vista.contenedores.CuadroDialogo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 public class HandlerElegirCiudad implements EventHandler<ActionEvent> {
     private Ciudad ciudad;
 
-    public HandlerElegirCiudad(Ciudad ciudad){
+    public HandlerElegirCiudad(Ciudad ciudad) {
         this.ciudad = ciudad;
     }
 
@@ -17,6 +18,6 @@ public class HandlerElegirCiudad implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionevent){
         Juego.obtenerInstancia().viajar(ciudad);
         CajaLugarYFecha.obtenerInstancia().mostrarLugarYTiempo();
-
+        CuadroDialogo.obtenerInstancia().getChildren().clear();
     }
 }
