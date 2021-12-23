@@ -2,6 +2,8 @@ package edu.fiuba.algo3.modelo.detective;
 
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.Ladron;
+import edu.fiuba.algo3.modelo.pistas.ContenedorDePistas;
+import edu.fiuba.algo3.modelo.randomizador.Randomizador;
 import edu.fiuba.algo3.modelo.reloj.Fecha;
 import edu.fiuba.algo3.modelo.reloj.Reloj;
 import edu.fiuba.algo3.modelo.cuchillazo.Cuchillazo;
@@ -14,6 +16,7 @@ public abstract class Detective {
     protected OrdenDeArresto ordenDeArresto;
     protected int cantidadDeArrestos;
     protected float velocidad;
+    protected Randomizador randomizador;
 
     Detective(){
         this.reloj = new Reloj();
@@ -26,9 +29,11 @@ public abstract class Detective {
         return( this.reloj.verificarFechaLimite() );
     }
 
-    public String visitarEdificio(Edificio edificio, int horas){
+    public void visitarEdificio(Edificio edificio, int horas, String siguienteCiudad){
         this.reloj.avanzarTiempo(horas);
-        return edificio.visitar(this);
+        edificio.visitar(this, horas);
+        //ContenedorDePistas.obtenerInstancia().leerPista(randomizador.generarDificultad(), siguienteCiudad, edificio.obtenerTipo());
+        ContenedorDePistas.obtenerInstanciaTEST().leerPista(randomizador.generarDificultad(), siguienteCiudad, edificio.obtenerTipo());
     }
 
     public Fecha obtenerFecha(){
@@ -52,6 +57,11 @@ public abstract class Detective {
     public abstract void viajarACiudadConLadron(int distancia);
 
     public abstract Detective incrementarArresto();
+
+    public String leerPista(String nombreCiudad, String tipoEdificio){
+        return "a";
+        //return ContenedorDePistas.getInstrance().lerrPistaCon(nombreCiudad, tipoEdificio, this.dificultad);
+    }
 
     //public void asignarOrdenDeArresto(OrdenDeArresto ordenDeArresto) {
         //this.ordenDeArresto = ordenDeArresto;
