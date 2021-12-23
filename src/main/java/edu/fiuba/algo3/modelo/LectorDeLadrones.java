@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.computadora.Computadora;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.ladron.Sospechoso;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -24,11 +26,17 @@ public class LectorDeLadrones {
             JSONArray ladronesArray = (JSONArray) mapParser.parse(reader);
 
             ladronesArray.forEach(element -> {
-                JSONObject ladron = (JSONObject) element;
+                JSONObject ladronJSON = (JSONObject) element;
+                Ladron ladron = new Sospechoso();
 
-                // Cargar computadora con "element"
-                //System.out.println(ladron.get("Hair"));
-                //System.out.println(element);
+                ladron.establecerNombre(ladronJSON.get("Nombre").toString());
+                ladron.establecerSexo(ladronJSON.get("Sexo").toString());
+                ladron.establecerHobby(ladronJSON.get("Hobby").toString());
+                ladron.establecerCabello(ladronJSON.get("Cabello").toString());
+                ladron.establecerSenia(ladronJSON.get("Seña").toString());
+                ladron.establecerVehiculo(ladronJSON.get("Auto").toString());
+
+                computadora.agregarLadron(ladron);
             });
 
         } catch (IOException e) {
