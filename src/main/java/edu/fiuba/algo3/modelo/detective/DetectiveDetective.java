@@ -18,7 +18,7 @@ public class DetectiveDetective extends Detective {
     @Override
     public Detective incrementarArresto() {
         this.cantidadDeArrestos++;
-        if (cantidadDeArrestos == 5) {
+        if (cantidadDeArrestos == 10) {
             return new DetectiveInvestigador();
         }
         return this;
