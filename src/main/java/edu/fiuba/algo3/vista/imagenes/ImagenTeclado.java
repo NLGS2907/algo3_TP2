@@ -1,12 +1,16 @@
 package edu.fiuba.algo3.vista.imagenes;
 
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+public class ImagenTeclado extends VistaImagen {
 
-public class ImagenTeclado extends ImageView {
+    public int getAncho() {
+        return 0;
+    }
 
-    public ImagenTeclado() {
-        super();
-        this.setImage(new Image("file:media/img/teclado.png"));
+    public int getAlto() {
+        return 0;
+    }
+
+    public String getDirectorioImagen() {
+        return "file:media/img/teclado.png";
     }
 }

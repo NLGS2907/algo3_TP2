@@ -9,9 +9,9 @@ import javafx.scene.layout.VBox;
 public class CajaLugarYFecha extends VBox {
 
     public CajaLugarYFecha(String lugar, String tiempo) {
-        super(30);
+        super(5);
         this.getChildren().addAll(new LocacionYFecha(lugar, tiempo), new ImagenTeclado());
-        this.setPadding(new Insets(20));
+        this.setPadding(new Insets(1.5));
         this.setAlignment(Pos.CENTER_LEFT);
     }
 }
