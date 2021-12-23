@@ -9,5 +9,10 @@ public abstract class Randomizador {
     public Randomizador() {
         random = new Random(System.nanoTime());
     }
+
     public abstract String generarDificultad();
+
+    public float generarProbabilidad() {
+        return random.nextFloat();
+    }
 }

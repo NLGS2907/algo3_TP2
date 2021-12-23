@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo.detective;
 
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.Computadora;
 import edu.fiuba.algo3.modelo.Ladron;
 import edu.fiuba.algo3.modelo.pistas.ContenedorDePistas;
 import edu.fiuba.algo3.modelo.randomizador.Randomizador;
@@ -29,11 +30,9 @@ public abstract class Detective {
         return( this.reloj.verificarFechaLimite() );
     }
 
-    public void visitarEdificio(Edificio edificio, int horas, String siguienteCiudad){
+    public void visitarEdificio(Edificio edificio, int horas){
         this.reloj.avanzarTiempo(horas);
         edificio.visitar(this, horas);
-        //ContenedorDePistas.obtenerInstancia().leerPista(randomizador.generarDificultad(), siguienteCiudad, edificio.obtenerTipo());
-        ContenedorDePistas.obtenerInstanciaTEST().leerPista(randomizador.generarDificultad(), siguienteCiudad, edificio.obtenerTipo());
     }
 
     public Fecha obtenerFecha(){
@@ -54,18 +53,41 @@ public abstract class Detective {
 
     public abstract void viajar(int distancia);
 
-    public abstract void viajarACiudadConLadron(int distancia);
+    public void viajarACiudadConLadron(int distancia){
+        this.cantidadDeCuchillazos = this.cantidadDeCuchillazos.acuchillar(this.reloj);
+        this.reloj.avanzarTiempo((int) Math.round(distancia/this.velocidad));
+    }
+
+    private void sufrirCuchillazo(float probabilidad){
+        if(probabilidad < 0.1)
+            this.cantidadDeCuchillazos = this.cantidadDeCuchillazos.acuchillar(this.reloj);
+    }
+
+    private void sufrirBalazo(float probabilidad){
+        if(probabilidad < 0.1)
+            this.reloj.avanzarTiempo(4);
+    }
+
+    public void recibirAtaque(){
+        float probabilidad = this.randomizador.generarProbabilidad();
+        if(probabilidad < 0.3)
+            this.sufrirBalazo(probabilidad);
+        else this.sufrirCuchillazo(probabilidad);
+    }
 
     public abstract Detective incrementarArresto();
 
     public String leerPista(String nombreCiudad, String tipoEdificio){
-        return "a";
-        //return ContenedorDePistas.getInstrance().lerrPistaCon(nombreCiudad, tipoEdificio, this.dificultad);
+        return ContenedorDePistas.obtenerInstancia().leerPista(randomizador.generarDificultad(), nombreCiudad, tipoEdificio);
     }
 
-    //public void asignarOrdenDeArresto(OrdenDeArresto ordenDeArresto) {
-        //this.ordenDeArresto = ordenDeArresto;
-    //}
+    public int determinarLongitudMision(){
+        if(this.cantidadDeArrestos < 5){
+            return 3;
+        } else if(this.cantidadDeArrestos < 10){
+            return 5;
+        } else return 7;
+    }
 
     public int obtenerContador() {
         return this.cantidadDeArrestos;

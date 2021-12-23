@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.modelo.detective;
 
-import edu.fiuba.algo3.modelo.edificios.Edificio;
 import edu.fiuba.algo3.modelo.randomizador.RandomizadorInvestigador;
 
 public class DetectiveInvestigador extends Detective {
@@ -12,11 +11,6 @@ public class DetectiveInvestigador extends Detective {
     }
 
     public void viajar(int distancia){
-        this.reloj.avanzarTiempo((int) Math.round(distancia/this.velocidad));
-    }
-
-    public void viajarACiudadConLadron(int distancia){
-        this.cantidadDeCuchillazos = this.cantidadDeCuchillazos.acuchillar(this.reloj);
         this.reloj.avanzarTiempo((int) Math.round(distancia/this.velocidad));
     }
 
