@@ -4,15 +4,39 @@ import edu.fiuba.algo3.modelo.computadora.Computadora;
 import edu.fiuba.algo3.modelo.detective.Detective;
 import edu.fiuba.algo3.modelo.detective.DetectiveNovato;
 
-public class Juego {
+import java.util.Observable;
+
+public class Juego /*extends Observable*/ {
+
+private static Juego instancia = null;
 
     private Detective detective;
     private Ciudad ciudadActual;
     private Computadora computadora;
 
-    Juego(){
+    private Juego(){
         this.detective = new DetectiveNovato();
         this.computadora = new Computadora();
+    }
+
+    private static void crearJuego() {
+        if (instancia == null) {
+            instancia = new Juego();
+        }
+    }
+
+    public static Juego obtenerInstancia() {
+        if (instancia == null) {
+            crearJuego();
+        }
+        return instancia;
+    }
+
+    public void resetear(){
+        if (instancia != null) {
+            instancia.detective = new DetectiveNovato();
+            instancia.computadora = new Computadora();
+        }
     }
 
     public String visitarEdificio(Edificio edificio){
@@ -31,12 +55,6 @@ public class Juego {
         this.ciudadActual = Mapa.obtenerInstancia().crearRutaDelLadron(detective.determinarLongitudMision());
     }
 
-    ////// TESTS //////
-
-    public void establecerCiudadActual(Ciudad ciudad){
-        this.ciudadActual = ciudad;
-    }
-
     public Ciudad ciudadActual(){
         return this.ciudadActual;
     }
@@ -44,4 +62,14 @@ public class Juego {
     public Detective obtenerDetective(){
         return this.detective;
     }
+
+    public String obtenerHorario() {
+        return this.detective.obtenerFecha().mostrar();
+    }
+
+    ////// TESTS //////
+    public void establecerCiudadActual(Ciudad ciudad){
+        this.ciudadActual = ciudad;
+    }
+
 }

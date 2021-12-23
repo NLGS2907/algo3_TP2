@@ -7,11 +7,30 @@ import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
 
 public class CajaLugarYFecha extends VBox {
+    private static CajaLugarYFecha instancia = null;
 
-    public CajaLugarYFecha(String lugar, String tiempo) {
+    private CajaLugarYFecha() {
         super(5);
-        this.getChildren().addAll(new LocacionYFecha(lugar, tiempo), new ImagenTeclado());
+
+    }
+
+    public static CajaLugarYFecha obtenerInstancia() {
+        if (instancia == null) {
+            instancia = new CajaLugarYFecha();
+        }
+        return instancia;
+    }
+
+    public static void crearCajaLugarYFecha() {
+        if (instancia == null) {
+            instancia = new CajaLugarYFecha();
+        }
+    }
+
+    public CajaLugarYFecha mostrarLugarYTiempo(){
+        this.getChildren().setAll(LocacionYFecha.obtenerInstancia().mostrarLugarYTiempo(), new ImagenTeclado());
         this.setPadding(new Insets(1.5));
         this.setAlignment(Pos.CENTER_LEFT);
+        return instancia;
     }
 }

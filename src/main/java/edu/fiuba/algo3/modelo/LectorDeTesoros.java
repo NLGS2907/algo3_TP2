@@ -19,15 +19,16 @@ public class LectorDeTesoros {
         this.filePath = filePath;
     }
 
-    public void cargarTesoros(Computadora computadora) {
+    public Map<String, String> cargarTesoros() {
         Map<String, String> tesoros = new HashMap<>();
         try {
             FileReader reader = new FileReader(this.filePath);
             JSONParser mapParser = new JSONParser();
-            JSONArray tesorosArray = (JSONArray) mapParser.parse(reader);
+            JSONObject jsonObject = (JSONObject) mapParser.parse(reader);
+            JSONObject tesorosJSON = (JSONObject) jsonObject.get("tesoros");
 
-            tesorosArray.forEach(element -> {
-                JSONObject tesoro = (JSONObject) element;
+            tesorosJSON.keySet().forEach(element -> {
+                tesoros.put(element.toString(), tesorosJSON.get(element).toString());
             });
 
         } catch (IOException e) {
@@ -35,5 +36,6 @@ public class LectorDeTesoros {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        return tesoros;
     }
 }
