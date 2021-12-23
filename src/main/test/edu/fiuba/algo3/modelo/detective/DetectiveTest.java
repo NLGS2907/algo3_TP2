@@ -1,9 +1,9 @@
 package edu.fiuba.algo3.modelo.detective;
 
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.Computadora;
-import edu.fiuba.algo3.modelo.edificios.*;
-import edu.fiuba.algo3.modelo.Ladron;
+import edu.fiuba.algo3.modelo.computadora.Computadora;
+import edu.fiuba.algo3.modelo.ladron.Sospechoso;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.pistas.ContenedorDePistas;
 import edu.fiuba.algo3.modelo.reloj.Fecha;
 import org.junit.jupiter.api.Test;

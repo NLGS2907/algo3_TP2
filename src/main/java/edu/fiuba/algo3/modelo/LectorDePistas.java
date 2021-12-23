@@ -1,5 +1,8 @@
-package edu.fiuba.algo3.modelo.pistas;
+package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.pistas.ContenedorDePistas;
+import edu.fiuba.algo3.modelo.pistas.PistasDeCiudad;
+import edu.fiuba.algo3.modelo.pistas.PistasDeEdificio;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;

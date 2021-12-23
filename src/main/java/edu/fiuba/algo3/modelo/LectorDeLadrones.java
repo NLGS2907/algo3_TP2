@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.computadora.Computadora;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -12,11 +13,11 @@ public class LectorDeLadrones {
 
     final private String filePath;
 
-    LectorDeLadrones (String filePath) {
+    public LectorDeLadrones (String filePath) {
         this.filePath = filePath;
     }
 
-    void cargarLadrones(Computadora computadora) {
+    public void cargarLadrones(Computadora computadora) {
         try {
             FileReader reader = new FileReader(this.filePath);
             JSONParser mapParser = new JSONParser();

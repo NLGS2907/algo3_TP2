@@ -1,13 +1,11 @@
 package edu.fiuba.algo3.modelo.pistas;
 
-import edu.fiuba.algo3.modelo.Caracteristica;
-import edu.fiuba.algo3.modelo.Ladron;
-import edu.fiuba.algo3.modelo.Sospechoso;
+import edu.fiuba.algo3.modelo.LectorDePistas;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.ladron.Sospechoso;
 import edu.fiuba.algo3.modelo.excepciones.ContenedorNoExiste;
-import edu.fiuba.algo3.modelo.excepciones.TipoDeCaracteristicaInexistente;
 
 import java.util.*;
-import java.util.AbstractMap.SimpleEntry;
 
 public class ContenedorDePistas {
 

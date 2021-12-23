@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.ladron;
 
 public class Caracteristica {
 
@@ -11,13 +11,13 @@ public class Caracteristica {
         this.valor = "";
     }
 
-    Caracteristica(String tipo)
+    public Caracteristica(String tipo)
     {
         this.tipo = tipo;
         this.valor = "";
     }
 
-    Caracteristica(String tipo, String valor)
+    public Caracteristica(String tipo, String valor)
     {
         this.tipo = tipo;
         this.valor = valor;

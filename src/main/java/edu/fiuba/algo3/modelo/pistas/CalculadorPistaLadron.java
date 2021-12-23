@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modelo.pistas;
 
-import edu.fiuba.algo3.modelo.Caracteristica;
-import edu.fiuba.algo3.modelo.Ladron;
+import edu.fiuba.algo3.modelo.ladron.Caracteristica;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.excepciones.TipoDeCaracteristicaInexistente;
 
 import java.util.AbstractMap;
