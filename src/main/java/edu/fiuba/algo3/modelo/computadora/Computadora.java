@@ -16,7 +16,11 @@ public class Computadora {
         this.ladron = new Sospechoso();
 
         LectorDeLadrones lector = new LectorDeLadrones("src/main/java/edu/fiuba/algo3/config/ladrones.json");
-        lector.cargarLadrones(this); /* agregar ladron */
+        lector.cargarLadrones(this);
+    }
+
+    public void establecerSospechoso(Ladron sospechoso) {
+        this.ladron = sospechoso;
     }
 
     public void establecerSexo(String sexo){
@@ -27,11 +31,11 @@ public class Computadora {
         this.ladron.establecerHobby(hobby);
     }
 
-    public void establecerPelo(String pelo){
+    public void establecerCabello(String pelo){
         this.ladron.establecerCabello(pelo);
     }
 
-    public void establecerSeña(String senia){
+    public void establecerSenia(String senia){
         this.ladron.establecerSenia(senia);
     }
 
