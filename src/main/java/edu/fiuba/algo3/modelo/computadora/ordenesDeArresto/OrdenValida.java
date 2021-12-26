@@ -13,4 +13,8 @@ public class OrdenValida implements OrdenDeArresto {
     public boolean esPara(Ladron ladron){
         return this.ladron.esIgualA(ladron);
     }
+
+    public String obtenerNombreSospechoso(){
+        return this.ladron.obtenerNombre();
+    }
 }

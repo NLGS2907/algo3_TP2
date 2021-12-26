@@ -25,7 +25,7 @@ public class Edificio {
         return this.tipo;
     }
 
-    public void visitar(Detective detective, int horas){
+    public void visitar(Detective detective){
         this.ladron.encontrar(detective);
     }
 

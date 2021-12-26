@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.excepciones.ExcepcionMapa;
 import edu.fiuba.algo3.modelo.detective.Detective;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -40,22 +41,33 @@ public class Mapa {
         detective.viajar(distancia);
     }
 
-    public Ciudad crearRutaDelLadron(int longitud) {
+    public Ciudad crearRutaDelLadron(int longitud, Ladron ladron) {
         for (Ciudad ciudad : ciudades) {
-            ciudad.establecerRutaDelLadron("Default");
+            ciudad.reiniciarCiudad();
         }
 
         Ciudad ciudadSiguiente = this.obtenerCiudadRandom();
         ciudadSiguiente.establecerRutaDelLadron("Final");
+        ciudadSiguiente.asignarLadron(ladron);
         Ciudad ciudadactual = null;
 
         for (int i = 0; i < longitud; i++) {
-            ciudadactual = obtenerCiudadRandom();
+            ciudadactual = obtenerCiudadRandom(ciudadSiguiente);
             ciudadactual.establecerRutaDelLadron(ciudadSiguiente.obtenerNombre());
             ciudadSiguiente = ciudadactual;
         }
 
         return ciudadactual;
+    }
+
+    private Ciudad obtenerCiudadRandom(Ciudad ciudadSiguiente) {
+        Random random = new Random(System.nanoTime());
+        Ciudad ciudadRandom = ciudades.get(random.nextInt(ciudades.size()));
+
+        while (!ciudadRandom.obtenerRutaDelLadron().equals("Default") || !adyacencias.get(ciudadRandom.obtenerNombre()).contains(ciudadSiguiente.obtenerNombre())) {
+            ciudadRandom = ciudades.get(random.nextInt(ciudades.size()));
+        }
+        return ciudadRandom;
     }
 
     private Ciudad obtenerCiudadRandom() {

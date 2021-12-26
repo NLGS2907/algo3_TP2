@@ -1,17 +1,17 @@
 package edu.fiuba.algo3.controlador.botones;
 
 import edu.fiuba.algo3.modelo.Juego;
-import edu.fiuba.algo3.modelo.pistas.DescripcionesDeCiudades;
+import edu.fiuba.algo3.vista.cajas.CajaLugarYFecha;
 import edu.fiuba.algo3.vista.contenedores.CuadroDialogo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-public class HandlerVerConexiones implements EventHandler<ActionEvent> {
-
+public class HandlerContinuar implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
-        System.out.println("VER ha sido apretado!");
+        System.out.println("continuar ha sido apretado!");
+        CajaLugarYFecha.obtenerInstancia().mostrarLugarYTiempo();
         CuadroDialogo.obtenerInstancia().getChildren().clear();
-        DescripcionesDeCiudades.obtenerInstancia().leerDescripcion(Juego.obtenerInstancia().ciudadActual().obtenerNombre());
+        Juego.obtenerInstancia().obtenerDetective().sanar();
     }
 }
