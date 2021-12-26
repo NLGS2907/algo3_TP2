@@ -8,7 +8,6 @@ public class HandlerInvestigar implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        System.out.println("INVESTIGAR ha sido apretado!");
         CuadroDialogo.obtenerInstancia().mostrarCiudad();
     }
 }

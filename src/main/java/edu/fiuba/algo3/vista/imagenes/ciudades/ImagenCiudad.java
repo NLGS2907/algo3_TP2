@@ -16,7 +16,6 @@ public class ImagenCiudad extends ImageView {
 
     public String getDirectorioImagen(String nombreImagen) {
         String directorioReal = "file:media/img/ciudades/" + nombreImagen + ".png";
-        System.out.println(directorioReal);
         return directorioReal;
     }
 }
