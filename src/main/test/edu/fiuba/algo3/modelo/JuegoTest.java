@@ -28,7 +28,7 @@ public class JuegoTest {
         Ciudad roma = Mapa.obtenerInstancia().obtenerCiudad("Roma");
         roma.establecerRutaDelLadron("Default");
         Juego.obtenerInstancia().establecerCiudadActual(montreal);
-        Fecha fecha = new Fecha (1,  14);
+        Fecha fecha = new Fecha (4,  14);
 
         Juego.obtenerInstancia().viajar(roma);
 

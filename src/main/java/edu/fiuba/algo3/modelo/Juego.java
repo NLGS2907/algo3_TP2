@@ -1,18 +1,21 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.computadora.Computadora;
+import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
 import edu.fiuba.algo3.modelo.detective.Detective;
 import edu.fiuba.algo3.modelo.detective.DetectiveNovato;
 
+import java.util.ArrayList;
 import java.util.Observable;
 
-public class Juego /*extends Observable*/ {
+public class Juego extends Observable {
 
 private static Juego instancia = null;
 
     private Detective detective;
     private Ciudad ciudadActual;
     private Computadora computadora;
+    //private
 
     public Juego(){
         this.detective = new DetectiveNovato();
@@ -45,10 +48,12 @@ private static Juego instancia = null;
 
     public void viajar(Ciudad destino){
         this.ciudadActual = this.ciudadActual.realizarViaje(destino, this.detective);
+
     }
 
-    public void emitirOrdenDeArresto(){
-        this.detective.emitirOrdenDeArresto(this.computadora);
+    public OrdenDeArresto emitirOrdenDeArresto(){
+        return this.detective.emitirOrdenDeArresto(this.computadora);
+
     }
 
     public void empezarNuevaMision(){
@@ -63,8 +68,20 @@ private static Juego instancia = null;
         return this.detective;
     }
 
+    public Computadora obtenerComputadora(){
+        return this.computadora;
+    }
+
     public String obtenerHorario() {
         return this.detective.obtenerFecha().mostrar();
+    }
+
+    public void estadoMision(){
+
+    }
+
+    private boolean seAcaboElTiempo(){
+        return !this.detective.verificarFechaLimite();
     }
 
     ////// TESTS //////

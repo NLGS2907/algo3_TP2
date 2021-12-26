@@ -12,7 +12,9 @@ import edu.fiuba.algo3.modelo.detective.cuchillazo.Cuchillazo;
 import edu.fiuba.algo3.modelo.detective.cuchillazo.SinAcuchillar;
 import edu.fiuba.algo3.modelo.Edificio;
 
-public abstract class Detective {
+import java.util.Observable;
+
+public abstract class Detective extends Observable {
     protected Reloj reloj;
     protected Cuchillazo cantidadDeCuchillazos;
     protected OrdenDeArresto ordenDeArresto;
@@ -32,21 +34,23 @@ public abstract class Detective {
 
     public void visitarEdificio(Edificio edificio, int horas){
         this.reloj.avanzarTiempo(horas);
-        edificio.visitar(this, horas);
+        edificio.visitar(this);
     }
 
     public Fecha obtenerFecha(){
         return this.reloj.obtenerFecha();
     }
     
-    public void emitirOrdenDeArresto(Computadora computadora) {
-        this.reloj.avanzarTiempo(3);
+    public OrdenDeArresto emitirOrdenDeArresto(Computadora computadora) {
         this.ordenDeArresto = computadora.emitirOrdenDeArresto();
+        this.reloj.avanzarTiempo(3);
+        return this.ordenDeArresto;
     }
 
     public Detective arrestarladron(Ladron ladron){
         if(this.ordenDeArresto.esPara(ladron)){
             this.incrementarArresto();
+            notifyObservers();
         }
         return this;
     }

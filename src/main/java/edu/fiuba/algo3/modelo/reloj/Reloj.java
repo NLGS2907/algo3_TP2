@@ -1,7 +1,8 @@
 package edu.fiuba.algo3.modelo.reloj;
 import java.time.LocalDateTime;
+import java.util.Observable;
 
-public class Reloj {
+public class Reloj extends Observable {
 
     private Fecha fecha;
     private final Fecha fechaLimite;
@@ -17,6 +18,7 @@ public class Reloj {
         if(auxiliar.conHora(22).esAntesDe(this.fecha)) {
             this.fecha = this.fecha.masHoras(8);
         }
+        notifyObservers();
     }
 
     public boolean verificarFechaLimite(){

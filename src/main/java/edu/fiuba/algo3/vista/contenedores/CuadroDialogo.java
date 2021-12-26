@@ -3,6 +3,10 @@ package edu.fiuba.algo3.vista.contenedores;
 import edu.fiuba.algo3.modelo.Ciudad;
 import edu.fiuba.algo3.modelo.Edificio;
 import edu.fiuba.algo3.modelo.Juego;
+import edu.fiuba.algo3.modelo.computadora.Computadora;
+import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
+import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenValida;
+import edu.fiuba.algo3.modelo.ladron.Caracteristica;
 import edu.fiuba.algo3.vista.animaciones.AnimacionTexto;
 import edu.fiuba.algo3.vista.contenedores.cuadros.CuadroNegro;
 import edu.fiuba.algo3.vista.etiquetas.Etiqueta;
@@ -48,6 +52,21 @@ public class CuadroDialogo extends CuadroNegro {
     public CuadroDialogo mostrarCiudad(){
         ArrayList<Edificio> edificios = Juego.obtenerInstancia().ciudadActual().obtenerEdificios();
         this.actualizarTodo(new BotonesEdificio(edificios));
+        return instancia;
+    }
+
+    public CuadroDialogo mostrarComputadora(){
+        Computadora computadora = Juego.obtenerInstancia().obtenerComputadora();
+        this.actualizarTodo(new MenuEmitirOrdenDeArresto(computadora));
+        return instancia;
+    }
+
+    public CuadroDialogo mostrarEstadoOrdenDeArresto(OrdenDeArresto ordenDeArresto){
+        if(ordenDeArresto.getClass() == OrdenValida.class)
+            mostrarMensaje("Se emitió exitosamente una orden de arresto para la\n" +
+                    " captura de " + ((OrdenValida) ordenDeArresto).obtenerNombreSospechoso() + ".");
+        else mostrarMensaje("No se pudo emitir una orden de arresto porque o \nno hay ningún sospechoso en la base de datos que\n" +
+                                " cumpla con las características elegidas, o hay 2 o\n más que las cumplen.");
         return instancia;
     }
 }
