@@ -75,7 +75,7 @@ public class DetectiveTest {
     public void test06VisitarAeropuertoTresVecesLa(){
         ContenedorDePistas.obtenerInstanciaTEST();
         boolean enCurso = true;
-        Detective detective = new DetectiveNovato();
+        Detective detective = new DetectiveTEST();
         Ciudad montreal = new Ciudad("Montreal");
         Ciudad siguiente = new Ciudad("Mexico");
         montreal.asignarSiguiente(siguiente);
@@ -122,7 +122,7 @@ public class DetectiveTest {
         Ladron ladron = new Sospechoso();
         bolsaConLadron.establecerLadron(ladron);
 
-        Detective detective = new DetectiveNovato();
+        Detective detective = new DetectiveTEST();
 
 
         detective.visitarEdificio(bolsaConLadron, 1);
@@ -146,7 +146,7 @@ public class DetectiveTest {
         Edificio bancoConLadron = new Edificio("Banco", "Financiero");
         bancoConLadron.establecerLadron(ladron);
 
-        Detective detective = new DetectiveNovato();
+        Detective detective = new DetectiveTEST();
         Ciudad siguienteCiudad = new Ciudad("Buenos Aires");
 
         Fecha fecha = new Fecha(4, 11);
