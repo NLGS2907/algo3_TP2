@@ -1,9 +1,9 @@
 {
   "pistasLadron": {
-    "Sexo": "El sospechoso es de sexo ",
-    "Hobby": "El sospechoso hace ",
-    "Cabello": "El sospechoso tiene cabello ",
-    "Seña": "El sospechoso llevaba ",
-    "Vehiculo": "Un mendigo vio al sospechoso en "
+    "Sexo": " El sospechoso es de sexo ",
+    "Hobby": " El sospechoso hace ",
+    "Cabello": " El sospechoso tiene cabello ",
+    "Seña": " El sospechoso llevaba ",
+    "Vehiculo": " Un mendigo vio al sospechoso en "
   }
 }

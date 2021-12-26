@@ -1,1 +1,27 @@
-
+{
+  "descripciones": {
+    "Peking": "Pekín, la enorme capital de China, tiene una historia que se remonta a 3 milenios. Aun así, es conocida tanto por su arquitectura moderna como por sus sitios antiguos, como el complejo de la Ciudad Prohibida, el palacio imperial durante las dinastías Ming y Qing.",
+    "Baghdad": "Bagdad es la capital y la ciudad más poblada de Irak. Su número de habitantes es de 8 765 000, lo que la convierte en la mayor ciudad del país y en la tercera del mundo árabe, solo por detrás de El Cairo y Riad.",
+    "Port Moresby": "Puerto Moresby es la capital de Papúa Nueva Guinea, y su mayor aglomeración de población contando su área metropolitana que se extiende por todo el Distrito Capital Nacional.",
+    "Sydney": "Sídney, capital de Nueva Gales del Sur y una de las ciudades más grandes de Australia, es famosa por su Casa de la Ópera de Sídney junto al puerto, con un característico diseño con forma de velas.",
+    "Estambul": "Estambul es una ciudad importante en Turquía, que se ubica en Europa y Asia a lo largo del estrecho de Bósforo.",
+    "London": "Londres, la capital de Inglaterra y del Reino Unido, es una ciudad del siglo XXI con una historia que se remonta a la época romana.",
+    "Bangkok": "Bangkok, la capital de Tailandia, es una extensa ciudad conocida por los santuarios ornamentados y la animada vida callejera.",
+    "Lima": "Lima es la capital de Perú ubicada en la árida costa del Pacífico del país.",
+    "Bamako": "Bamako o Bámako es la capital de Malí, se encuentra a orillas del río Níger en el sudoeste del país.",
+    "El Cairo": "El Cairo, la extensa capital de Egipto, se ubica en el río Nilo.",
+    "Mexico": "Ciudad de México es la densamente poblada capital de México que se encuentra a gran altura.",
+    "Athens": "Atenas es la capital de Grecia. También se encontraba en el centro de la Antigua Grecia, un poderoso imperio y civilización.",
+    "Singapore": "Singapur es una ciudad-Estado, por lo que su capital se considera la ciudad de Singapur.",
+    "Moscow": "Moscú se ubica en el río Moscova en Rusia occidental y es la capital cosmopolita de la nación.",
+    "Roma": "Roma, la capital de Italia, es una extensa ciudad cosmopolita que tiene a la vista casi 3,000 años de arte, arquitectura y cultura de influencia mundial.",
+    "Colombo": "Colombo es la ciudad más poblada de Sri Lanka y su capital comercial.",
+    "Kathmandu": "Katmandú, la capital de Nepal, se ubica en un valle rodeado por las montañas del Himalaya.",
+    "Buenos Aires": "Buenos Aires es la gran capital cosmopolita de Argentina.",
+    "Montreal": "Montreal es la ciudad más grande de la provincia de Quebec en Canadá.",
+    "Rio de Janeiro": "Río de Janeiro es una enorme ciudad costera de Brasil, famosa por sus playas de Copacabana e Ipanema.",
+    "New York": "Nueva York incluye 5 distritos que se ubican donde el río Hudson desemboca en el océano Atlántico.",
+    "Oslo": "Oslo, la capital de Noruega, se ubica en la costa sur del país en la cabecera del Fiordo de Oslo. ",
+    "Kigali": "Kigali es la capital de Ruanda, también su ciudad más poblada."
+  }
+}
