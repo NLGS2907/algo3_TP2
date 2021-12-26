@@ -14,33 +14,27 @@ public class ContenedorDePistas {
     private Map<String, PistasDeCiudad> pistas;
     private CalculadorPistaLadron calculadorPistaLadron;
 
-    private ContenedorDePistas(Map<String, PistasDeCiudad> pistas) {
-        this.pistas = pistas;
+    private ContenedorDePistas() {
         this.calculadorPistaLadron = new CalculadorPistaLadron();
-    }
-
-    public static void crearContenedorDePistas(Map<String, PistasDeCiudad> pistas) {
-        if (instancia == null) {
-            instancia = new ContenedorDePistas(pistas);
-        }
+        LectorDePistas lector = new LectorDePistas("src/main/java/edu/fiuba/algo3/config/pistas.json");
+        this.pistas = lector.cargarPistas();
     }
 
     public static ContenedorDePistas obtenerInstancia() throws ContenedorNoExiste {
         if (instancia == null) {
-            LectorDePistas lector = new LectorDePistas("src/main/java/edu/fiuba/algo3/config/pistas.json");
-            lector.cargarPistas();
+            instancia = new ContenedorDePistas();
         }
         return instancia;
     }
 
     public String leerPista(String dificultad, String ciudad, String tipoDeEdificio) {
-        String pistaEdificio =  pistas.get(dificultad).leerPista(ciudad, tipoDeEdificio);
+        String pistaEdificio = pistas.get(dificultad).leerPista(ciudad, tipoDeEdificio);
         return pistaEdificio;
     }
 
     public String leerPistaConLadron(String dificultad, String ciudad, String tipoDeEdificio) {
         String pistaEdificio =  pistas.get(dificultad).leerPista(ciudad, tipoDeEdificio);
-        return pistaEdificio; /*+ instancia.calculadorPistaLadron.calcularPistaLadron();*/
+        return pistaEdificio + this.calculadorPistaLadron.calcularPistaLadron();
     }
 
     public void cargarPistasLadron(Ladron ladron) {

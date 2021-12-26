@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.pistas.ContenedorDePistas;
 import edu.fiuba.algo3.modelo.pistas.PistasDeCiudad;
 import edu.fiuba.algo3.modelo.pistas.PistasDeEdificio;
 import org.json.simple.JSONObject;
@@ -20,7 +19,7 @@ public class LectorDePistas {
         this.filePath = filePath;
     }
 
-    public void cargarPistas() {
+    public Map<String, PistasDeCiudad> cargarPistas() {
         Map<String, PistasDeCiudad> contenedorDePistas = new HashMap<>();
         try {
             FileReader reader = new FileReader(this.filePath);
@@ -53,6 +52,6 @@ public class LectorDePistas {
             e.printStackTrace();
         }
 
-        ContenedorDePistas.crearContenedorDePistas(contenedorDePistas);
+        return contenedorDePistas;
     }
 }
