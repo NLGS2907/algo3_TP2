@@ -16,7 +16,7 @@ public class LectorDeDescripciones {
 
     final private String filePath;
 
-    LectorDeDescripciones(String filePath) {
+    public LectorDeDescripciones(String filePath) {
         this.filePath = filePath;
     }
 
