@@ -11,26 +11,26 @@ public class JuegoTest {
         Juego.obtenerInstancia().resetear();
 
         Ciudad mexico = Mapa.obtenerInstancia().obtenerCiudad("Mexico");
-        Ciudad rioDeJaneiro = Mapa.obtenerInstancia().obtenerCiudad("Rio de Janeiro");
-        rioDeJaneiro.establecerRutaDelLadron("Default");
+        Ciudad montreal = Mapa.obtenerInstancia().obtenerCiudad("Montreal");
+        montreal.establecerRutaDelLadron("Default");
         Juego.obtenerInstancia().establecerCiudadActual(mexico);
 
-        Juego.obtenerInstancia().viajar(rioDeJaneiro);
+        Juego.obtenerInstancia().viajar(montreal);
 
-        assertSame(Juego.obtenerInstancia().ciudadActual(), rioDeJaneiro);
+        assertSame(Juego.obtenerInstancia().ciudadActual(), montreal);
     }
 
     @Test
     public void test02ViajarDeMexicoARioDeJaneiroYElTiempoPasaCorrectamente(){
         Juego.obtenerInstancia().resetear();
 
-        Ciudad mexico = Mapa.obtenerInstancia().obtenerCiudad("Mexico");
-        Ciudad rioDeJaneiro = Mapa.obtenerInstancia().obtenerCiudad("Rio de Janeiro");
-        rioDeJaneiro.establecerRutaDelLadron("Default");
-        Juego.obtenerInstancia().establecerCiudadActual(mexico);
-        Fecha fecha = new Fecha (4,  17);
+        Ciudad montreal = Mapa.obtenerInstancia().obtenerCiudad("Montreal");
+        Ciudad roma = Mapa.obtenerInstancia().obtenerCiudad("Roma");
+        roma.establecerRutaDelLadron("Default");
+        Juego.obtenerInstancia().establecerCiudadActual(montreal);
+        Fecha fecha = new Fecha (1,  14);
 
-        Juego.obtenerInstancia().viajar(rioDeJaneiro);
+        Juego.obtenerInstancia().viajar(roma);
 
         assertTrue(Juego.obtenerInstancia().obtenerDetective().obtenerFecha().esIgualA(fecha));
     }
