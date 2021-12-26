@@ -6,6 +6,7 @@ import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.modelo.computadora.Computadora;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenValida;
+import edu.fiuba.algo3.modelo.estado.EstadoMision;
 import edu.fiuba.algo3.modelo.ladron.Caracteristica;
 import edu.fiuba.algo3.vista.animaciones.AnimacionTexto;
 import edu.fiuba.algo3.vista.contenedores.cuadros.CuadroNegro;
@@ -67,6 +68,30 @@ public class CuadroDialogo extends CuadroNegro {
                     " captura de " + ((OrdenValida) ordenDeArresto).obtenerNombreSospechoso() + ".");
         else mostrarMensaje("No se pudo emitir una orden de arresto porque o \nno hay ningún sospechoso en la base de datos que\n" +
                                 " cumpla con las características elegidas, o hay 2 o\n más que las cumplen.");
+        return instancia;
+    }
+
+    public CuadroDialogo update(){
+        String estadoMision = Juego.obtenerInstancia().estadoMision();
+
+        if(estadoMision == "Tiempo agotado"){
+            String mensaje;
+            //this.mostrarMensaje("Se acabó el tiempo.");
+            this.actualizarTodo(new MenuComenzarNuevaMision("Se acabó el tiempo."));
+        }
+
+        if(estadoMision == "Ladron atrapado"){
+            this.mostrarMensaje("atrapa3");
+        }
+
+        if(estadoMision == "Ladron escapo"){
+            this.mostrarMensaje("escapo");
+        }
+
+        if(estadoMision == "Sin mision"){
+            this.mostrarMensaje("sin mision");
+        }
+
         return instancia;
     }
 }

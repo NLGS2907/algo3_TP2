@@ -18,6 +18,8 @@ public class HandlerElegirCiudad implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionevent){
         Juego.obtenerInstancia().viajar(ciudad);
         CajaLugarYFecha.obtenerInstancia().mostrarLugarYTiempo();
-        CuadroDialogo.obtenerInstancia().getChildren().clear();
+        if(Juego.obtenerInstancia().estadoMision() == "En curso"){
+            CuadroDialogo.obtenerInstancia().getChildren().clear();
+        }
     }
 }

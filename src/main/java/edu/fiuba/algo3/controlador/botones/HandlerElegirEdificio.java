@@ -19,7 +19,9 @@ public class HandlerElegirEdificio implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionevent){
         String pista = Juego.obtenerInstancia().visitarEdificio(edificio);
         CajaLugarYFecha.obtenerInstancia().mostrarLugarYTiempo();
-        CuadroDialogo.obtenerInstancia().mostrarMensaje(pista);
+        if(Juego.obtenerInstancia().estadoMision() == "En curso") {
+            CuadroDialogo.obtenerInstancia().mostrarMensaje(pista);
+        }
     }
 }
 

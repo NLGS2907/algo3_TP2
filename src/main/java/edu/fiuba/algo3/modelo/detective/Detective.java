@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo.detective;
 
+import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.modelo.computadora.Computadora;
 import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
@@ -50,8 +51,13 @@ public abstract class Detective extends Observable {
     public Detective arrestarladron(Ladron ladron){
         if(this.ordenDeArresto.esPara(ladron)){
             this.incrementarArresto();
+            Juego.obtenerInstancia().ganarMision();
             notifyObservers();
+            return this;
         }
+
+        Juego.obtenerInstancia().ladronEscapo();
+        notifyObservers();
         return this;
     }
 
@@ -83,6 +89,10 @@ public abstract class Detective extends Observable {
 
     public String leerPista(String nombreCiudad, String tipoEdificio){
         return ContenedorDePistas.obtenerInstancia().leerPista(randomizador.generarDificultad(), nombreCiudad, tipoEdificio);
+    }
+
+    public void reiniciarReloj(){
+        this.reloj = new Reloj();
     }
 
     public int determinarLongitudMision(){

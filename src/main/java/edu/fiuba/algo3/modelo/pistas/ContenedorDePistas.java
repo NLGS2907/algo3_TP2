@@ -35,7 +35,7 @@ public class ContenedorDePistas {
 
     public String leerPista(String dificultad, String ciudad, String tipoDeEdificio) {
         String pistaEdificio =  pistas.get(dificultad).leerPista(ciudad, tipoDeEdificio);
-        return pistaEdificio; /*+ instancia.calculadorPistaLadron.calcularPistaLadron();*/
+        return pistaEdificio; //+ instancia.calculadorPistaLadron.calcularPistaLadron();
     }
 
     public void cargarPistasLadron(Ladron ladron) {
