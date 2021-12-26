@@ -47,6 +47,7 @@ public class DetectiveTest {
 
     @Test
     public void test04DetectiveNovatoComienzaEnMontrealVisitaEdificioYBlibloteca(){
+        ContenedorDePistas.obtenerInstancia().cargarPistasLadron(new Sospechoso());
         Detective detective = new DetectiveNovato();
         Ciudad montreal = new Ciudad("Montreal");
         Ciudad siguiente = new Ciudad("Mexico");
@@ -73,6 +74,7 @@ public class DetectiveTest {
 
     @Test
     public void test06VisitarAeropuertoTresVecesLa(){
+        ContenedorDePistas.obtenerInstancia().cargarPistasLadron(new Sospechoso());
         ContenedorDePistas.obtenerInstanciaTEST();
         boolean enCurso = true;
         Detective detective = new DetectiveTEST();
