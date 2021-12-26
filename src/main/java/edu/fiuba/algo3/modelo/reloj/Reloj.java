@@ -1,13 +1,12 @@
 package edu.fiuba.algo3.modelo.reloj;
 import edu.fiuba.algo3.modelo.Juego;
 
-import java.time.LocalDateTime;
 import java.util.Observable;
 
 public class Reloj extends Observable {
 
-    private Fecha fecha;
-    private final Fecha fechaLimite;
+    protected Fecha fecha;
+    protected final Fecha fechaLimite;
 
     public Reloj(){
         this.fecha = new Fecha(4, 7);
@@ -23,7 +22,6 @@ public class Reloj extends Observable {
         if(!verificarFechaLimite()){
 
             Juego.obtenerInstancia().tiempoAgotado();
-            notifyObservers();
         }
     }
 

@@ -1,8 +1,11 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.detective.Detective;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.ladron.NoLadron;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Ciudad {
 
@@ -29,6 +32,9 @@ public class Ciudad {
             this.contadorVisitas++;
         }
         detective.visitarEdificio(edificio, this.contadorVisitas);
+        if (this.estaEnLaRutaDelLadron()) {
+            return detective.leerPistaConLadron(ciudadRecorrido, edificio.obtenerTipo());
+        }
         return detective.leerPista(ciudadRecorrido, edificio.obtenerTipo());
     }
 
@@ -52,6 +58,26 @@ public class Ciudad {
         return !this.ciudadRecorrido.equals("Default");
     }
 
+    public void asignarLadron(Ladron ladron) {
+        Random random = new Random(System.nanoTime());
+        edificios.get(random.nextInt(edificios.size())).establecerLadron(ladron);
+    }
+
+    public void reiniciarCiudad() {
+        this.ciudadRecorrido = "Default";
+        for (Edificio edificio : edificios) {
+            edificio.establecerLadron(new NoLadron());
+        }
+    }
+
+    public Ciudad realizarViaje(Ciudad destino, Detective detective) {
+        Mapa.obtenerInstancia().realizarViaje(this, destino, detective);
+        if (destino.estaEnLaRutaDelLadron()) {
+            detective.recibirAtaque();
+        }
+        return destino;
+    }
+
     ////// VISTA //////
     public ArrayList<Ciudad> obtenerCiudadesAdyacentes() {
         return ciudadesAdyacentes;
@@ -60,15 +86,6 @@ public class Ciudad {
     ////// VISTA //////
     public ArrayList<Edificio> obtenerEdificios() {
         return edificios;
-    }
-
-    ////// TEST //////
-    public Ciudad realizarViaje(Ciudad destino, Detective detective) {
-        Mapa.obtenerInstancia().realizarViaje(this, destino, detective);
-        if (destino.estaEnLaRutaDelLadron()) {
-            detective.recibirAtaque();
-        }
-        return destino;
     }
 
     ////// TEST //////

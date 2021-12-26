@@ -4,10 +4,10 @@ import edu.fiuba.algo3.modelo.computadora.Computadora;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
 import edu.fiuba.algo3.modelo.detective.Detective;
 import edu.fiuba.algo3.modelo.detective.DetectiveNovato;
-import edu.fiuba.algo3.modelo.estado.*;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.pistas.ContenedorDePistas;
 import edu.fiuba.algo3.vista.contenedores.CuadroDialogo;
 
-import java.util.ArrayList;
 import java.util.Observable;
 
 public class Juego extends Observable {
@@ -18,12 +18,10 @@ private static Juego instancia = null;
     private Ciudad ciudadActual;
     private Computadora computadora;
     private String estadoMision;
-    //private
 
     public Juego(){
         this.detective = new DetectiveNovato();
         this.computadora = new Computadora();
-        //this.estadoMision = new SinMision();
         this.estadoMision = "Sin mision";
     }
 
@@ -62,31 +60,28 @@ private static Juego instancia = null;
     }
 
     public void empezarNuevaMision(){
-        this.ciudadActual = Mapa.obtenerInstancia().crearRutaDelLadron(detective.determinarLongitudMision());
-        //this.estadoMision = new EnCurso();
+        Ladron nuevoLadron = computadora.obtenerLadronRandom();
+        this.ciudadActual = Mapa.obtenerInstancia().crearRutaDelLadron(detective.determinarLongitudMision(), nuevoLadron);
+        ContenedorDePistas.obtenerInstancia().cargarPistasLadron(nuevoLadron);
+        computadora.reiniciar();
         this.estadoMision = "En curso";
         this.detective.reiniciarReloj();
         CuadroDialogo.obtenerInstancia().update();
     }
 
     public void ganarMision(){
-       // this.estadoMision = new LadronAtrapado();
         this.estadoMision = "Ladron atrapado";
         CuadroDialogo.obtenerInstancia().update();
     }
 
     public void ladronEscapo(){
-        //this.estadoMision = new LadronEscapo();
         this.estadoMision = "Ladron escapo";
         CuadroDialogo.obtenerInstancia().update();
-        //vista.update
     }
 
     public void tiempoAgotado(){
-        //this.estadoMision = new TiempoAgotado();
         this.estadoMision = "Tiempo agotado";
         CuadroDialogo.obtenerInstancia().update();
-        //vista.update
     }
 
     public String estadoMision(){
@@ -108,10 +103,6 @@ private static Juego instancia = null;
     public String obtenerHorario() {
         return this.detective.obtenerFecha().mostrar();
     }
-
-    //public void estadoMision(){
-
-   // }
 
     private boolean seAcaboElTiempo(){
         return !this.detective.verificarFechaLimite();

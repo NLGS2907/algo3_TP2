@@ -34,7 +34,7 @@ public class CalculadorPistaLadron {
             Caracteristica atributo = (Caracteristica) atributoEntry.getKey();
 
             if (pistasLadron.get(atributo.obtenerTipo()) != null) {
-                return pistasLadron.get(atributo.obtenerTipo()) + atributo.obtenerTipo();
+                return pistasLadron.get(atributo.obtenerTipo()) + atributo.obtenerValor();
             } else {
                 throw new TipoDeCaracteristicaInexistente("El ladron tiene una caracteristica invalida");
             }

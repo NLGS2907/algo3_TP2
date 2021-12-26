@@ -9,6 +9,6 @@ public class HandlerVerConexiones implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
         System.out.println("VER ha sido apretado!");
-        CuadroDialogo.obtenerInstancia().mostrarMensaje("");
+        CuadroDialogo.obtenerInstancia().getChildren().clear();
     }
 }

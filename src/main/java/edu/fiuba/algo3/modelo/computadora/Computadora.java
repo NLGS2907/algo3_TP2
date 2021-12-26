@@ -57,4 +57,12 @@ public class Computadora {
     public void agregarLadron(Ladron ladron){
         this.baseDeDatos.agregarLadron(ladron);
     }
+
+    public Ladron obtenerLadronRandom() {
+        return this.baseDeDatos.obtenerLadronRandom();
+    }
+
+    public void reiniciar() {
+        ladronGuardado = new Sospechoso();
+    }
 }
