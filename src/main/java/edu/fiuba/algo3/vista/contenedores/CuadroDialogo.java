@@ -6,11 +6,10 @@ import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.modelo.computadora.Computadora;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenValida;
-import edu.fiuba.algo3.modelo.estado.EstadoMision;
-import edu.fiuba.algo3.modelo.ladron.Caracteristica;
 import edu.fiuba.algo3.vista.animaciones.AnimacionTexto;
 import edu.fiuba.algo3.vista.contenedores.cuadros.CuadroNegro;
 import edu.fiuba.algo3.vista.etiquetas.Etiqueta;
+import edu.fiuba.algo3.vista.contenedores.cuadros.MenuHerida;
 import javafx.geometry.Pos;
 
 import java.util.ArrayList;
@@ -71,26 +70,40 @@ public class CuadroDialogo extends CuadroNegro {
         return instancia;
     }
 
+    public CuadroDialogo sufrirCuchillazo(){
+        this.actualizarTodo(new MenuHerida("Un secuaz del sospechoso te hirió con un cuchillo."));
+        //this.mostrarMensaje("Te Fakearon lobo");
+        return instancia;
+    }
+
+    public CuadroDialogo sufrirBalazo(){
+        this.actualizarTodo(new MenuHerida("El sospechoso te disparó."));
+       // this.mostrarMensaje("Recibiste un balazo");
+        return instancia;
+    }
+
     public CuadroDialogo update(){
         String estadoMision = Juego.obtenerInstancia().estadoMision();
 
+        String mensaje = "";
         if(estadoMision == "Tiempo agotado"){
-            String mensaje;
             //this.mostrarMensaje("Se acabó el tiempo.");
-            this.actualizarTodo(new MenuComenzarNuevaMision("Se acabó el tiempo."));
+            mensaje = "Se acabó el tiempo.";
         }
 
         if(estadoMision == "Ladron atrapado"){
-            this.mostrarMensaje("atrapa3");
+            mensaje = "atrapa3.";
         }
 
         if(estadoMision == "Ladron escapo"){
-            this.mostrarMensaje("escapo");
+            mensaje = "Se escapo.";
         }
 
         if(estadoMision == "Sin mision"){
-            this.mostrarMensaje("sin mision");
+            mensaje = "Sin misión.";
         }
+
+        this.actualizarTodo(new MenuComenzarNuevaMision(mensaje));
 
         return instancia;
     }

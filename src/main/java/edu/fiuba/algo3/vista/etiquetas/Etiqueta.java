@@ -8,14 +8,17 @@ public class Etiqueta extends Label {
 
     public Etiqueta(String titulo) {
         this(titulo, 12, "#ffffff", "file:fuentes/Minecraftia-Regular.ttf");
+        this.setWrapText(true);
     }
 
     public Etiqueta(String titulo, int tamanioFuente) {
         this(titulo, tamanioFuente, "#ffffff", "file:fuentes/Minecraftia-Regular.ttf");
+        this.setWrapText(true);
     }
 
     public Etiqueta(String titulo, int tamanioFuente, String color) {
         this(titulo, tamanioFuente, color, "file:fuentes/Minecraftia-Regular.ttf");
+        this.setWrapText(true);
     }
 
     public Etiqueta(String titulo, int tamanioFuente, String color, String pathFuente) {
@@ -23,5 +26,6 @@ public class Etiqueta extends Label {
         Font fuente = Font.loadFont(pathFuente, tamanioFuente);
         this.setFont(fuente);
         this.setTextFill(Paint.valueOf(color));
+        this.setWrapText(true);
     }
 }
