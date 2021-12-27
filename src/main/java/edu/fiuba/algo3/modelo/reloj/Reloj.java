@@ -1,10 +1,12 @@
 package edu.fiuba.algo3.modelo.reloj;
-import java.time.LocalDateTime;
+import edu.fiuba.algo3.modelo.Juego;
 
-public class Reloj {
+import java.util.Observable;
 
-    private Fecha fecha;
-    private final Fecha fechaLimite;
+public class Reloj extends Observable {
+
+    protected Fecha fecha;
+    protected final Fecha fechaLimite;
 
     public Reloj(){
         this.fecha = new Fecha(4, 7);
@@ -16,6 +18,10 @@ public class Reloj {
         this.fecha = this.fecha.masHoras(horas);
         if(auxiliar.conHora(22).esAntesDe(this.fecha)) {
             this.fecha = this.fecha.masHoras(8);
+        }
+        if(!verificarFechaLimite()){
+
+            Juego.obtenerInstancia().tiempoAgotado();
         }
     }
 

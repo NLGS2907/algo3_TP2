@@ -1,10 +1,10 @@
-package edu.fiuba.algo3.vista.botones;
+package edu.fiuba.algo3.vista.botones.acciones;
 
-import edu.fiuba.algo3.controlador.botones.HandlerInvestigar;
+import edu.fiuba.algo3.controlador.botones.acciones.HandlerInvestigar;
+import edu.fiuba.algo3.vista.botones.BotonBlanco;
 import edu.fiuba.algo3.vista.imagenes.botones.ImagenInvestigar;
-import javafx.scene.control.Button;
 
-public class BotonInvestigar extends Button {
+public class BotonInvestigar extends BotonBlanco {
 
     public BotonInvestigar() {
         super();

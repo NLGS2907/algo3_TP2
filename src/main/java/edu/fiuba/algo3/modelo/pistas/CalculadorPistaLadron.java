@@ -1,23 +1,24 @@
 package edu.fiuba.algo3.modelo.pistas;
 
+import edu.fiuba.algo3.modelo.LectorDePistasLadron;
 import edu.fiuba.algo3.modelo.ladron.Caracteristica;
 import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.excepciones.TipoDeCaracteristicaInexistente;
 
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
+import java.util.*;
 
 public class CalculadorPistaLadron {
 
     private ArrayList<AbstractMap.SimpleEntry<Caracteristica, Boolean>> atributosLadron;
     private Random random;
     private double probabilidadPistaLadron;
+    private Map<String, String> pistasLadron;
 
     CalculadorPistaLadron() {
         this.random = new Random(System.nanoTime());
         this.probabilidadPistaLadron = 0.30;
+        LectorDePistasLadron lector = new LectorDePistasLadron("src/main/java/edu/fiuba/algo3/config/pistasLadron.json");
+        this.pistasLadron = lector.cargarPistasLadron();
     }
 
     public String calcularPistaLadron () {
@@ -32,19 +33,12 @@ public class CalculadorPistaLadron {
             atributoEntry.setValue(true);
             Caracteristica atributo = (Caracteristica) atributoEntry.getKey();
 
-            if (atributo.obtenerTipo().equals("Sexo")) {
-                return "El sospechoso era de sexo " + atributo.obtenerValor();
-            } else if (atributo.obtenerTipo().equals("Hobby")) {
-                return "Se dice que al sospechoso le gusta " + atributo.obtenerValor();
-            } else if (atributo.obtenerTipo().equals("Cabello")) {
-                return "El cabello del sospechoso era " + atributo.obtenerValor();
-            } else if (atributo.obtenerTipo().equals("Seña")) {
-                return "El sujeto tenía " + atributo.obtenerValor();
-            } else if (atributo.obtenerTipo().equals("Vehiculo")) {
-                return "Un mendigo vio al sospechoso andando en un " + atributo.obtenerValor();
+            if (pistasLadron.get(atributo.obtenerTipo()) != null) {
+                return pistasLadron.get(atributo.obtenerTipo()) + atributo.obtenerValor();
             } else {
                 throw new TipoDeCaracteristicaInexistente("El ladron tiene una caracteristica invalida");
             }
+
         } else {
             return "";
         }

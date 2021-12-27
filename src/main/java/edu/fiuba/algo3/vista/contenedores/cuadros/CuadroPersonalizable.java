@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.vista.contenedores.cuadros;
 
-import edu.fiuba.algo3.vista.etiquetas.Etiqueta;
 import javafx.scene.Node;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.VBox;
@@ -12,6 +11,10 @@ public abstract class CuadroPersonalizable extends VBox {
     public CuadroPersonalizable() {
         super(0);
         this.setBorder(this.getTipoBorde());
+    }
+
+    public void limpiar() {
+        this.getChildren().clear();
     }
 
     public void agregar(Node elemento) {

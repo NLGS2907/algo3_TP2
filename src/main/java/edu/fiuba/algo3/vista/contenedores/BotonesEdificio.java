@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.vista.contenedores;
 
 import edu.fiuba.algo3.modelo.Edificio;
-import edu.fiuba.algo3.vista.botones.*;
+import edu.fiuba.algo3.vista.botones.contextuales.BotonElegirEdificio;
 import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
 
@@ -13,6 +13,6 @@ public class BotonesEdificio extends VBox {
         for (Edificio edificio : edificios) {
             this.getChildren().add(new BotonElegirEdificio(edificio));
         }
-        this.setAlignment(Pos.BOTTOM_CENTER);
+        this.setAlignment(Pos.TOP_LEFT);
     }
 }

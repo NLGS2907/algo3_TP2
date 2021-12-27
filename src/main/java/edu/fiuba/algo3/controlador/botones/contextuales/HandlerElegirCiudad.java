@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.controlador.botones;
+package edu.fiuba.algo3.controlador.botones.contextuales;
 
 import edu.fiuba.algo3.modelo.Ciudad;
 import edu.fiuba.algo3.modelo.Juego;
@@ -18,6 +18,8 @@ public class HandlerElegirCiudad implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionevent){
         Juego.obtenerInstancia().viajar(ciudad);
         CajaLugarYFecha.obtenerInstancia().mostrarLugarYTiempo();
-        CuadroDialogo.obtenerInstancia().getChildren().clear();
+        if(Juego.obtenerInstancia().estadoMision() == "En curso" && !Juego.obtenerInstancia().obtenerDetective().estaHerido()){
+            CuadroDialogo.obtenerInstancia().limpiar();
+        }
     }
 }

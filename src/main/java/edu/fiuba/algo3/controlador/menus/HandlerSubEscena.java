@@ -13,7 +13,11 @@ public abstract class HandlerSubEscena implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        SubEscenario subEscenario = new SubEscenario(this.getTitulo(), new MensajeAbout(this.getInfo()));
+        MensajeAbout mensajeAbout = new MensajeAbout(this.getInfo());
+        SubEscenario subEscenario = new SubEscenario(this.getTitulo(), mensajeAbout);
+        subEscenario.setOnHidden(e -> {
+            mensajeAbout.terminarAnimacion(); // Para que no siga actualizándose ni reproduciendo sonidos.
+        });
         subEscenario.show();
     }
 }

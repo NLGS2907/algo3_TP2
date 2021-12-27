@@ -23,5 +23,6 @@ public class Etiqueta extends Label {
         Font fuente = Font.loadFont(pathFuente, tamanioFuente);
         this.setFont(fuente);
         this.setTextFill(Paint.valueOf(color));
+        this.setWrapText(true);
     }
 }

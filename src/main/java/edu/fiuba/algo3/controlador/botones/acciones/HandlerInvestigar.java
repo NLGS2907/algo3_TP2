@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.controlador.botones;
+package edu.fiuba.algo3.controlador.botones.acciones;
 
 import edu.fiuba.algo3.vista.contenedores.CuadroDialogo;
 import javafx.event.ActionEvent;

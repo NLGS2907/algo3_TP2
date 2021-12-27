@@ -1,22 +1,28 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.computadora.Computadora;
+import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
 import edu.fiuba.algo3.modelo.detective.Detective;
 import edu.fiuba.algo3.modelo.detective.DetectiveNovato;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.pistas.ContenedorDePistas;
+import edu.fiuba.algo3.vista.contenedores.CuadroDialogo;
 
 import java.util.Observable;
 
-public class Juego /*extends Observable*/ {
+public class Juego extends Observable {
 
 private static Juego instancia = null;
 
     private Detective detective;
     private Ciudad ciudadActual;
     private Computadora computadora;
+    private String estadoMision;
 
     public Juego(){
         this.detective = new DetectiveNovato();
         this.computadora = new Computadora();
+        this.estadoMision = "Sin mision";
     }
 
     private static void crearJuego() {
@@ -45,14 +51,41 @@ private static Juego instancia = null;
 
     public void viajar(Ciudad destino){
         this.ciudadActual = this.ciudadActual.realizarViaje(destino, this.detective);
+
     }
 
-    public void emitirOrdenDeArresto(){
-        this.detective.emitirOrdenDeArresto(this.computadora);
+    public OrdenDeArresto emitirOrdenDeArresto(){
+        return this.detective.emitirOrdenDeArresto(this.computadora);
+
     }
 
     public void empezarNuevaMision(){
-        this.ciudadActual = Mapa.obtenerInstancia().crearRutaDelLadron(detective.determinarLongitudMision());
+        Ladron nuevoLadron = computadora.obtenerLadronRandom();
+        this.ciudadActual = Mapa.obtenerInstancia().crearRutaDelLadron(detective.determinarLongitudMision(), nuevoLadron);
+        ContenedorDePistas.obtenerInstancia().cargarPistasLadron(nuevoLadron);
+        computadora.reiniciar();
+        this.estadoMision = "En curso";
+        this.detective.reiniciarReloj();
+        CuadroDialogo.obtenerInstancia().update();
+    }
+
+    public void ganarMision(){
+        this.estadoMision = "Ladron atrapado";
+        CuadroDialogo.obtenerInstancia().update();
+    }
+
+    public void ladronEscapo(){
+        this.estadoMision = "Ladron escapo";
+        CuadroDialogo.obtenerInstancia().update();
+    }
+
+    public void tiempoAgotado(){
+        this.estadoMision = "Tiempo agotado";
+        CuadroDialogo.obtenerInstancia().update();
+    }
+
+    public String estadoMision(){
+        return this.estadoMision;
     }
 
     public Ciudad ciudadActual(){
@@ -63,8 +96,16 @@ private static Juego instancia = null;
         return this.detective;
     }
 
+    public Computadora obtenerComputadora(){
+        return this.computadora;
+    }
+
     public String obtenerHorario() {
         return this.detective.obtenerFecha().mostrar();
+    }
+
+    private boolean seAcaboElTiempo(){
+        return !this.detective.verificarFechaLimite();
     }
 
     ////// TESTS //////

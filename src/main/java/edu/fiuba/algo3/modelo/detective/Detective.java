@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo.detective;
 
+import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.modelo.computadora.Computadora;
 import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
@@ -11,10 +12,14 @@ import edu.fiuba.algo3.modelo.reloj.Reloj;
 import edu.fiuba.algo3.modelo.detective.cuchillazo.Cuchillazo;
 import edu.fiuba.algo3.modelo.detective.cuchillazo.SinAcuchillar;
 import edu.fiuba.algo3.modelo.Edificio;
+import edu.fiuba.algo3.vista.contenedores.CuadroDialogo;
 
-public abstract class Detective {
+import java.util.Observable;
+
+public abstract class Detective extends Observable {
     protected Reloj reloj;
     protected Cuchillazo cantidadDeCuchillazos;
+    protected boolean fueHerido;
     protected OrdenDeArresto ordenDeArresto;
     protected int cantidadDeArrestos;
     protected float velocidad;
@@ -24,6 +29,7 @@ public abstract class Detective {
         this.reloj = new Reloj();
         this.cantidadDeCuchillazos = new SinAcuchillar();
         this.ordenDeArresto = new OrdenInvalida();
+        this.fueHerido = false;
     }
 
     public boolean verificarFechaLimite(){
@@ -32,22 +38,30 @@ public abstract class Detective {
 
     public void visitarEdificio(Edificio edificio, int horas){
         this.reloj.avanzarTiempo(horas);
-        edificio.visitar(this, horas);
+        edificio.visitar(this);
     }
 
     public Fecha obtenerFecha(){
         return this.reloj.obtenerFecha();
     }
     
-    public void emitirOrdenDeArresto(Computadora computadora) {
-        this.reloj.avanzarTiempo(3);
+    public OrdenDeArresto emitirOrdenDeArresto(Computadora computadora) {
         this.ordenDeArresto = computadora.emitirOrdenDeArresto();
+        this.reloj.avanzarTiempo(3);
+        return this.ordenDeArresto;
     }
+
 
     public Detective arrestarladron(Ladron ladron){
         if(this.ordenDeArresto.esPara(ladron)){
             this.incrementarArresto();
+            Juego.obtenerInstancia().ganarMision();
+            //notifyObservers();
+            return this;
         }
+
+        Juego.obtenerInstancia().ladronEscapo();
+        //notifyObservers();
         return this;
     }
 
@@ -59,13 +73,19 @@ public abstract class Detective {
     }
 
     private void sufrirCuchillazo(float probabilidad){
-        if(probabilidad < 0.1)
+        if(probabilidad < 0.2){
+            this.fueHerido = true;
             this.cantidadDeCuchillazos = this.cantidadDeCuchillazos.acuchillar(this.reloj);
+            CuadroDialogo.obtenerInstancia().sufrirCuchillazo();
+        }
     }
 
     private void sufrirBalazo(float probabilidad){
-        if(probabilidad < 0.1)
+        if(probabilidad < 0.2){
+            this.fueHerido = true;
             this.reloj.avanzarTiempo(4);
+            CuadroDialogo.obtenerInstancia().sufrirBalazo();
+        }
     }
 
     public void recibirAtaque(){
@@ -81,6 +101,14 @@ public abstract class Detective {
         return ContenedorDePistas.obtenerInstancia().leerPista(randomizador.generarDificultad(), nombreCiudad, tipoEdificio);
     }
 
+    public String leerPistaConLadron(String nombreCiudad, String tipoEdificio){
+        return ContenedorDePistas.obtenerInstancia().leerPistaConLadron(randomizador.generarDificultad(), nombreCiudad, tipoEdificio);
+    }
+
+    public void reiniciarReloj(){
+        this.reloj = new Reloj();
+    }
+
     public int determinarLongitudMision(){
         if(this.cantidadDeArrestos < 5){
             return 3;
@@ -89,7 +117,17 @@ public abstract class Detective {
         } else return 7;
     }
 
+    public boolean estaHerido(){
+        return this.fueHerido;
+    }
+
+    public void sanar(){
+        this.fueHerido = false;
+    }
+
     public int obtenerContador() {
         return this.cantidadDeArrestos;
     }
+
+
 }

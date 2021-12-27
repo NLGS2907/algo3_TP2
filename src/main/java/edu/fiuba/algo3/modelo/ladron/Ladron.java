@@ -12,6 +12,7 @@ public abstract class Ladron {
     public Ladron(){
         this.nombre = "";
         caracteristicas = new ArrayList<Caracteristica>();
+        //caracteristicas.add(new Caracteristica("Nombre"));
         caracteristicas.add(new Caracteristica("Sexo"));
         caracteristicas.add(new Caracteristica("Hobby"));
         caracteristicas.add(new Caracteristica("Cabello"));
@@ -58,6 +59,14 @@ public abstract class Ladron {
     
     public void establecerVehiculo(String vehiculo){
         establecerCaracteristica("Vehiculo", vehiculo);
+    }
+
+    public ArrayList<Caracteristica> obtenerCaracteristicas(){
+        return caracteristicas;
+    }
+
+    public String obtenerNombre(){
+        return this.nombre;
     }
 
     public Caracteristica obtenerSexo(){

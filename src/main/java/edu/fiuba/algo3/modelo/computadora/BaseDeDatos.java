@@ -6,6 +6,7 @@ import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenInvalida;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenValida;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.stream.Stream;
 
 public class BaseDeDatos {
@@ -35,9 +36,15 @@ public class BaseDeDatos {
         return new OrdenInvalida();
     }
 
-    public void agregarLadron (Ladron ladronBuscado)
+    public void agregarLadron(Ladron ladronBuscado)
     {
         if(!buscarLadronIdentico(ladronBuscado))
             this.listaLadrones.add(ladronBuscado);
+    }
+
+    public Ladron obtenerLadronRandom()
+    {
+        Random random = new Random(System.nanoTime());
+        return listaLadrones.get(random.nextInt(listaLadrones.size()));
     }
 }
