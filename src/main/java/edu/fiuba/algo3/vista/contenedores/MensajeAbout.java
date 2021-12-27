@@ -8,15 +8,22 @@ import javafx.geometry.Pos;
 
 public class MensajeAbout extends CuadroNegro {
 
+    AnimacionTexto animacionTexto;
+
     public MensajeAbout(String mensajeAMostrar) {
         this(mensajeAMostrar, 12);
     }
 
     public MensajeAbout(String mensajeAMostrar, int tamanoFuente) {
         super();
-        Etiqueta mensajeAbout = new AnimacionTexto(mensajeAMostrar, tamanoFuente).getEtiqueta();
+        this.animacionTexto = new AnimacionTexto(mensajeAMostrar, tamanoFuente);
+        Etiqueta mensajeAbout = this.animacionTexto.getEtiqueta();
         this.agregar(mensajeAbout);
         this.setAlignment(Pos.TOP_LEFT);
         this.setPadding(new Insets(15));
+    }
+
+    public void terminarAnimacion() {
+        this.animacionTexto.terminar();
     }
 }

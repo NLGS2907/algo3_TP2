@@ -45,13 +45,15 @@ public class CuadroDialogo extends CuadroNegro {
 
     public CuadroDialogo desplegarPosiblesViajes(){
         ArrayList<Ciudad> ciudades = Juego.obtenerInstancia().ciudadActual().obtenerCiudadesAdyacentes();
-        this.actualizarTodo(new BotonesViajes(ciudades));
+        this.actualizarTodo(new AnimacionTexto("Seleccione la ciudad a la que quiere ir:").getEtiqueta(),
+                            new BotonesViajes(ciudades));
         return instancia;
     }
 
     public CuadroDialogo mostrarCiudad(){
         ArrayList<Edificio> edificios = Juego.obtenerInstancia().ciudadActual().obtenerEdificios();
-        this.actualizarTodo(new BotonesEdificio(edificios));
+        this.actualizarTodo(new AnimacionTexto("Seleccione el edificio que quiere investigar:").getEtiqueta(),
+                            new BotonesEdificio(edificios));
         return instancia;
     }
 

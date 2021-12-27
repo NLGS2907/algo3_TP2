@@ -1,10 +1,8 @@
 package edu.fiuba.algo3.vista.contenedores;
 
-import edu.fiuba.algo3.modelo.Edificio;
 import edu.fiuba.algo3.modelo.computadora.Computadora;
 import edu.fiuba.algo3.modelo.ladron.Caracteristica;
-import edu.fiuba.algo3.vista.botones.BotonElegirEdificio;
-import edu.fiuba.algo3.vista.botones.BotonEmitirOrdenDeArresto;
+import edu.fiuba.algo3.vista.botones.contextuales.BotonEmitirOrdenDeArresto;
 import edu.fiuba.algo3.vista.cajas.CajaCargarCaracteristica;
 import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;

@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.vista.contenedores;
 
-import edu.fiuba.algo3.vista.botones.BotonComenzarMision;
+import edu.fiuba.algo3.vista.botones.contextuales.BotonComenzarMision;
 import edu.fiuba.algo3.vista.etiquetas.Etiqueta;
 import javafx.scene.layout.VBox;
 
