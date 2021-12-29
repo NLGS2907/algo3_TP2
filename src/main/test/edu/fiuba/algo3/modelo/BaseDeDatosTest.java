@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 public class BaseDeDatosTest {
 
-    
+    @Test
     public void test01BuscarLadronMasculinoEnUnaListaConOtros2()
     {
         Ladron ladron1 = new Sospechoso();

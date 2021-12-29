@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.pistas;
 
-import edu.fiuba.algo3.modelo.LectorDePistas;
+import edu.fiuba.algo3.modelo.lectores.LectorDePistas;
 import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.ladron.Sospechoso;
 import edu.fiuba.algo3.modelo.excepciones.ContenedorNoExiste;

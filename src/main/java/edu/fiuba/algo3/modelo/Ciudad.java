@@ -42,7 +42,7 @@ public class Ciudad {
         this.edificios.add(edificio);
     }
 
-    void agregarRutaDeVuelo(Ciudad ciudad) {
+    public void agregarRutaDeVuelo(Ciudad ciudad) {
         ciudadesAdyacentes.add(ciudad);
     }
 

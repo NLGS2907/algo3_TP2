@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.pistas;
 
-import edu.fiuba.algo3.modelo.LectorDeDescripciones;
+import edu.fiuba.algo3.modelo.lectores.LectorDeDescripciones;
 
 import java.util.Map;
 

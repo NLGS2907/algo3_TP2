@@ -16,7 +16,7 @@ import edu.fiuba.algo3.vista.contenedores.CuadroDialogo;
 
 import java.util.Observable;
 
-public abstract class Detective extends Observable {
+public abstract class Detective{
     protected Reloj reloj;
     protected Cuchillazo cantidadDeCuchillazos;
     protected boolean fueHerido;
@@ -56,12 +56,10 @@ public abstract class Detective extends Observable {
         if(this.ordenDeArresto.esPara(ladron)){
             this.incrementarArresto();
             Juego.obtenerInstancia().ganarMision();
-            //notifyObservers();
             return this;
         }
 
         Juego.obtenerInstancia().ladronEscapo();
-        //notifyObservers();
         return this;
     }
 

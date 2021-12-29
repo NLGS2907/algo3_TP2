@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.pistas;
 
-import edu.fiuba.algo3.modelo.LectorDeTesoros;
+import edu.fiuba.algo3.modelo.lectores.LectorDeTesoros;
 import java.util.Map;
 
 public class ContenedorDeTesoros {

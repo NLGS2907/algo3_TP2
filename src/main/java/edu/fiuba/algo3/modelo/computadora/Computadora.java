@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.modelo.computadora;
 
-import edu.fiuba.algo3.modelo.LectorDeLadrones;
-import edu.fiuba.algo3.modelo.computadora.BaseDeDatos;
+import edu.fiuba.algo3.modelo.lectores.LectorDeLadrones;
 import edu.fiuba.algo3.modelo.ladron.Caracteristica;
 import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.ladron.Sospechoso;

@@ -1,5 +1,7 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.lectores;
 
+import edu.fiuba.algo3.modelo.Ciudad;
+import edu.fiuba.algo3.modelo.Edificio;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -10,15 +12,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MapReader {
+public class LectorDeMapa {
 
     final private String filePath;
 
-    MapReader(String filePath) {
+    public LectorDeMapa(String filePath) {
         this.filePath = filePath;
     }
 
-    Map<String, Map<String, Integer>> cargarDistancias() {
+    public Map<String, Map<String, Integer>> cargarDistancias() {
         final Map<String, Map<String, Integer>> distancias = new HashMap<>();
         try {
             FileReader reader = new FileReader(this.filePath);
@@ -45,7 +47,7 @@ public class MapReader {
         return distancias;
     }
 
-    ArrayList<Ciudad> cargarCiudades() {
+    public ArrayList<Ciudad> cargarCiudades() {
         ArrayList<Ciudad> ciudades = new ArrayList<>();
         try {
             FileReader reader = new FileReader(this.filePath);
@@ -84,7 +86,7 @@ public class MapReader {
         return ciudades;
     }
 
-    Map<String,ArrayList<String>> cargarAdyacencias() {
+    public Map<String,ArrayList<String>> cargarAdyacencias() {
         Map<String,ArrayList<String>> adyacencias = new HashMap<>();
         try {
             FileReader reader = new FileReader(this.filePath);

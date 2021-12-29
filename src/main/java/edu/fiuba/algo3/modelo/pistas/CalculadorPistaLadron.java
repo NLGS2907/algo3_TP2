@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.pistas;
 
-import edu.fiuba.algo3.modelo.LectorDePistasLadron;
+import edu.fiuba.algo3.modelo.lectores.LectorDePistasLadron;
 import edu.fiuba.algo3.modelo.ladron.Caracteristica;
 import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.excepciones.TipoDeCaracteristicaInexistente;
@@ -21,7 +21,7 @@ public class CalculadorPistaLadron {
         this.pistasLadron = lector.cargarPistasLadron();
     }
 
-    public String calcularPistaLadron () {
+    public String calcularPistaLadron () throws TipoDeCaracteristicaInexistente {
 
         if (random.nextFloat() < probabilidadPistaLadron) {
 

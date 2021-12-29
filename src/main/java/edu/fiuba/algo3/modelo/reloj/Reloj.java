@@ -1,9 +1,8 @@
 package edu.fiuba.algo3.modelo.reloj;
 import edu.fiuba.algo3.modelo.Juego;
+import edu.fiuba.algo3.modelo.excepciones.HorasInvalidas;
 
-import java.util.Observable;
-
-public class Reloj extends Observable {
+public class Reloj {
 
     protected Fecha fecha;
     protected final Fecha fechaLimite;
@@ -13,7 +12,10 @@ public class Reloj extends Observable {
         this.fechaLimite = new Fecha(10, 17);
     }
 
-    public void avanzarTiempo(int horas){
+    public void avanzarTiempo(int horas) throws HorasInvalidas {
+        if (horas < 0) {
+            throw new HorasInvalidas("Numero de horas negativo");
+        }
         Fecha auxiliar = this.fecha.masHoras(0);
         this.fecha = this.fecha.masHoras(horas);
         if(auxiliar.conHora(22).esAntesDe(this.fecha)) {
@@ -32,9 +34,4 @@ public class Reloj extends Observable {
     public Fecha obtenerFecha() {
         return this.fecha;
     }
-
-    public String mostrarFecha() {
-        return this.fecha.mostrar();
-    }
-
 }

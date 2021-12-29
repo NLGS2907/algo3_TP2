@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.lectores;
 
 import edu.fiuba.algo3.modelo.pistas.PistasDeCiudad;
 import edu.fiuba.algo3.modelo.pistas.PistasDeEdificio;

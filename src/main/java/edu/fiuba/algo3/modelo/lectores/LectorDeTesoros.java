@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.lectores;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
