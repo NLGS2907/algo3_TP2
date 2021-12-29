@@ -2,6 +2,7 @@ package edu.fiuba.algo3.vista.contenedores;
 
 import edu.fiuba.algo3.modelo.Ciudad;
 import edu.fiuba.algo3.modelo.Edificio;
+import edu.fiuba.algo3.modelo.EstadoJuego;
 import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.modelo.computadora.Computadora;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
@@ -79,7 +80,6 @@ public class CuadroDialogo extends CuadroNegro {
 
     public CuadroDialogo sufrirCuchillazo(){
         this.actualizarTodo(new MenuHerida("Un secuaz del sospechoso te hirió con un cuchillo."));
-        //this.mostrarMensaje("Te Fakearon lobo");
         return instancia;
     }
 
@@ -90,23 +90,22 @@ public class CuadroDialogo extends CuadroNegro {
     }
 
     public CuadroDialogo update(){
-        String estadoMision = Juego.obtenerInstancia().estadoMision();
-
+        EstadoJuego estadoMision = Juego.obtenerInstancia().estadoMision();
         String mensaje = "";
-        if(estadoMision == "Tiempo agotado"){
-            //this.mostrarMensaje("Se acabó el tiempo.");
+
+        if(estadoMision == EstadoJuego.TIEMPO_AGOTADO){
             mensaje = "Se acabó el tiempo! Se perdió el rastro del ladrón.";
         }
 
-        if(estadoMision == "Ladron atrapado"){
+        else if(estadoMision == EstadoJuego.LADRON_ATRAPADO){
             mensaje = "Felicidades! Capturaste al sospechoso y el tesoro está siendo regresado a su lugar de origen.";
         }
 
-        if(estadoMision == "Ladron escapo"){
+        else if(estadoMision == EstadoJuego.LADRON_ESCAPO){
             mensaje = "Atrapaste al ladrón pero como no tenías una orden de arresto para él, salió en libertad..";
         }
 
-        if(estadoMision == "Sin mision"){
+        else if(estadoMision == EstadoJuego.SIN_MISION){
             mensaje = "Sin misión.";
         }
 

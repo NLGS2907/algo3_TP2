@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.controlador.botones.contextuales;
 
 import edu.fiuba.algo3.modelo.Edificio;
+import edu.fiuba.algo3.modelo.EstadoJuego;
 import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.vista.cajas.CajaLugarYFecha;
 import edu.fiuba.algo3.vista.contenedores.CuadroDialogo;
@@ -19,7 +20,7 @@ public class HandlerElegirEdificio implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionevent){
         String pista = Juego.obtenerInstancia().visitarEdificio(edificio);
         CajaLugarYFecha.obtenerInstancia().mostrarLugarYTiempo();
-        if(Juego.obtenerInstancia().estadoMision() == "En curso") {
+        if(Juego.obtenerInstancia().estadoMision() == EstadoJuego.EN_CURSO) {
             CuadroDialogo.obtenerInstancia().mostrarMensaje(pista);
         }
     }

@@ -8,7 +8,6 @@ public class HandlerComputadora implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        System.out.println("COMPUTADORA ha sido apretado!");
         CuadroDialogo.obtenerInstancia().mostrarComputadora();
     }
 }

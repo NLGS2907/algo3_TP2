@@ -11,9 +11,8 @@ import javafx.event.EventHandler;
 public class HandlerComenzarMision implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
-        String descripcion = DescripcionesDeCiudades.obtenerInstancia().leerDescripcion(Juego.obtenerInstancia().ciudadActual().obtenerNombre());
-        System.out.println("comenzarmision ha sido apretado!");
         Juego.obtenerInstancia().empezarNuevaMision();
+        String descripcion = DescripcionesDeCiudades.obtenerInstancia().leerDescripcion(Juego.obtenerInstancia().ciudadActual().obtenerNombre());
         CajaLugarYFecha.obtenerInstancia().mostrarLugarYTiempo();
         CuadroDialogo.obtenerInstancia().actualizarTodo(new AnimacionTexto(descripcion).getEtiqueta());
     }

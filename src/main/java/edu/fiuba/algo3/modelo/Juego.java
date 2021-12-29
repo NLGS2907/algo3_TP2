@@ -17,12 +17,12 @@ private static Juego instancia = null;
     private Detective detective;
     private Ciudad ciudadActual;
     private Computadora computadora;
-    private String estadoMision;
+    private EstadoJuego estadoMision;
 
     public Juego(){
         this.detective = new DetectiveNovato();
         this.computadora = new Computadora();
-        this.estadoMision = "Sin mision";
+        this.estadoMision = EstadoJuego.SIN_MISION;
     }
 
     private static void crearJuego() {
@@ -64,27 +64,27 @@ private static Juego instancia = null;
         this.ciudadActual = Mapa.obtenerInstancia().crearRutaDelLadron(detective.determinarLongitudMision(), nuevoLadron);
         ContenedorDePistas.obtenerInstancia().cargarPistasLadron(nuevoLadron);
         computadora.reiniciar();
-        this.estadoMision = "En curso";
+        this.estadoMision = EstadoJuego.EN_CURSO;
         this.detective.reiniciarReloj();
         CuadroDialogo.obtenerInstancia().update();
     }
 
     public void ganarMision(){
-        this.estadoMision = "Ladron atrapado";
+        this.estadoMision = EstadoJuego.LADRON_ATRAPADO;
         CuadroDialogo.obtenerInstancia().update();
     }
 
     public void ladronEscapo(){
-        this.estadoMision = "Ladron escapo";
+        this.estadoMision = EstadoJuego.LADRON_ESCAPO;
         CuadroDialogo.obtenerInstancia().update();
     }
 
     public void tiempoAgotado(){
-        this.estadoMision = "Tiempo agotado";
+        this.estadoMision = EstadoJuego.TIEMPO_AGOTADO;
         CuadroDialogo.obtenerInstancia().update();
     }
 
-    public String estadoMision(){
+    public EstadoJuego estadoMision(){
         return this.estadoMision;
     }
 

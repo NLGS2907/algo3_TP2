@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modelo.pistas;
 
 import edu.fiuba.algo3.modelo.lectores.LectorDePistasLadron;
-import edu.fiuba.algo3.modelo.ladron.Caracteristica;
+import edu.fiuba.algo3.modelo.ladron.caracteristica.Caracteristica;
 import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.excepciones.TipoDeCaracteristicaInexistente;
 
@@ -23,25 +23,23 @@ public class CalculadorPistaLadron {
 
     public String calcularPistaLadron () throws TipoDeCaracteristicaInexistente {
 
-        if (random.nextFloat() < probabilidadPistaLadron) {
+        if (random.nextFloat() >= probabilidadPistaLadron) {
 
-            if (atributosLadron.stream().filter(element -> !(element.getValue())).count() == 0) {
-                atributosLadron.stream().forEach(element -> element.setValue(false));
-            }
-
-            AbstractMap.SimpleEntry atributoEntry = atributosLadron.stream().filter(element -> !(element.getValue())).findFirst().get();
-            atributoEntry.setValue(true);
-            Caracteristica atributo = (Caracteristica) atributoEntry.getKey();
-
-            if (pistasLadron.get(atributo.obtenerTipo()) != null) {
-                return pistasLadron.get(atributo.obtenerTipo()) + atributo.obtenerValor();
-            } else {
-                throw new TipoDeCaracteristicaInexistente("El ladron tiene una caracteristica invalida");
-            }
-
-        } else {
             return "";
         }
+
+        if (atributosLadron.stream().filter(element -> !(element.getValue())).count() == 0) {
+            atributosLadron.stream().forEach(element -> element.setValue(false));
+        }
+
+        AbstractMap.SimpleEntry atributoEntry = atributosLadron.stream().filter(element -> !(element.getValue())).findFirst().get();
+        atributoEntry.setValue(true);
+        Caracteristica atributo = (Caracteristica) atributoEntry.getKey();
+
+        if (pistasLadron.get(atributo.obtenerNombreTipo()) != null) {
+            return pistasLadron.get(atributo.obtenerNombreTipo()) + atributo.obtenerValor();
+        }
+        throw new TipoDeCaracteristicaInexistente("El ladron tiene una caracteristica invalida");
     }
 
     public void cargarAtributos(Ladron ladron) {
