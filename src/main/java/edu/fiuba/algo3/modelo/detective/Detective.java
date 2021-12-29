@@ -73,26 +73,29 @@ public abstract class Detective extends Observable {
     }
 
     private void sufrirCuchillazo(float probabilidad){
-        if(probabilidad < 0.2){
+        if(probabilidad < 0.3){
             this.fueHerido = true;
             this.cantidadDeCuchillazos = this.cantidadDeCuchillazos.acuchillar(this.reloj);
-            CuadroDialogo.obtenerInstancia().sufrirCuchillazo();
         }
     }
 
     private void sufrirBalazo(float probabilidad){
-        if(probabilidad < 0.2){
+        if(probabilidad < 0.3){
             this.fueHerido = true;
             this.reloj.avanzarTiempo(4);
-            CuadroDialogo.obtenerInstancia().sufrirBalazo();
         }
     }
 
     public void recibirAtaque(){
         float probabilidad = this.randomizador.generarProbabilidad();
-        if(probabilidad < 0.3)
+        if(probabilidad < 0.3){
+            CuadroDialogo.obtenerInstancia().sufrirBalazo();
             this.sufrirBalazo(probabilidad);
-        else this.sufrirCuchillazo(probabilidad);
+        }
+        else{
+            CuadroDialogo.obtenerInstancia().sufrirCuchillazo();
+            this.sufrirCuchillazo(probabilidad);
+        }
     }
 
     public abstract Detective incrementarArresto();
@@ -129,5 +132,7 @@ public abstract class Detective extends Observable {
         return this.cantidadDeArrestos;
     }
 
-
+    public String rango(){
+        return this.getClass().getSimpleName();
+    }
 }

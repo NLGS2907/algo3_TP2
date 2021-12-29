@@ -13,7 +13,7 @@ public class LectorDeTesoros {
 
     private String filePath;
 
-    LectorDeTesoros(String filePath) {
+    public LectorDeTesoros(String filePath) {
         this.filePath = filePath;
     }
 

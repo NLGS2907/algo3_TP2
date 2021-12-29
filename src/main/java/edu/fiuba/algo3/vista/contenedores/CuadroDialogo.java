@@ -43,6 +43,11 @@ public class CuadroDialogo extends CuadroNegro {
         return instancia;
     }
 
+    public CuadroDialogo empezarJuego(){
+        this.actualizarTodo(new MenuComenzarJuego());
+        return instancia;
+    }
+
     public CuadroDialogo desplegarPosiblesViajes(){
         ArrayList<Ciudad> ciudades = Juego.obtenerInstancia().ciudadActual().obtenerCiudadesAdyacentes();
         this.actualizarTodo(new AnimacionTexto("Seleccione la ciudad a la que quiere ir:").getEtiqueta(),
@@ -90,15 +95,15 @@ public class CuadroDialogo extends CuadroNegro {
         String mensaje = "";
         if(estadoMision == "Tiempo agotado"){
             //this.mostrarMensaje("Se acabó el tiempo.");
-            mensaje = "Se acabó el tiempo.";
+            mensaje = "Se acabó el tiempo! Se perdió el rastro del ladrón.";
         }
 
         if(estadoMision == "Ladron atrapado"){
-            mensaje = "atrapa3.";
+            mensaje = "Felicidades! Capturaste al sospechoso y el tesoro está siendo regresado a su lugar de origen.";
         }
 
         if(estadoMision == "Ladron escapo"){
-            mensaje = "Se escapo.";
+            mensaje = "Atrapaste al ladrón pero como no tenías una orden de arresto para él, salió en libertad..";
         }
 
         if(estadoMision == "Sin mision"){
