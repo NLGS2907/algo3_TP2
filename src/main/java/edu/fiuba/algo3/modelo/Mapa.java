@@ -1,8 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.excepciones.ExcepcionMapa;
+import edu.fiuba.algo3.modelo.excepciones.RutaInexistente;
 import edu.fiuba.algo3.modelo.detective.Detective;
 import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.lectores.LectorDeMapa;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -17,10 +18,10 @@ public class Mapa {
     private Map<String,ArrayList<String>> adyacencias;
 
     private Mapa() {
-        MapReader mapReader = new MapReader("src/main/java/edu/fiuba/algo3/config/ciudades.json");
-        this.distancias = mapReader.cargarDistancias();
-        this.ciudades = mapReader.cargarCiudades();
-        this.adyacencias = mapReader.cargarAdyacencias();
+        LectorDeMapa lectorDeMapa = new LectorDeMapa("src/main/java/edu/fiuba/algo3/config/ciudades.json");
+        this.distancias = lectorDeMapa.cargarDistancias();
+        this.ciudades = lectorDeMapa.cargarCiudades();
+        this.adyacencias = lectorDeMapa.cargarAdyacencias();
     }
 
     private static void crearMapa() {
@@ -80,18 +81,11 @@ public class Mapa {
         return ciudadRandom;
     }
 
-    int calcularDistanciaEntre(Ciudad ciudadOrigen, Ciudad ciudadDestino) throws ExcepcionMapa {
+    int calcularDistanciaEntre(Ciudad ciudadOrigen, Ciudad ciudadDestino) throws RutaInexistente {
         if (distancias.get(ciudadOrigen.obtenerNombre()).get(ciudadDestino.obtenerNombre()) == null) {
-            throw new ExcepcionMapa("Ruta inexistente");
+            throw new RutaInexistente("Ruta inexistente");
         }
         return distancias.get(ciudadOrigen.obtenerNombre()).get(ciudadDestino.obtenerNombre());
-    }
-
-    public int calcularDistanciaEntre(String ciudadOrigen, String ciudadDestino) {
-        if (distancias.get(ciudadOrigen).get(ciudadDestino) == null) {
-            throw new ExcepcionMapa("Ruta inexistente");
-        }
-        return distancias.get(ciudadOrigen).get(ciudadDestino);
     }
 
     ////// TEST //////

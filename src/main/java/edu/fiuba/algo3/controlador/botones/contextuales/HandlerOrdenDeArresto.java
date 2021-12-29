@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.controlador.botones.contextuales;
 
 import edu.fiuba.algo3.modelo.Edificio;
+import edu.fiuba.algo3.modelo.EstadoJuego;
 import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
 import edu.fiuba.algo3.vista.cajas.CajaLugarYFecha;
@@ -14,7 +15,7 @@ public class HandlerOrdenDeArresto implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionevent){
         OrdenDeArresto ordenDeArresto = Juego.obtenerInstancia().emitirOrdenDeArresto();
         CajaLugarYFecha.obtenerInstancia().mostrarLugarYTiempo();
-        if(Juego.obtenerInstancia().estadoMision() == "En curso") {
+        if(Juego.obtenerInstancia().estadoMision() == EstadoJuego.EN_CURSO) {
             CuadroDialogo.obtenerInstancia().mostrarEstadoOrdenDeArresto(ordenDeArresto);
         }
     }

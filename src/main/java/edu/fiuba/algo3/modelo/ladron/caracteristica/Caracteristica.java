@@ -1,29 +1,29 @@
-package edu.fiuba.algo3.modelo.ladron;
+package edu.fiuba.algo3.modelo.ladron.caracteristica;
 
 public class Caracteristica {
 
-    private String tipo;
+    private TipoCaracteristica tipo;
     private String valor;
 
     Caracteristica()
     {
-        this.tipo = "";
+        this.tipo = TipoCaracteristica.SIN_CARACTERISTICA;
         this.valor = "";
     }
 
-    public Caracteristica(String tipo)
+    public Caracteristica(TipoCaracteristica tipo)
     {
         this.tipo = tipo;
         this.valor = "";
     }
 
-    public Caracteristica(String tipo, String valor)
+    public Caracteristica(TipoCaracteristica tipo, String valor)
     {
         this.tipo = tipo;
         this.valor = valor;
     }
 
-    public void establecerTipo(String tipo)
+    public void establecerTipo(TipoCaracteristica tipo)
     {
         this.tipo = tipo;
     }
@@ -35,7 +35,7 @@ public class Caracteristica {
 
     public boolean compararTipo(Caracteristica caracteristicaAComparar)
     {
-        return (this.tipo.equalsIgnoreCase(caracteristicaAComparar.tipo));
+        return (this.tipo == (caracteristicaAComparar.tipo));
     }
 
     public boolean compararValor(Caracteristica caracteristicaAComparar)
@@ -68,11 +68,14 @@ public class Caracteristica {
         return esSimilar;
     }
 
-    //?!
-    public String obtenerTipo(){
+    public TipoCaracteristica obtenerTipo(){
         return this.tipo;
     }
-    //NO SE USA
+
+    public String obtenerNombreTipo() {
+        return this.tipo.name();
+    }
+
     public String obtenerValor(){
         return this.valor;
     }

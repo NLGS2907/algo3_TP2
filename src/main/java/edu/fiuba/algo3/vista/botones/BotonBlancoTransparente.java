@@ -3,23 +3,23 @@ package edu.fiuba.algo3.vista.botones;
 import edu.fiuba.algo3.vista.bordes.BordeBlanco;
 import javafx.scene.layout.BorderImage;
 
-public class BotonBlanco extends BotonDeColor {
+public class BotonBlancoTransparente extends BotonDeColor {
 
-    public BotonBlanco() {
+    public BotonBlancoTransparente() {
         super("", true);
     }
 
-    public BotonBlanco(String titulo) {
+    public BotonBlancoTransparente(String titulo) {
         super(titulo, true);
     }
 
-    public BotonBlanco(String titulo, boolean conBorde) {
+    public BotonBlancoTransparente(String titulo, boolean conBorde) {
         super(titulo, conBorde);
     }
 
     @Override
     public String getColorFondo() {
-        return "#ffffff";
+        return "transparent";
     }
 
     @Override

@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.controlador.caracteristicas;
 
-import edu.fiuba.algo3.modelo.Juego;
-import edu.fiuba.algo3.modelo.ladron.Caracteristica;
+import edu.fiuba.algo3.modelo.ladron.caracteristica.Caracteristica;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 

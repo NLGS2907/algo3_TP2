@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.modelo.ladron;
 
 import edu.fiuba.algo3.modelo.detective.Detective;
+import edu.fiuba.algo3.modelo.ladron.caracteristica.Caracteristica;
+import edu.fiuba.algo3.modelo.ladron.caracteristica.TipoCaracteristica;
 
 import java.util.ArrayList;
 
@@ -12,15 +14,14 @@ public abstract class Ladron {
     public Ladron(){
         this.nombre = "";
         caracteristicas = new ArrayList<Caracteristica>();
-        //caracteristicas.add(new Caracteristica("Nombre"));
-        caracteristicas.add(new Caracteristica("Sexo"));
-        caracteristicas.add(new Caracteristica("Hobby"));
-        caracteristicas.add(new Caracteristica("Cabello"));
-        caracteristicas.add(new Caracteristica("Seña"));
-        caracteristicas.add(new Caracteristica("Vehiculo"));
+        for (TipoCaracteristica tipo: TipoCaracteristica.values()) {
+            if (tipo != TipoCaracteristica.SIN_CARACTERISTICA) {
+                this.caracteristicas.add(new Caracteristica(tipo));
+            }
+        }
     }
 
-    private void establecerCaracteristica(String tipo, String valor){
+    private void establecerCaracteristica(TipoCaracteristica tipo, String valor){
         Caracteristica caracteristicaAuxiliar = new Caracteristica(tipo, valor);
         caracteristicas.stream().filter(elemento -> elemento.compararTipo(caracteristicaAuxiliar)).forEach(elemento -> elemento.establecerValor(valor));
     }
@@ -42,23 +43,23 @@ public abstract class Ladron {
     }
 
     public void establecerSexo(String sexo){
-        establecerCaracteristica("Sexo", sexo);
+        establecerCaracteristica(TipoCaracteristica.SEXO, sexo);
     }
 
     public void establecerHobby(String hobby){
-        establecerCaracteristica("Hobby", hobby);
+        establecerCaracteristica(TipoCaracteristica.HOBBY, hobby);
     }
 
     public void establecerCabello(String cabello){
-        establecerCaracteristica("Cabello", cabello);
+        establecerCaracteristica(TipoCaracteristica.CABELLO, cabello);
     }
 
     public void establecerSenia(String senia){
-        establecerCaracteristica("Seña", senia);
+        establecerCaracteristica(TipoCaracteristica.SENIA, senia);
     }
     
     public void establecerVehiculo(String vehiculo){
-        establecerCaracteristica("Vehiculo", vehiculo);
+        establecerCaracteristica(TipoCaracteristica.VEHICULO, vehiculo);
     }
 
     public ArrayList<Caracteristica> obtenerCaracteristicas(){
@@ -70,29 +71,28 @@ public abstract class Ladron {
     }
 
     public Caracteristica obtenerSexo(){
-        Caracteristica caracteristicaAuxiliar = new Caracteristica("Sexo", "nada");
+        Caracteristica caracteristicaAuxiliar = new Caracteristica(TipoCaracteristica.SEXO, "nada");
         return this.caracteristicas.stream().filter(elemento -> elemento.compararTipo(caracteristicaAuxiliar)).findFirst().get();
     }
     public Caracteristica obtenerHobby(){
-        Caracteristica caracteristicaAuxiliar = new Caracteristica("Hobby", "nada");
+        Caracteristica caracteristicaAuxiliar = new Caracteristica(TipoCaracteristica.HOBBY, "nada");
         return this.caracteristicas.stream().filter(elemento -> elemento.compararTipo(caracteristicaAuxiliar)).findFirst().get();
     }
 
     public Caracteristica obtenerCabello(){
-        Caracteristica caracteristicaAuxiliar = new Caracteristica("Cabello", "nada");
+        Caracteristica caracteristicaAuxiliar = new Caracteristica(TipoCaracteristica.CABELLO, "nada");
         return this.caracteristicas.stream().filter(elemento -> elemento.compararTipo(caracteristicaAuxiliar)).findFirst().get();
     }
 
     public Caracteristica obtenerSenia(){
-        Caracteristica caracteristicaAuxiliar = new Caracteristica("Seña", "nada");
+        Caracteristica caracteristicaAuxiliar = new Caracteristica(TipoCaracteristica.SENIA, "nada");
         return this.caracteristicas.stream().filter(elemento -> elemento.compararTipo(caracteristicaAuxiliar)).findFirst().get();
     }
 
     public Caracteristica obtenerVehiculo(){
-        Caracteristica caracteristicaAuxiliar = new Caracteristica("Vehiculo", "nada");
+        Caracteristica caracteristicaAuxiliar = new Caracteristica(TipoCaracteristica.VEHICULO, "nada");
         return this.caracteristicas.stream().filter(elemento -> elemento.compararTipo(caracteristicaAuxiliar)).findFirst().get();
     }
-
 
     public boolean esSimilarA(Ladron ladron){
         long cantidadMismatches = this.caracteristicas.stream().filter(elemento -> !buscarCaracteristicaSimilarEnLadron(ladron.caracteristicas,elemento)).count();

@@ -18,7 +18,7 @@
       },
       "New York": {
         "Financiero": "El ladrón compró dólares.",
-        "Biblioteca": "En el piso habia una entrada de un partido de los knicks.",
+        "Biblioteca": "En el piso habia una entrada de un partido de los Knicks.",
         "Transporte": "El ladrón tenía una bandera azul, blanca y roja."
       },
       "Buenos Aires": {
@@ -53,8 +53,8 @@
       },
       "Estambul": {
         "Financiero": "El ladrón compró liras.",
-        "Biblioteca": "xd",
-        "Transporte": "El ladrón tenía una bandera roja y blanca."
+        "Biblioteca": "Se llevo una revista sobre el imperio Bizantino.",
+        "Transporte": "Vi que pasaban una novela turca por la televisión y el sospechoso la entendía sin leer los subtítulos."
       }
     },
     "Media": {
@@ -69,49 +69,49 @@
         "Transporte": "Se dice que el sospechoso se vio por la ciudad"
       },
       "Montreal": {
-        "Financiero": "",
-        "Biblioteca": "Se fue con un libro sobre arces",
-        "Transporte": ""
+        "Financiero": "Hizo un escándalo en el mercado local porque no vendían jarabe de maple.",
+        "Biblioteca": "Se fue con un libro sobre arces.",
+        "Transporte": "En el UBER se olvidó un abrigo de invierno."
       },
       "New York": {
-        "Financiero": "",
-        "Biblioteca": "",
-        "Transporte": ""
+        "Financiero": "Lo vieron hablando con un conocido corredor de bolsa.",
+        "Biblioteca": "Mencionó que iba a un país con elecciones políticas optativas.",
+        "Transporte": "Estuvo tomando lecciones de inglés."
       },
       "Buenos Aires": {
-        "Financiero": "",
-        "Biblioteca": "",
-        "Transporte": ""
+        "Financiero": "Hizo arreglos por teléfono para comprar varias toneladas de soja.",
+        "Biblioteca": "Se le cayó una entrada para un evento de tango.",
+        "Transporte": "Arregló reservas en un hotel que tenía un nombre en español."
       },
       "Mexico": {
-        "Financiero": "",
-        "Biblioteca": "",
-        "Transporte": ""
+        "Financiero": "Pasó en tres ocasiones distintas por el supermercado y se llevó solo tortillas.",
+        "Biblioteca": "Creo que se robó un libro de historia Maya.",
+        "Transporte": "Arregló reservas en un hotel que tenía un nombre en español."
       },
       "Rio de Janeiro": {
-        "Financiero": "xd",
-        "Biblioteca": "xd",
-        "Transporte": "xd"
+        "Financiero": "Preguntó en donde podía conseguir camisetas de Fluminense.",
+        "Biblioteca": "Dijo que se moría de ganas de jugar al futbol.",
+        "Transporte": "Insultó es portugués a un motociclista que le tocó bocina."
       },
       "El Cairo": {
-        "Financiero": "a",
-        "Biblioteca": "s",
-        "Transporte": "a"
+        "Financiero": "Dejó un recibo de alquiler de camellos.",
+        "Biblioteca": "Investigo acerca de la longitud exacta del río Nilo.",
+        "Transporte": "El sospechoso habló en árabe con un contrabandista."
       },
       "Oslo": {
-        "Financiero": "s",
-        "Biblioteca": "a",
-        "Transporte": "s"
+        "Financiero": "Tenía la billetera llena de Coronas.",
+        "Biblioteca": "Se dirige a un país relativamente poco poblado.",
+        "Transporte": "Lo escuché hablando por teléfono en lo que parecía ser algún dialecto nórdico, o ruso tal vez."
       },
       "Roma": {
-        "Financiero": "a",
-        "Biblioteca": "s",
-        "Transporte": "a"
+        "Financiero": "Compró una salsa de tomate muy específica para lo que iba a cocinar al mediodía.",
+        "Biblioteca": "Simpatizaba bastante con dictadores de la segunda guerra mundial.",
+        "Transporte": "Dijo que no podía esparar a viajar para poder probar unos quesos y vinos tradicionales que les habían recomendado."
       },
       "Estambul": {
-        "Financiero": "xd",
-        "Biblioteca": "xd",
-        "Transporte": "xd"
+        "Financiero": "Le compró un turbante a un vendedor ambulante.",
+        "Biblioteca": "Tuvo problemas con su VISA por que se dirige a un país que está en más de un continente a la vez.",
+        "Transporte": "El auto del ladrón tenía una bandera roja y blanca."
       }
     },
     "Dificil": {
@@ -126,52 +126,50 @@
         "Transporte": "Se dice que el sospechoso se vio por la ciudad"
       },
       "Montreal": {
-        "Financiero": "",
-        "Biblioteca": "",
-        "Transporte": ""
+        "Financiero": "El sospechoso sobornó a un policía que lo descubrió traficando canola.",
+        "Biblioteca": "Repetía una y otra vez la sigla CHL, no se que signifique.",
+        "Transporte": "Habló con un familiar suyo en francés."
       },
       "New York": {
-        "Financiero": "",
-        "Biblioteca": "",
-        "Transporte": ""
+        "Financiero": "Lo vi devolviendo una película de cowboys.",
+        "Biblioteca": "Dijo que extrañaba las hamburguesas con queso que solía comer.",
+        "Transporte": "Parecía ser un entusiasta del baseball, tenía una gorra de un equipo conocido."
       },
       "Buenos Aires": {
-        "Financiero": "",
-        "Biblioteca": "",
-        "Transporte": ""
+        "Financiero": "Rechazó un postre que le ofrecieron porque no tenía 'dulce de leche'.",
+        "Biblioteca": "Dijo que se moría de ganas de jugar al futbol.",
+        "Transporte": "Reservó un vuelo con llegada al Aeropuerto Internacional Ministro Pistarini."
       },
       "Mexico": {
-        "Financiero": "",
-        "Biblioteca": "",
-        "Transporte": ""
+        "Financiero": "Lo escuché hablando de falsificar un cuadro de Frida Khalo.",
+        "Biblioteca": "Creo que se robó un libro de historia Maya.",
+        "Transporte": "Se olvidó un disco de Julieta Venegas en el taxi."
       },
       "Rio de Janeiro": {
-        "Financiero": "xd",
-        "Biblioteca": "xd",
-        "Transporte": "xd"
+        "Financiero": "Compró lentes de sol y dos pares de sandalias de la marca más cara que encontró.",
+        "Biblioteca": "Se le cayó una bolsa con dinero y se llegó a ver que en el piso tamién habiá una entrada a una exposición de capoeira.",
+        "Transporte": "Lo vi pasar con un tucán en una jaula."
       },
       "El Cairo": {
-        "Financiero": "xd",
-        "Biblioteca": "xd",
-        "Transporte": "xd"
+        "Financiero": "Dejó un recibo de alquiler de camellos.",
+        "Biblioteca": "En los archivos de la biblioteca figura que hizo una búsqueda sobre de libros según la palabra clave: 'Osiris'.",
+        "Transporte": "Se postró en el medio de la terminal de trenes para realizar lo que parecía ser algpun tipo de oración."
       },
       "Oslo": {
-        "Financiero": "xd",
-        "Biblioteca": "xd",
-        "Transporte": "xd"
+        "Financiero": "El país al que se dirige es un pionero de las energías renovables.",
+        "Biblioteca": "Se escuchó que el país al que iba tiene una sola zona horaria.",
+        "Transporte": "Contrató un guía para que cuando llegue a su destino lo acompañe por su navegación programada del mar del Norte."
       },
       "Roma": {
-        "Financiero": "xd",
-        "Biblioteca": "xd",
-        "Transporte": "xd"
+        "Financiero": "Dijo que el fernet local era mucho peor que el del lugar al que se dirigía.",
+        "Biblioteca": "Preguntó por libros sobre tácticas de guerra antiguas.",
+        "Transporte": "Se despidió de un sacerdote local con un gesto extraño y un proverbio en latín."
       },
       "Estambul": {
-        "Financiero": "xd",
-        "Biblioteca": "Preguntó donde adoptar un gato.",
-        "Transporte": "xd"
+        "Financiero": "Estaba con ansias de visitar la basílica de Santa Sofía.",
+        "Biblioteca": "Preguntó sobre donde adoptar un gato.",
+        "Transporte": "Habló por teléfono en un lenguaje que no reconocí. No era español."
       }
-
-
     }
   }
 }

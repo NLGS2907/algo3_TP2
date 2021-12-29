@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.lectores;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -9,24 +9,24 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LectorDeTesoros {
+public class LectorDePistasLadron {
 
     private String filePath;
 
-    LectorDeTesoros(String filePath) {
+    public LectorDePistasLadron(String filePath) {
         this.filePath = filePath;
     }
 
-    public Map<String, String> cargarTesoros() {
-        Map<String, String> tesoros = new HashMap<>();
+    public Map<String, String> cargarPistasLadron() {
+        Map<String, String> pistasLadron = new HashMap<>();
         try {
             FileReader reader = new FileReader(this.filePath);
             JSONParser mapParser = new JSONParser();
             JSONObject jsonObject = (JSONObject) mapParser.parse(reader);
-            JSONObject tesorosJSON = (JSONObject) jsonObject.get("tesoros");
+            JSONObject pistasLadronJSON = (JSONObject) jsonObject.get("pistasLadron");
 
-            tesorosJSON.keySet().forEach(element -> {
-                tesoros.put(element.toString(), tesorosJSON.get(element).toString());
+            pistasLadronJSON.keySet().forEach(element -> {
+                pistasLadron.put(element.toString(), pistasLadronJSON.get(element).toString());
             });
 
         } catch (IOException e) {
@@ -34,6 +34,6 @@ public class LectorDeTesoros {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return tesoros;
+        return pistasLadron;
     }
 }
