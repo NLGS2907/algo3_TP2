@@ -7,6 +7,7 @@ import edu.fiuba.algo3.vista.cajas.CajaLugarYFecha;
 import edu.fiuba.algo3.vista.contenedores.CuadroDialogo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.media.AudioClip;
 
 public class HandlerVer implements EventHandler<ActionEvent> {
 
@@ -15,5 +16,7 @@ public class HandlerVer implements EventHandler<ActionEvent> {
         String descripcion = DescripcionesDeCiudades.obtenerInstancia().leerDescripcion(Juego.obtenerInstancia().ciudadActual().obtenerNombre());
         CuadroDialogo.obtenerInstancia().actualizarTodo(new AnimacionTexto(descripcion).getEtiqueta());
         CajaLugarYFecha.obtenerInstancia().mostrarLugarYTiempo();
+        AudioClip audioClip = new AudioClip("file:media/sfx/botonVer.mp3");
+        audioClip.play();
     }
 }

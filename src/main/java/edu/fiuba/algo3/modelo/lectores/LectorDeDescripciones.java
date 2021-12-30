@@ -1,8 +1,5 @@
 package edu.fiuba.algo3.modelo.lectores;
 
-import edu.fiuba.algo3.modelo.ladron.Ladron;
-import edu.fiuba.algo3.modelo.ladron.Sospechoso;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;

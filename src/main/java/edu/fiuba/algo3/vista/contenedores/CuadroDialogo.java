@@ -9,8 +9,8 @@ import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenValida;
 import edu.fiuba.algo3.vista.animaciones.AnimacionTexto;
 import edu.fiuba.algo3.vista.contenedores.cuadros.CuadroNegro;
-import edu.fiuba.algo3.vista.etiquetas.Etiqueta;
 import edu.fiuba.algo3.vista.contenedores.cuadros.MenuHerida;
+import edu.fiuba.algo3.vista.etiquetas.Etiqueta;
 import javafx.geometry.Pos;
 
 import java.util.ArrayList;

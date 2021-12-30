@@ -24,7 +24,7 @@ public class AnimacionTexto extends AnimationTimer {
         this.indiceActual = 0;
         this.etiqueta = new Etiqueta(this.textoOriginal, tamanio);
         this.audioClip = new AudioClip("file:media/sfx/apretarTecla.mp3");
-        this.audioClip.setRate(2.0);
+        this.audioClip.setRate(4.5);
         this.audioClip.setCycleCount(AudioClip.INDEFINITE);
         if (auto_start) {
             this.empezar();

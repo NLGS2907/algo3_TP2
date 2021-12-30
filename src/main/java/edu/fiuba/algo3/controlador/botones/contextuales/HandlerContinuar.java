@@ -5,7 +5,6 @@ import edu.fiuba.algo3.modelo.pistas.DescripcionesDeCiudades;
 import edu.fiuba.algo3.vista.animaciones.AnimacionTexto;
 import edu.fiuba.algo3.vista.cajas.CajaLugarYFecha;
 import edu.fiuba.algo3.vista.contenedores.CuadroDialogo;
-import edu.fiuba.algo3.vista.contenedores.LocacionYFecha;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 

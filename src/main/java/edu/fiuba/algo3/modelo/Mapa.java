@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.excepciones.RutaInexistente;
 import edu.fiuba.algo3.modelo.detective.Detective;
+import edu.fiuba.algo3.modelo.excepciones.RutaInexistente;
 import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.lectores.LectorDeMapa;
 

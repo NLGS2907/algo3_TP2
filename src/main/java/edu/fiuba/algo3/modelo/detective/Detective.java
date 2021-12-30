@@ -1,20 +1,18 @@
 package edu.fiuba.algo3.modelo.detective;
 
+import edu.fiuba.algo3.modelo.Edificio;
 import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.modelo.computadora.Computadora;
-import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenInvalida;
-import edu.fiuba.algo3.modelo.pistas.ContenedorDePistas;
-import edu.fiuba.algo3.modelo.detective.randomizador.Randomizador;
-import edu.fiuba.algo3.modelo.reloj.Fecha;
-import edu.fiuba.algo3.modelo.reloj.Reloj;
 import edu.fiuba.algo3.modelo.detective.cuchillazo.Cuchillazo;
 import edu.fiuba.algo3.modelo.detective.cuchillazo.SinAcuchillar;
-import edu.fiuba.algo3.modelo.Edificio;
+import edu.fiuba.algo3.modelo.detective.randomizador.Randomizador;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.pistas.ContenedorDePistas;
+import edu.fiuba.algo3.modelo.reloj.Fecha;
+import edu.fiuba.algo3.modelo.reloj.Reloj;
 import edu.fiuba.algo3.vista.contenedores.CuadroDialogo;
-
-import java.util.Observable;
 
 public abstract class Detective{
     protected Reloj reloj;

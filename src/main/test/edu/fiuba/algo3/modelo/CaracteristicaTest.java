@@ -1,11 +1,11 @@
 package edu.fiuba.algo3.modelo;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import edu.fiuba.algo3.modelo.ladron.caracteristica.Caracteristica;
 import edu.fiuba.algo3.modelo.ladron.caracteristica.TipoCaracteristica;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CaracteristicaTest {
     

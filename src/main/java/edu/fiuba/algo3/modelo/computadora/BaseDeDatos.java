@@ -1,9 +1,9 @@
 package edu.fiuba.algo3.modelo.computadora;
 
-import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenInvalida;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenValida;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
 
 import java.util.ArrayList;
 import java.util.Random;
