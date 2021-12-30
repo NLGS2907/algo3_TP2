@@ -27,10 +27,10 @@ public class BaseDeDatos {
     {
         Stream<Ladron> listaFiltrada =  this.listaLadrones.stream().filter(elemento->elemento.esSimilarA(ladronBuscado));
         
-        long cantidadSospechosos = listaFiltrada.count();
+        long cantidadDeCoincidencias = listaFiltrada.count();
         listaFiltrada =  this.listaLadrones.stream().filter(elemento->elemento.esSimilarA(ladronBuscado));
 
-        if(cantidadSospechosos == 1){
+        if(cantidadDeCoincidencias == 1){
             return new OrdenValida(listaFiltrada.findFirst().get());
         }
         return new OrdenInvalida();
