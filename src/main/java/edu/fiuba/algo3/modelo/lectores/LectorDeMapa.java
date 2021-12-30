@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class LectorDeMapa {
 
@@ -58,13 +59,7 @@ public class LectorDeMapa {
 
             ciudadesOrigenJSON.keySet().forEach(ciudadOrigen -> {
                 Ciudad origen = new Ciudad(ciudadOrigen.toString());
-
-                /* Leer nombres de edificios */
-                origen.agregarEdificio(new Edificio("Banco", "Financiero"));
-                origen.agregarEdificio(new Edificio("Biblioteca", "Biblioteca"));
-                origen.agregarEdificio(new Edificio("Aeropuerto", "Transporte"));
-                /* - - - */
-
+                cargarEdificios(origen);
                 ciudades.add(origen);
             });
 
@@ -84,6 +79,23 @@ public class LectorDeMapa {
         }
 
         return ciudades;
+    }
+
+    private void cargarEdificios(Ciudad ciudad) {
+        Random random = new Random(System.nanoTime());
+        if (random.nextFloat() < 0.5) {
+            ciudad.agregarEdificio(new Edificio("Banco", "Financiero"));
+        } else {
+            ciudad.agregarEdificio(new Edificio("Bolsa", "Financiero"));
+        }
+
+        ciudad.agregarEdificio(new Edificio("Biblioteca", "Biblioteca"));
+
+        if (random.nextFloat() < 0.5){
+            ciudad.agregarEdificio(new Edificio("Aeropuerto", "Transporte"));
+        } else {
+            ciudad.agregarEdificio(new Edificio("Puerto", "Transporte"));
+        }
     }
 
     public Map<String,ArrayList<String>> cargarAdyacencias() {
