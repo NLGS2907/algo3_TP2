@@ -100,10 +100,6 @@ private static Juego instancia = null;
         return this.detective.obtenerFecha().mostrar();
     }
 
-    private boolean seAcaboElTiempo(){
-        return !this.detective.verificarFechaLimite();
-    }
-
     ////// TESTS //////
     public void establecerCiudadActual(Ciudad ciudad){
         this.ciudadActual = ciudad;

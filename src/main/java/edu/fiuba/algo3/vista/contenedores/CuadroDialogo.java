@@ -85,7 +85,6 @@ public class CuadroDialogo extends CuadroNegro {
 
     public CuadroDialogo sufrirBalazo(){
         this.actualizarTodo(new MenuHerida("El sospechoso te disparó."));
-       // this.mostrarMensaje("Recibiste un balazo");
         return instancia;
     }
 
