@@ -6,7 +6,7 @@ import edu.fiuba.algo3.modelo.Edificio;
 
 public class BotonElegirEdificio extends BotonNegro {
     public BotonElegirEdificio(Edificio edificio) {
-        super("-\t" + edificio.obtenerTipo());
+        super("-\t" + edificio.obtenerNombre());
         this.setOnAction(new HandlerElegirEdificio(edificio));
     }
 }

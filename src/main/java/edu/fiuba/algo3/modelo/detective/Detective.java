@@ -65,11 +65,6 @@ public abstract class Detective{
 
     public abstract void viajar(int distancia);
 
-    public void viajarACiudadConLadron(int distancia){
-        this.cantidadDeCuchillazos = this.cantidadDeCuchillazos.acuchillar(this.reloj);
-        this.reloj.avanzarTiempo((int) Math.round(distancia/this.velocidad));
-    }
-
     private void sufrirCuchillazo(){
         float probabilidad = this.randomizador.generarProbabilidad();
         if(probabilidad < 0.3){
@@ -118,6 +113,11 @@ public abstract class Detective{
         } else if(this.cantidadDeArrestos < 10){
             return 5;
         } else return 7;
+    }
+
+    public void viajarACiudadConLadron(int distancia){
+        this.cantidadDeCuchillazos = this.cantidadDeCuchillazos.acuchillar(this.reloj);
+        this.reloj.avanzarTiempo((int) Math.round(distancia/this.velocidad));
     }
 
     public boolean estaHerido(){

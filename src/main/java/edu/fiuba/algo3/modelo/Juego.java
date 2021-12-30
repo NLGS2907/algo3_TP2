@@ -10,7 +10,7 @@ import edu.fiuba.algo3.vista.contenedores.CuadroDialogo;
 
 import java.util.Observable;
 
-public class Juego extends Observable {
+public class Juego{
 
 private static Juego instancia = null;
 

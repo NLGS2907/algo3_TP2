@@ -25,6 +25,10 @@ public class Edificio {
         return this.tipo;
     }
 
+    public String obtenerNombre(){
+        return this.nombre;
+    }
+
     public void visitar(Detective detective){
         this.ladron.encontrar(detective);
     }
