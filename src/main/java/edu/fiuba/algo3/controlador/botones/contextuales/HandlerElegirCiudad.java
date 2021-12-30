@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.controlador.botones.contextuales;
 
-import edu.fiuba.algo3.controlador.botones.acciones.HandlerVer;
 import edu.fiuba.algo3.modelo.Ciudad;
 import edu.fiuba.algo3.modelo.EstadoJuego;
 import edu.fiuba.algo3.modelo.Juego;

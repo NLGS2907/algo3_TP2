@@ -1,8 +1,5 @@
 package edu.fiuba.algo3.vista.contenedores.cuadros;
 
-import edu.fiuba.algo3.vista.animaciones.AnimacionTexto;
-import edu.fiuba.algo3.vista.cajas.CajaLugarYFecha;
-import edu.fiuba.algo3.vista.contenedores.CuadroDialogo;
 import edu.fiuba.algo3.vista.etiquetas.Etiqueta;
 import edu.fiuba.algo3.vista.botones.contextuales.BotonContinuar;
 import javafx.scene.layout.VBox;

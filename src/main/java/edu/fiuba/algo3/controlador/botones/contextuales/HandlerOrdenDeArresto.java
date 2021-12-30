@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.controlador.botones.contextuales;
 
-import edu.fiuba.algo3.modelo.Edificio;
 import edu.fiuba.algo3.modelo.EstadoJuego;
 import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
