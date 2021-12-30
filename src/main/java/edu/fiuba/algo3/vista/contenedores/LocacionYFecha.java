@@ -30,9 +30,16 @@ public class LocacionYFecha extends CuadroNegro {
         return instancia;
     }
 
-    public LocacionYFecha mostrarLugarYTiempo(){
+    public LocacionYFecha mostrarLugarYTiempo() {
         this.lugar.reiniciar(Juego.obtenerInstancia().ciudadActual().obtenerNombre());
         this.tiempo.reiniciar(Juego.obtenerInstancia().obtenerHorario());
+        this.setAlignment(Pos.TOP_CENTER);
+        return instancia;
+    }
+
+    public LocacionYFecha mostrarCuartelGeneral() {
+        this.lugar.reiniciar("Cuartel General");
+        this.tiempo.reiniciar("");
         this.setAlignment(Pos.TOP_CENTER);
         return instancia;
     }
