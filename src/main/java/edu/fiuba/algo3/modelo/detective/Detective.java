@@ -70,14 +70,16 @@ public abstract class Detective{
         this.reloj.avanzarTiempo((int) Math.round(distancia/this.velocidad));
     }
 
-    private void sufrirCuchillazo(float probabilidad){
+    private void sufrirCuchillazo(){
+        float probabilidad = this.randomizador.generarProbabilidad();
         if(probabilidad < 0.3){
             this.fueHerido = true;
             this.cantidadDeCuchillazos = this.cantidadDeCuchillazos.acuchillar(this.reloj);
         }
     }
 
-    private void sufrirBalazo(float probabilidad){
+    private void sufrirBalazo(){
+        float probabilidad = this.randomizador.generarProbabilidad();
         if(probabilidad < 0.3){
             this.fueHerido = true;
             this.reloj.avanzarTiempo(4);
@@ -88,11 +90,11 @@ public abstract class Detective{
         float probabilidad = this.randomizador.generarProbabilidad();
         if(probabilidad < 0.3){
             CuadroDialogo.obtenerInstancia().sufrirBalazo();
-            this.sufrirBalazo(probabilidad);
+            this.sufrirBalazo();
         }
         else{
             CuadroDialogo.obtenerInstancia().sufrirCuchillazo();
-            this.sufrirCuchillazo(probabilidad);
+            this.sufrirCuchillazo();
         }
     }
 
