@@ -50,15 +50,13 @@ public abstract class Detective{
     }
 
 
-    public Detective arrestarladron(Ladron ladron){
+    public void arrestarladron(Ladron ladron){
         if(this.ordenDeArresto.esPara(ladron)){
-            this.incrementarArresto();
+            Juego.obtenerInstancia().asignarDetective(this.incrementarArresto());
             Juego.obtenerInstancia().ganarMision();
-            return this;
         }
 
         Juego.obtenerInstancia().ladronEscapo();
-        return this;
     }
 
     public abstract void viajar(int distancia);
@@ -113,6 +111,10 @@ public abstract class Detective{
         } else return 7;
     }
 
+    public String rango(){
+        return this.getClass().getSimpleName().substring(9);
+    }
+
     public void viajarACiudadConLadron(int distancia){
         this.cantidadDeCuchillazos = this.cantidadDeCuchillazos.acuchillar(this.reloj);
         this.reloj.avanzarTiempo((int) Math.round(distancia/this.velocidad));
@@ -128,9 +130,5 @@ public abstract class Detective{
 
     public int obtenerContador() {
         return this.cantidadDeArrestos;
-    }
-
-    public String rango(){
-        return this.getClass().getSimpleName();
     }
 }
