@@ -11,10 +11,9 @@ public class DetectiveDetectiveFake extends DetectiveDetective{
     }
 
     @Override
-    public Detective arrestarladron(Ladron ladron) {
+    public void arrestarladron(Ladron ladron) {
         if (this.ordenDeArresto.esPara(ladron)) {
             this.incrementarArresto();
         }
-        return this;
     }
 }

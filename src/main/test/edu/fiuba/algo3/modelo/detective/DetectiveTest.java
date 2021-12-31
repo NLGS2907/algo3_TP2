@@ -189,42 +189,4 @@ public class DetectiveTest {
         assertEquals(detective.obtenerContador(),6);
     }
 
-  /*  @Test
-    public void testDetectivoHace6ArrestosInvestigaYAtrapaSospechoso() {
-        Detective detective = new DetectiveNovato();
-        for (int i = 0; i < 6; i++) {
-            detective = detective.incrementarArresto();
-        }
-
-        assertSame(DetectiveDetective.class, detective.getClass());
-
-        Ciudad ciudadOrigen = new Ciudad("Mexico");
-        Ciudad ciudadDestino = new Ciudad("Montreal");
-
-        Ciudad ciudadActual = ciudadOrigen;
-
-        ciudadActual.realizarViaje(ciudadDestino, detective);
-
-        Edificio EdificioConLadron = new Edificio();
-        EdificioConLadron.establecerLadron(true);
-        boolean ladronArrestado = false;
-        Ladron ladron = new Sospechoso();
-        ladron.establecerSexo("Masculino");
-        ladron.establecerSenia("Anillo");
-
-        BaseDeDatos baseDeDatos = new BaseDeDatos();
-        baseDeDatos.agregarLadron(ladron);
-
-        detective.emitirOrdenDeArresto(baseDeDatos, ladron);
-
-        detective.visitarEdificio(EdificioConLadron, 1);
-        ladronArrestado = detective.arrestarladron();
-
-        Fecha fecha = new Fecha (4,  14);
-
-        assertTrue(detective.obtenerFecha().esIgualA(fecha));
-        assertTrue(ladronArrestado);
-    }
-*/
-
 }

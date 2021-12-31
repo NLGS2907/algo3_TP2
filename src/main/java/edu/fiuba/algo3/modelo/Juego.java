@@ -92,6 +92,10 @@ private static Juego instancia = null;
         return this.detective;
     }
 
+    public void asignarDetective(Detective detective){
+        this.detective = detective;
+    }
+
     public Computadora obtenerComputadora(){
         return this.computadora;
     }
