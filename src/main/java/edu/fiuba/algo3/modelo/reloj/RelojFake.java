@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.modelo.reloj;
 
-public class RelojTEST extends Reloj{
+public class RelojFake extends Reloj{
 
-    public RelojTEST(){
+    public RelojFake(){
         super();
     }
 

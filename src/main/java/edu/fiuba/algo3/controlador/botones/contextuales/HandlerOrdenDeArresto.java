@@ -19,6 +19,6 @@ public class HandlerOrdenDeArresto implements EventHandler<ActionEvent> {
             CuadroDialogo.obtenerInstancia().mostrarEstadoOrdenDeArresto(ordenDeArresto);
         }
         AudioClip audioClip = new AudioClip("file:media/sfx/botonEmitirOrden.mp3");
-        audioClip.play();
+        audioClip.play(0.5);
     }
 }

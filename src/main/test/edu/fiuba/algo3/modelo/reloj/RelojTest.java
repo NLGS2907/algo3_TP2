@@ -9,7 +9,7 @@ public class RelojTest {
 
     @Test
     public void test01RelojAvanzaSeisHorasYNoPasaDeLaFechaLimite() {
-        Reloj reloj = new RelojTEST();
+        Reloj reloj = new RelojFake();
 
         reloj.avanzarTiempo(6);
         assertTrue(reloj.verificarFechaLimite());
@@ -17,7 +17,7 @@ public class RelojTest {
 
     @Test
     public void test02Agregar8DiasSePasaDeLaFechaLimite() {
-        Reloj reloj = new RelojTEST();
+        Reloj reloj = new RelojFake();
 
         reloj.avanzarTiempo(192); // 8 (dias) x 24 (horas) = 192
 
@@ -26,9 +26,9 @@ public class RelojTest {
 
     @Test
     public void test03AlPasarDeLasOnceSeAgreganOchoHorasSiempre() {
-        Reloj reloj1 = new RelojTEST();
-        Reloj reloj2 = new RelojTEST();
-        Reloj reloj3 = new RelojTEST();
+        Reloj reloj1 = new RelojFake();
+        Reloj reloj2 = new RelojFake();
+        Reloj reloj3 = new RelojFake();
         Fecha unDiaDespues = new Fecha(5, 15);
         Fecha diezDiasDespues = new Fecha(14, 15);
 //        Fecha unMesDespues = new Fecha(31, 15);

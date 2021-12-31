@@ -33,7 +33,7 @@ public class LectorDeLadrones {
                 ladron.establecerSexo(ladronJSON.get("Sexo").toString());
                 ladron.establecerHobby(ladronJSON.get("Hobby").toString());
                 ladron.establecerCabello(ladronJSON.get("Cabello").toString());
-                ladron.establecerSenia(ladronJSON.get("Seña").toString());
+                ladron.establecerSenia(ladronJSON.get("Senia").toString());
                 ladron.establecerVehiculo(ladronJSON.get("Auto").toString());
 
                 computadora.agregarLadron(ladron);

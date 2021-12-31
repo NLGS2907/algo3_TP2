@@ -4,7 +4,7 @@
     "Sexo":     "Masculino",
     "Hobby":    "Alpinismo",
     "Cabello":  "Negro",
-    "Seña":     "Anillo",
+    "Senia":     "Anillo",
     "Auto":     "Moto"
   },
 
@@ -13,7 +13,7 @@
     "Sexo":     "Masculino",
     "Hobby":    "Alpinismo",
     "Cabello":  "Pelirrojo",
-    "Seña":     "Tatuaje",
+    "Senia":     "Tatuaje",
     "Auto":     "Convertible"
   },
 
@@ -22,7 +22,7 @@
     "Sexo":     "Masculino",
     "Hobby":    "Croquet",
     "Cabello":  "Rubio",
-    "Seña":     "Tatuaje",
+    "Senia":     "Tatuaje",
     "Auto":     "Limosina"
   },
 
@@ -31,7 +31,7 @@
     "Sexo":     "Masculino",
     "Hobby":    "Croquet",
     "Cabello":  "Negro",
-    "Seña":     "Joyas",
+    "Senia":     "Joyas",
     "Auto":     "Convertible"
   },
 
@@ -40,7 +40,7 @@
     "Sexo":     "Masculino",
     "Hobby":    "Croquet",
     "Cabello":  "Pelirrojo",
-    "Seña":     "Anillo",
+    "Senia":     "Anillo",
     "Auto":     "Limosina"
   },
 
@@ -49,7 +49,7 @@
     "Sexo":     "Femenino",
     "Hobby":    "Alpinismo",
     "Cabello":  "Castaño",
-    "Seña":     "Joyas",
+    "Senia":     "Joyas",
     "Auto":     "Limosina"
   },
 
@@ -58,7 +58,7 @@
     "Sexo":     "Femenino",
     "Hobby":    "Tennis",
     "Cabello":  "Pelirrojo",
-    "Seña":     "Anillo",
+    "Senia":     "Anillo",
     "Auto":     "Convertible"
   },
 
@@ -67,7 +67,7 @@
     "Sexo":     "Femenino",
     "Hobby":    "Alpinismo",
     "Cabello":  "Castaño",
-    "Seña":     "Tatuaje",
+    "Senia":     "Tatuaje",
     "Auto":     "Moto"
   },
 
@@ -76,7 +76,7 @@
     "Sexo":     "Femenino",
     "Hobby":    "Tennis",
     "Cabello":  "Rubio",
-    "Seña":     "Tatuaje",
+    "Senia":     "Tatuaje",
     "Auto":     "Limosina"
   },
 
@@ -85,7 +85,7 @@
     "Sexo":     "Femenino",
     "Hobby":    "Tennis",
     "Cabello":  "Castaño",
-    "Seña":     "Joyas",
+    "Senia":     "Joyas",
     "Auto":     "Convertible"
   }
 ]

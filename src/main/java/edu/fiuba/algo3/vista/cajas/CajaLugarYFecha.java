@@ -41,7 +41,7 @@ public class CajaLugarYFecha extends VBox {
         this.getChildren().setAll(LocacionYFecha.obtenerInstancia().mostrarCuartelGeneral(),
                 new ImagenCiudad(subPathCuartelGeneral));
         AudioClip audioClip = new AudioClip("file:media/sfx/cuartelGeneral.mp3");
-        audioClip.play();
+        audioClip.play(0.25);
         return instancia;
     }
 }

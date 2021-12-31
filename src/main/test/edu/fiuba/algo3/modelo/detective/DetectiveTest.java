@@ -75,7 +75,7 @@ public class DetectiveTest {
         ContenedorDePistas.obtenerInstancia().cargarPistasLadron(new Sospechoso());
         ContenedorDePistas.obtenerInstanciaTEST();
         boolean enCurso = true;
-        Detective detective = new DetectiveNovatoTEST();
+        Detective detective = new DetectiveNovatoFake();
         Ciudad montreal = new Ciudad("Montreal");
         Ciudad siguiente = new Ciudad("Mexico");
         montreal.asignarSiguiente(siguiente);
@@ -118,7 +118,7 @@ public class DetectiveTest {
         Edificio bolsaConLadron = new Edificio("Bolsa", "Financierio");
         Ladron ladron = new Sospechoso();
         bolsaConLadron.establecerLadron(ladron);
-        Detective detective = new DetectiveNovatoTEST();
+        Detective detective = new DetectiveNovatoFake();
         detective.visitarEdificio(bolsaConLadron, 1);
         assertEquals(0, detective.cantidadDeArrestos);
     }
@@ -135,7 +135,7 @@ public class DetectiveTest {
         computadora.establecerSospechoso(ladron);
         Edificio bancoConLadron = new Edificio("Banco", "Financiero");
         bancoConLadron.establecerLadron(ladron);
-        Detective detective = new DetectiveNovatoTEST();
+        Detective detective = new DetectiveNovatoFake();
         Fecha fecha = new Fecha(4, 11);
         detective.emitirOrdenDeArresto(computadora);
         detective.visitarEdificio(bancoConLadron, 1);
@@ -181,7 +181,7 @@ public class DetectiveTest {
         computadora.establecerSospechoso(ladron);
         Edificio bancoConLadron = new Edificio("Banco", "Financiero");
         bancoConLadron.establecerLadron(ladron);
-        Detective detective = new DetectiveDetectiveTEST();
+        Detective detective = new DetectiveDetectiveFake();
         Fecha fecha = new Fecha(4, 11);
         detective.emitirOrdenDeArresto(computadora);
         detective.visitarEdificio(bancoConLadron, 1);

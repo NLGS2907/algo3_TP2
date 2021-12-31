@@ -1,12 +1,13 @@
 package edu.fiuba.algo3.modelo.detective;
 
 import edu.fiuba.algo3.modelo.ladron.Ladron;
-import edu.fiuba.algo3.modelo.reloj.RelojTEST;
+import edu.fiuba.algo3.modelo.reloj.RelojFake;
 
-public class DetectiveNovatoTEST extends DetectiveNovato {
-    public DetectiveNovatoTEST(){
+public class DetectiveDetectiveFake extends DetectiveDetective{
+
+    public DetectiveDetectiveFake(){
         super();
-        this.reloj = new RelojTEST();
+        this.reloj = new RelojFake();
     }
 
     @Override
@@ -16,5 +17,4 @@ public class DetectiveNovatoTEST extends DetectiveNovato {
         }
         return this;
     }
-
 }
