@@ -8,9 +8,7 @@ import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.pistas.ContenedorDePistas;
 import edu.fiuba.algo3.vista.contenedores.CuadroDialogo;
 
-import java.util.Observable;
-
-public class Juego extends Observable {
+public class Juego{
 
 private static Juego instancia = null;
 
@@ -51,12 +49,10 @@ private static Juego instancia = null;
 
     public void viajar(Ciudad destino){
         this.ciudadActual = this.ciudadActual.realizarViaje(destino, this.detective);
-
     }
 
     public OrdenDeArresto emitirOrdenDeArresto(){
         return this.detective.emitirOrdenDeArresto(this.computadora);
-
     }
 
     public void empezarNuevaMision(){
@@ -102,10 +98,6 @@ private static Juego instancia = null;
 
     public String obtenerHorario() {
         return this.detective.obtenerFecha().mostrar();
-    }
-
-    private boolean seAcaboElTiempo(){
-        return !this.detective.verificarFechaLimite();
     }
 
     ////// TESTS //////

@@ -1,16 +1,12 @@
 package edu.fiuba.algo3.vista.contenedores.cuadros;
 
-import edu.fiuba.algo3.vista.animaciones.AnimacionTexto;
-import edu.fiuba.algo3.vista.cajas.CajaLugarYFecha;
-import edu.fiuba.algo3.vista.contenedores.CuadroDialogo;
-import edu.fiuba.algo3.vista.etiquetas.Etiqueta;
 import edu.fiuba.algo3.vista.botones.contextuales.BotonContinuar;
+import edu.fiuba.algo3.vista.etiquetas.Etiqueta;
 import javafx.scene.layout.VBox;
 
 public class MenuHerida extends VBox{
     public MenuHerida(String mensaje){
         super(18);
-        this.getChildren().add(new Etiqueta(mensaje));
-        this.getChildren().add(new BotonContinuar());
+        this.getChildren().addAll(new Etiqueta(mensaje), new BotonContinuar());
     }
 }

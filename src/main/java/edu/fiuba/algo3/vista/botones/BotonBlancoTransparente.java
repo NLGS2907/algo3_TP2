@@ -29,6 +29,6 @@ public class BotonBlancoTransparente extends BotonDeColor {
 
     @Override
     public BorderImage getTipoBorde() {
-        return new BordeBlanco(7);
+        return new BordeBlanco(6);
     }
 }

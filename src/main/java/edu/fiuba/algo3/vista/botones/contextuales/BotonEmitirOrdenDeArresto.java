@@ -1,13 +1,13 @@
 package edu.fiuba.algo3.vista.botones.contextuales;
 
 import edu.fiuba.algo3.controlador.botones.contextuales.HandlerOrdenDeArresto;
-import edu.fiuba.algo3.vista.imagenes.botones.ImagenInvestigar;
-import javafx.scene.control.Button;
+import edu.fiuba.algo3.vista.botones.BotonNegro;
+import edu.fiuba.algo3.vista.imagenes.botones.ImagenEmitirOrden;
 
-public class BotonEmitirOrdenDeArresto extends Button {
+public class BotonEmitirOrdenDeArresto extends BotonNegro {
     public BotonEmitirOrdenDeArresto() {
         super();
         this.setOnAction(new HandlerOrdenDeArresto());
-        this.setGraphic(new ImagenInvestigar());
+        this.setGraphic(new ImagenEmitirOrden());
     }
 }

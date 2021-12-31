@@ -1,9 +1,9 @@
 package edu.fiuba.algo3.modelo.pistas;
 
-import edu.fiuba.algo3.modelo.lectores.LectorDePistasLadron;
-import edu.fiuba.algo3.modelo.ladron.caracteristica.Caracteristica;
-import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.excepciones.TipoDeCaracteristicaInexistente;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.ladron.caracteristica.Caracteristica;
+import edu.fiuba.algo3.modelo.lectores.LectorDePistasLadron;
 
 import java.util.*;
 
@@ -37,7 +37,7 @@ public class CalculadorPistaLadron {
         Caracteristica atributo = (Caracteristica) atributoEntry.getKey();
 
         if (pistasLadron.get(atributo.obtenerNombreTipo()) != null) {
-            return pistasLadron.get(atributo.obtenerNombreTipo()) + atributo.obtenerValor();
+            return pistasLadron.get(atributo.obtenerNombreTipo()) + atributo.obtenerValor() + ".";
         }
         throw new TipoDeCaracteristicaInexistente("El ladron tiene una caracteristica invalida");
     }

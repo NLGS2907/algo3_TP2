@@ -3,12 +3,11 @@ package edu.fiuba.algo3.vista.cajas;
 import edu.fiuba.algo3.modelo.Ciudad;
 import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.vista.contenedores.LocacionYFecha;
-import edu.fiuba.algo3.vista.imagenes.ciudades.*;
+import edu.fiuba.algo3.vista.imagenes.ciudades.ImagenCiudad;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
-
-import java.util.Locale;
+import javafx.scene.media.AudioClip;
 
 public class CajaLugarYFecha extends VBox {
     private static CajaLugarYFecha instancia = null;
@@ -31,15 +30,18 @@ public class CajaLugarYFecha extends VBox {
         return instancia;
     }
 
-    public static void crearCajaLugarYFecha() {
-        if (instancia == null) {
-            instancia = new CajaLugarYFecha();
-        }
-    }
-
     public CajaLugarYFecha mostrarLugarYTiempo(){
         this.getChildren().setAll(LocacionYFecha.obtenerInstancia().mostrarLugarYTiempo(),
                                 this.conseguirImagenCiudad(Juego.obtenerInstancia().ciudadActual()));
+        return instancia;
+    }
+
+    public CajaLugarYFecha mostrarCuartelGeneral() {
+        String subPathCuartelGeneral = "cuartelGeneral/cuartelgeneral";
+        this.getChildren().setAll(LocacionYFecha.obtenerInstancia().mostrarCuartelGeneral(),
+                new ImagenCiudad(subPathCuartelGeneral));
+        AudioClip audioClip = new AudioClip("file:media/sfx/cuartelGeneral.mp3");
+        audioClip.play();
         return instancia;
     }
 }

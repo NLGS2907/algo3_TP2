@@ -1,9 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.detective.Detective;
 import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.ladron.NoLadron;
 import edu.fiuba.algo3.modelo.ladron.Sospechoso;
-import edu.fiuba.algo3.modelo.detective.Detective;
 
 public class Edificio {
 
@@ -23,6 +23,10 @@ public class Edificio {
 
     public String obtenerTipo(){
         return this.tipo;
+    }
+
+    public String obtenerNombre(){
+        return this.nombre;
     }
 
     public void visitar(Detective detective){

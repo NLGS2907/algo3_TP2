@@ -4,6 +4,7 @@ import edu.fiuba.algo3.modelo.Ciudad;
 import edu.fiuba.algo3.vista.botones.contextuales.BotonElegirCiudad;
 import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
+
 import java.util.ArrayList;
 
 public class BotonesViajes extends VBox {
