@@ -33,9 +33,9 @@ public class Ciudad {
         }
         detective.visitarEdificio(edificio, this.contadorVisitas);
         if (this.estaEnLaRutaDelLadron()) {
-            return detective.leerPistaConLadron(ciudadRecorrido, edificio.obtenerTipo());
+            return detective.leerPistaConLadron(this.ciudadRecorrido, edificio.obtenerTipo());
         }
-        return detective.leerPista(ciudadRecorrido, edificio.obtenerTipo());
+        return detective.leerPista(this.ciudadRecorrido, edificio.obtenerTipo());
     }
 
     public void agregarEdificio(Edificio edificio){

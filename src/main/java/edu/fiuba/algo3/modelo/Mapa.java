@@ -81,7 +81,7 @@ public class Mapa {
         return ciudadRandom;
     }
 
-    int calcularDistanciaEntre(Ciudad ciudadOrigen, Ciudad ciudadDestino) throws RutaInexistente {
+    public int calcularDistanciaEntre(Ciudad ciudadOrigen, Ciudad ciudadDestino) throws RutaInexistente {
         if (distancias.get(ciudadOrigen.obtenerNombre()).get(ciudadDestino.obtenerNombre()) == null) {
             throw new RutaInexistente("Ruta inexistente");
         }

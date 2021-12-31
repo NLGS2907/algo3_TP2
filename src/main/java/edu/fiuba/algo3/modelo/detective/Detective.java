@@ -14,7 +14,6 @@ import edu.fiuba.algo3.modelo.detective.cuchillazo.SinAcuchillar;
 import edu.fiuba.algo3.modelo.Edificio;
 import edu.fiuba.algo3.vista.contenedores.CuadroDialogo;
 
-import java.util.Observable;
 
 public abstract class Detective{
     protected Reloj reloj;

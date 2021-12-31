@@ -60,10 +60,10 @@ private static Juego instancia = null;
     }
 
     public void empezarNuevaMision(){
-        Ladron nuevoLadron = computadora.obtenerLadronRandom();
-        this.ciudadActual = Mapa.obtenerInstancia().crearRutaDelLadron(detective.determinarLongitudMision(), nuevoLadron);
+        Ladron nuevoLadron = this.computadora.obtenerLadronRandom();
+        this.ciudadActual = Mapa.obtenerInstancia().crearRutaDelLadron(this.detective.determinarLongitudMision(), nuevoLadron);
         ContenedorDePistas.obtenerInstancia().cargarPistasLadron(nuevoLadron);
-        computadora.reiniciar();
+        this.computadora.reiniciar();
         this.estadoMision = EstadoJuego.EN_CURSO;
         this.detective.reiniciarReloj();
         CuadroDialogo.obtenerInstancia().update();
