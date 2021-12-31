@@ -24,7 +24,7 @@ public abstract class BotonDeColor extends Button {
         BorderImage bordeActivo = this.getTipoBorde();
         this.setBackground(new Background(fondoNormal));
         this.setTextFill(Paint.valueOf(this.getColorFill()));
-        this.setFont(Font.loadFont("file:fuentes/Minecraftia-Regular.ttf", 12));
+        this.setFont(Font.loadFont("file:fuentes//Minecraftia-Regular.ttf", 12));
         this.setAlignment(Pos.CENTER);
         this.setCursor(Cursor.HAND);
 

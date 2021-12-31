@@ -11,6 +11,6 @@ public class HandlerVersion extends HandlerSubEscena {
     public String getInfo() {
         return "VERSIÓN DEL JUEGO:\n" +
                 "Actualmente estás jugando la versión:\n" +
-                "v0.0.1 (alpha)";
+                "v1.0.0";
     }
 }
