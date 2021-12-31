@@ -7,15 +7,15 @@ import javafx.scene.text.Font;
 public class Etiqueta extends Label {
 
     public Etiqueta(String titulo) {
-        this(titulo, 12, "#ffffff", "file:fuentes/Minecraftia-Regular.ttf");
+        this(titulo, 12, "#ffffff", "file:fuentes//Minecraftia-Regular.ttf");
     }
 
     public Etiqueta(String titulo, int tamanioFuente) {
-        this(titulo, tamanioFuente, "#ffffff", "file:fuentes/Minecraftia-Regular.ttf");
+        this(titulo, tamanioFuente, "#ffffff", "file:fuentes//Minecraftia-Regular.ttf");
     }
 
     public Etiqueta(String titulo, int tamanioFuente, String color) {
-        this(titulo, tamanioFuente, color, "file:fuentes/Minecraftia-Regular.ttf");
+        this(titulo, tamanioFuente, color, "file:fuentes//Minecraftia-Regular.ttf");
     }
 
     public Etiqueta(String titulo, int tamanioFuente, String color, String pathFuente) {

@@ -39,9 +39,7 @@ public class LectorDeLadrones {
                 computadora.agregarLadron(ladron);
             });
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
     }
