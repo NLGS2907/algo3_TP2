@@ -30,7 +30,10 @@ public class Ciudad {
     public String visitarEdificio(Detective detective, Edificio edificio){
         this.incrementarContador();
         detective.visitarEdificio(edificio, this.contadorVisitas);
-        return this.obtenerPista(detective, edificio);
+        if (this.estaEnLaRutaDelLadron()) {
+            return detective.leerPistaConLadron(this.ciudadRecorrido, edificio.obtenerTipo());
+        }
+        return detective.leerPista(this.ciudadRecorrido, edificio.obtenerTipo());
     }
 
     public void agregarEdificio(Edificio edificio){

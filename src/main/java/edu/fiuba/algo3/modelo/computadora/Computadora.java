@@ -16,7 +16,6 @@ public class Computadora {
     public Computadora(){
         this.baseDeDatos = new BaseDeDatos();
         this.ladronGuardado = new Sospechoso();
-
         LectorDeLadrones lector = new LectorDeLadrones("src/main/java/edu/fiuba/algo3/config/ladrones.json");
         lector.cargarLadrones(this);
     }
