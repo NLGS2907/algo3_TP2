@@ -28,9 +28,7 @@ public class Ciudad {
     }
 
     public String visitarEdificio(Detective detective, Edificio edificio){
-        if(this.contadorVisitas < 3){
-            this.contadorVisitas++;
-        }
+        this.incrementarContador();
         detective.visitarEdificio(edificio, this.contadorVisitas);
         if (this.estaEnLaRutaDelLadron()) {
             return detective.leerPistaConLadron(this.ciudadRecorrido, edificio.obtenerTipo());
@@ -76,6 +74,19 @@ public class Ciudad {
             detective.recibirAtaque();
         }
         return destino;
+    }
+
+    private String obtenerPista(Detective detective, Edificio edificio){
+        if (this.estaEnLaRutaDelLadron()) {
+            return detective.leerPistaConLadron(ciudadRecorrido, edificio.obtenerTipo());
+        }
+        return detective.leerPista(ciudadRecorrido, edificio.obtenerTipo());
+    }
+
+    private void incrementarContador(){
+        if(this.contadorVisitas < 3){
+            this.contadorVisitas++;
+        }
     }
 
     ////// VISTA //////

@@ -1,19 +1,18 @@
 package edu.fiuba.algo3.modelo.detective;
 
+import edu.fiuba.algo3.modelo.Edificio;
 import edu.fiuba.algo3.modelo.Juego;
 import edu.fiuba.algo3.modelo.computadora.Computadora;
-import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenInvalida;
-import edu.fiuba.algo3.modelo.pistas.ContenedorDePistas;
-import edu.fiuba.algo3.modelo.detective.randomizador.Randomizador;
-import edu.fiuba.algo3.modelo.reloj.Fecha;
-import edu.fiuba.algo3.modelo.reloj.Reloj;
 import edu.fiuba.algo3.modelo.detective.cuchillazo.Cuchillazo;
 import edu.fiuba.algo3.modelo.detective.cuchillazo.SinAcuchillar;
-import edu.fiuba.algo3.modelo.Edificio;
+import edu.fiuba.algo3.modelo.detective.randomizador.Randomizador;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.pistas.ContenedorDePistas;
+import edu.fiuba.algo3.modelo.reloj.Fecha;
+import edu.fiuba.algo3.modelo.reloj.Reloj;
 import edu.fiuba.algo3.vista.contenedores.CuadroDialogo;
-
 
 public abstract class Detective{
     protected Reloj reloj;
@@ -64,19 +63,16 @@ public abstract class Detective{
 
     public abstract void viajar(int distancia);
 
-    public void viajarACiudadConLadron(int distancia){
-        this.cantidadDeCuchillazos = this.cantidadDeCuchillazos.acuchillar(this.reloj);
-        this.reloj.avanzarTiempo((int) Math.round(distancia/this.velocidad));
-    }
-
-    private void sufrirCuchillazo(float probabilidad){
+    private void sufrirCuchillazo(){
+        float probabilidad = this.randomizador.generarProbabilidad();
         if(probabilidad < 0.3){
             this.fueHerido = true;
             this.cantidadDeCuchillazos = this.cantidadDeCuchillazos.acuchillar(this.reloj);
         }
     }
 
-    private void sufrirBalazo(float probabilidad){
+    private void sufrirBalazo(){
+        float probabilidad = this.randomizador.generarProbabilidad();
         if(probabilidad < 0.3){
             this.fueHerido = true;
             this.reloj.avanzarTiempo(4);
@@ -87,11 +83,11 @@ public abstract class Detective{
         float probabilidad = this.randomizador.generarProbabilidad();
         if(probabilidad < 0.3){
             CuadroDialogo.obtenerInstancia().sufrirBalazo();
-            this.sufrirBalazo(probabilidad);
+            this.sufrirBalazo();
         }
         else{
             CuadroDialogo.obtenerInstancia().sufrirCuchillazo();
-            this.sufrirCuchillazo(probabilidad);
+            this.sufrirCuchillazo();
         }
     }
 
@@ -115,6 +111,11 @@ public abstract class Detective{
         } else if(this.cantidadDeArrestos < 10){
             return 5;
         } else return 7;
+    }
+
+    public void viajarACiudadConLadron(int distancia){
+        this.cantidadDeCuchillazos = this.cantidadDeCuchillazos.acuchillar(this.reloj);
+        this.reloj.avanzarTiempo((int) Math.round(distancia/this.velocidad));
     }
 
     public boolean estaHerido(){

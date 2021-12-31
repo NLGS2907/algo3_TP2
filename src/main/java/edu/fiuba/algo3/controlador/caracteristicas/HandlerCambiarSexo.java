@@ -8,7 +8,6 @@ import javafx.event.ActionEvent;
 public class HandlerCambiarSexo extends HandlerCambiarCaracteristica{
     public HandlerCambiarSexo(Caracteristica caracteristica){
         super(caracteristica);
-        //this.caracteristica = caracteristica;
         this.valoresPosibles.add("Masculino");
         this.valoresPosibles.add("Femenino");
     }

@@ -1,13 +1,12 @@
 package edu.fiuba.algo3.controlador.botones.contextuales;
 
-import edu.fiuba.algo3.controlador.botones.acciones.HandlerVer;
 import edu.fiuba.algo3.modelo.Ciudad;
 import edu.fiuba.algo3.modelo.EstadoJuego;
 import edu.fiuba.algo3.modelo.Juego;
+import edu.fiuba.algo3.modelo.pistas.DescripcionesDeCiudades;
 import edu.fiuba.algo3.vista.animaciones.AnimacionTexto;
 import edu.fiuba.algo3.vista.cajas.CajaLugarYFecha;
 import edu.fiuba.algo3.vista.contenedores.CuadroDialogo;
-import edu.fiuba.algo3.modelo.pistas.DescripcionesDeCiudades;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 

@@ -15,10 +15,4 @@ public abstract class HandlerCambiarCaracteristica implements EventHandler<Actio
         valoresPosibles = new ArrayList<String>();
         this.valoresPosibles.add("");
     }
-
-    //@Override
-    //public void handle(ActionEvent actionEvent){
-
-
-    //}
 }

@@ -1,9 +1,9 @@
 package edu.fiuba.algo3.modelo.computadora;
 
-import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenInvalida;
 import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenValida;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -27,10 +27,10 @@ public class BaseDeDatos {
     {
         Stream<Ladron> listaFiltrada =  this.listaLadrones.stream().filter(elemento->elemento.esSimilarA(ladronBuscado));
         
-        long cantidadSospechosos = listaFiltrada.count();
+        long cantidadDeCoincidencias = listaFiltrada.count();
         listaFiltrada =  this.listaLadrones.stream().filter(elemento->elemento.esSimilarA(ladronBuscado));
 
-        if(cantidadSospechosos == 1){
+        if(cantidadDeCoincidencias == 1){
             return new OrdenValida(listaFiltrada.findFirst().get());
         }
         return new OrdenInvalida();

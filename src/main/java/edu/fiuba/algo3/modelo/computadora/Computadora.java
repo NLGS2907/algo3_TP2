@@ -1,10 +1,10 @@
 package edu.fiuba.algo3.modelo.computadora;
 
-import edu.fiuba.algo3.modelo.lectores.LectorDeLadrones;
-import edu.fiuba.algo3.modelo.ladron.caracteristica.Caracteristica;
+import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
 import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.ladron.Sospechoso;
-import edu.fiuba.algo3.modelo.computadora.ordenesDeArresto.OrdenDeArresto;
+import edu.fiuba.algo3.modelo.ladron.caracteristica.Caracteristica;
+import edu.fiuba.algo3.modelo.lectores.LectorDeLadrones;
 
 import java.util.ArrayList;
 

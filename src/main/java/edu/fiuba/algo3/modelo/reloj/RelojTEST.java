@@ -1,8 +1,5 @@
 package edu.fiuba.algo3.modelo.reloj;
 
-import edu.fiuba.algo3.modelo.reloj.Reloj;
-import edu.fiuba.algo3.modelo.reloj.Fecha;
-
 public class RelojTEST extends Reloj{
 
     public RelojTEST(){
